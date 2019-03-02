@@ -5,12 +5,17 @@ import withStyles from "react-jss";
 const propTypes = {
   classes: PropTypes.object.isRequired
 };
-    
+
 const Header = props => {
-  return <div>Header</div>;
+  const { classes } = props;
+  return <div className={classes.root} />;
 };
 
-const styles = {};
+const styles = {
+  root: {
+    position: "relative"
+  }
+};
 
 Header.propTypes = propTypes;
 

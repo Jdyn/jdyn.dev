@@ -7,11 +7,15 @@ const propTypes = {
 };
 
 const Footer = props => {
-  return <div>Footer</div>;
+  const { classes } = props;
+  return <div className={classes.root}></div>;
 };
 
-const styles = {};
-
+const styles = {
+  root: {
+    position: "relative",
+  }
+};
 Footer.propTypes = propTypes;
 
 export default withStyles(styles)(Footer);

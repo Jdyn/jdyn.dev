@@ -20,7 +20,7 @@ const styles = theme => ({
     html: {
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
-      boxSizing: "border-box"
+      boxSizing: "border-box",
     },
     body: {
       margin: 0,
