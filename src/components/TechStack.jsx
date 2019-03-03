@@ -19,10 +19,9 @@ const to = index => ({
 
 const from = index => ({
   x: 0,
-  y: index * -4,
-  rotation: 0,
-  scale: 1.5,
   y: -1000,
+  rotation: 0,
+  scale: 1.5
 });
 
 const TechStack = props => {
@@ -39,7 +38,7 @@ const TechStack = props => {
       const dir = xDir < 0 ? -1 : 1; // Determines whether card was dragged left or right.
       if (!down && trigger) removed.add(index); // If mouse button is up and velocity is reached, add the card to removed.
       set(i => {
-        if (index !== i) return; // Only change data for the current card
+        if (index !== i) return; // Only change projects for the current card
         const isRemoved = removed.has(index);
         const x = isRemoved ? (200 + window.innerWidth) * dir : down ? xDelta : 0; // When a card is removed it flys out left or right, otherwise goes back to zero
         const rotation = xDelta / 100 + (isRemoved ? dir * 10 * velocity : 0); // Rotates the card as it is being removed.
@@ -79,12 +78,12 @@ const TechStack = props => {
 const styles = {
   container: {
     position: "absolute",
-    width: "100%",
-    height: "100%",
+    // width: "100%",
+    // height: "100%",
     willChange: "transform",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "flex-end"
   }
 };
 

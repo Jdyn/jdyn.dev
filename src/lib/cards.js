@@ -16,23 +16,5 @@ export default [
     level: "5",
     overview: "",
     icon: "img/nodejs.svg"
-  },
-  {
-    name: "Node.JS",
-    level: "5",
-    overview: "",
-    icon: "img/nodejs.svg"
-  },
-  {
-    name: "Node.JS",
-    level: "5",
-    overview: "",
-    icon: "img/nodejs.svg"
-  },
-  {
-    name: "Node.JS",
-    level: "5",
-    overview: "",
-    icon: "img/nodejs.svg"
-  },
+  }
 ];
