@@ -23,28 +23,32 @@ const Projects = props => {
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("touchend", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchend", handleClickOutside);
     };
+  }, []);
+
+  const titleSpring = useSpring({
+    config: config.slow,
+    opacity: 1,
+    height: "50vh",
+    from: { opacity: 0, height: "0px" }
   });
 
-  const springRef = useRef();
+  const openingRef = useRef();
   const { width, height, opacity, ...rest } = useSpring({
-    ref: springRef,
-    config: config.gentle,
+    ref: openingRef,
+    config: config.default,
     from: {
       width: "20%",
-      height: "auto",
-      background: "hotpink",
+      background: "#555abf",
       boxShadow: "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
     },
     to: {
       width: open ? "100%" : "20%",
-      height: open ? "auto" : "auto",
-      background: open ? "white" : "hotpink",
-      transform: `translateY(${hovering ? "-10px" : "0px"})`,
+      background: open ? "white" : "#555abf",
+      transform: open ? `translateY(0px)` : `translateY(${hovering ? "-10px" : "0px"})`,
       boxShadow: open
         ? "0 50px 200px -20px rgba(50,50,93,.25), 0 30px 120px -30px rgba(0,0,0,.3)"
         : hovering
@@ -53,9 +57,9 @@ const Projects = props => {
     }
   });
 
-  const transRef = useRef();
+  const itemsRef = useRef();
   const transitions = useTransition(open ? projects : [], item => item.name, {
-    ref: transRef,
+    ref: itemsRef,
     unique: true,
     trail: 400 / projects.length,
     from: { opacity: 0, transform: "scale(0)" },
@@ -63,7 +67,7 @@ const Projects = props => {
     leave: { opacity: 0, transform: "scale(0)" }
   });
 
-  useChain(open ? [springRef, transRef] : [transRef, springRef]);
+  useChain(open ? [openingRef, itemsRef] : [itemsRef, openingRef]);
 
   return (
     <div className={classes.container}>
@@ -72,14 +76,18 @@ const Projects = props => {
         className={classes.display}
         style={{ ...rest, width: width, height: height }}
         onClick={() => set(true)}
-        onMouseOver={e => isHovering(true)}
-        onMouseOut={e => isHovering(false)}
+        onMouseOver={() => isHovering(true)}
+        onMouseOut={() => isHovering(false)}
       >
         {transitions.map(({ item, key, props }) => (
           <ProjectCard key={key} style={{ ...props, background: item.css }} />
         ))}
+        {!open && (
+          <animated.div className={classes.buttonTitle} style={titleSpring}>
+            projects
+          </animated.div>
+        )}
       </animated.div>
-      {/* <div className={classes.projectsHero}> hello</div> */}
     </div>
   );
 };
@@ -102,7 +110,6 @@ const styles = theme => ({
     flexWrap: "wrap",
     flexDirection: "row",
     borderRadius: 10,
-    minHeight: "64px",
     minWidth: "128px",
     cursor: "pointer",
     margin: "25px",
@@ -111,15 +118,18 @@ const styles = theme => ({
     },
     padding: "10px",
     willChange: "width, height",
-    "&:hover": {
-      transform: "translateY(-1px)"
-    }
   },
-  projectsHero: {
+  buttonTitle: {
     display: "flex",
-    position: "relative",
-    height: "100%",
-    width: "45%"
+    color: "white",
+    fontWeight: 600,
+    justifyContent: "center",
+    flexGrow: 1,
+    width: "100%",
+    textTransform: "uppercase",
+    letterSpacing: "0.125em",
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 

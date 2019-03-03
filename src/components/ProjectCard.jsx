@@ -21,7 +21,7 @@ const styles = {
     flexBasis: "auto",
     width: "100%",
     maxWidth: "350px",
-    height: "350px",
+    height: "400px",
     margin: "0 0 20px 0",
     "@media (min-width: 700px)": {
       margin: "10px"

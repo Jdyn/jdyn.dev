@@ -14,18 +14,19 @@ const Home = props => {
   const { classes, cards, projects } = props;
   return (
     <div className={classes.root}>
+      {/* <div className={classes.stripe} /> */}
       <div className={classes.stackHero}>
         <div className={classes.header}>
           <h1 style={{ margin: "10px 0" }}>
             Hey I'm Jaden
-            <br /> here's my stack.
+            <br /> this is my <code>stack</code>.
           </h1>
         </div>
       </div>
       <div className={classes.stack}>
         <TechStack cards={cards} />
-      </div>  
-        <Projects projects={projects} />
+      </div>
+      <Projects projects={projects} />
     </div>
   );
 };
@@ -63,7 +64,7 @@ const styles = theme => ({
   stackHero: {
     gridArea: "stackHero",
     textAlign: "center",
-    justifyContent: "middle",
+    justifyContent: "center",
     display: "flex",
     flexDirection: "column",
     "@media (min-width: 750px)": {
@@ -72,10 +73,22 @@ const styles = theme => ({
     }
   },
   header: {
-    margin: "auto 0"
+    margin: "auto 0",
+    userSelect: "none"
   },
-  projects: {
-
+  stripe: {
+    zIndex: -1,
+    width: "100vw",
+    height: "100vh",
+    top: 0,
+    boxShadow: "0 0px 20px 0 rgba(50, 50, 73, 0.4)",
+    overflow: "hidden",
+    WebkitTransform: "skwY(-12deg)",
+    transform: "skewY(-20deg)",
+    WebkitTransformOrigin: 0,
+    transformOrigin: 0,
+    backgroundColor: theme.tertiaryWhite,
+    position: "absolute"
   }
 });
 

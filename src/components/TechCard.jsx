@@ -17,7 +17,7 @@ const trans = (rotation, scale, perspective) =>
     10}deg) rotateZ(${rotation}deg) scale(${scale})`;
 
 const TechCard = props => {
-  const { classes, rotation, scale, index, bind } = props;
+  const { classes, card, rotation, scale, index, bind } = props;
 
   return (
     <animated.div
@@ -28,16 +28,11 @@ const TechCard = props => {
       {...bind(index)}
     >
       <div className={classes.container}>
-        <div className={classes.header} />
+        <div className={classes.header}>
+          <img alt="technology icon" src={card.icon} className={classes.techLogo} />
+        </div>
         <div className={classes.footer} />
       </div>
-      {/* <div className={classes.header}>
-        <img alt="technology icon" src={card.icon} className={classes.techLogo} />
-        <h3 className={classes.name}>{card.name}</h3>
-      </div> */}
-
-      {/* <p className={classes.overview}>{card.overview}</p> */}
-      <div className={classes.footer} />
     </animated.div>
   );
 };
@@ -62,11 +57,11 @@ const styles = theme => ({
   },
   techLogo: {
     position: "relative",
-    width: "128px",
-    height: "128px",
+    maxWidth: "50%",
+    height: "50%",
     userSelect: "none",
-    marginTop: "20px",
-    marginLeft: "20px"
+    marginTop: "5%",
+    marginLeft: "5%"
   },
   overview: {
     margin: "20px",
@@ -94,8 +89,6 @@ const styles = theme => ({
     margin: 0,
     marginLeft: "15px",
     flexGrow: 1,
-    // justifyContent: "middle",
-    // alignItems: "flex-end"
     justifyContent: "middle",
     alignItems: "center"
   }

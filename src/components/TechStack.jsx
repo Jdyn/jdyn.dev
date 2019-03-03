@@ -77,13 +77,13 @@ const TechStack = props => {
 
 const styles = {
   container: {
+    display: "flex",
     position: "absolute",
-    // width: "100%",
-    // height: "100%",
+    width: "100%",
+    height: "100%",
     willChange: "transform",
     display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end"
+    justifyContent: "center"
   }
 };
 
