@@ -3,6 +3,7 @@ import { useTransition, useSpring, useChain, config, animated } from "react-spri
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import ProjectCard from "./ProjectCard";
+import Modal from "./Modal";
 
 const propTypes = {
   classes: PropTypes.object.isRequired
@@ -12,12 +13,20 @@ const Projects = props => {
   const { classes, projects } = props;
   const [open, set] = useState(false);
   const [hovering, isHovering] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [currentProject, setProject] = useState({});
   const myRef = useRef();
 
   const handleClickOutside = e => {
-    if (!myRef.current.contains(e.target)) {
+    if (!myRef.current.contains(e.target) && modal === false) {
       set(false);
     }
+  };
+
+  const handleModal = project => {
+    document.body.style.overflow = "hidden";
+    setProject(project);
+    setModal(true);
   };
 
   useEffect(() => {
@@ -27,18 +36,18 @@ const Projects = props => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchend", handleClickOutside);
     };
-  }, []);
+  }, [modal]);
 
   const titleSpring = useSpring({
-    config: config.slow,
+    config: config.default,
     opacity: 1,
     height: "50vh",
     from: { opacity: 0, height: "0px" }
   });
 
-  const openingRef = useRef();
+  const containerRef = useRef();
   const { width, height, opacity, ...rest } = useSpring({
-    ref: openingRef,
+    ref: containerRef,
     config: config.default,
     from: {
       width: "20%",
@@ -48,6 +57,7 @@ const Projects = props => {
     to: {
       width: open ? "100%" : "20%",
       background: open ? "white" : "#555abf",
+      cursor: open ? "default" : "pointer",
       transform: open ? `translateY(0px)` : `translateY(${hovering ? "-10px" : "0px"})`,
       boxShadow: open
         ? "0 50px 200px -20px rgba(50,50,93,.25), 0 30px 120px -30px rgba(0,0,0,.3)"
@@ -62,15 +72,16 @@ const Projects = props => {
     ref: itemsRef,
     unique: true,
     trail: 400 / projects.length,
-    from: { opacity: 0, transform: "scale(0)" },
-    enter: { opacity: 1, transform: "scale(1)" },
+    from: { opacity: 0, transform: "scale(0)", cursor: "default" },
+    enter: { opacity: 1, transform: "scale(1)", cursor: "pointer" },
     leave: { opacity: 0, transform: "scale(0)" }
   });
 
-  useChain(open ? [openingRef, itemsRef] : [itemsRef, openingRef]);
+  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef]);
 
   return (
     <div className={classes.container}>
+      {modal && <Modal setModal={setModal} project={currentProject} />}
       <animated.div
         ref={myRef}
         className={classes.display}
@@ -80,7 +91,12 @@ const Projects = props => {
         onMouseOut={() => isHovering(false)}
       >
         {transitions.map(({ item, key, props }) => (
-          <ProjectCard key={key} style={{ ...props, background: item.css }} />
+          <ProjectCard
+            key={key}
+            project={item}
+            style={{ ...props, background: item.css }}
+            handleModal={handleModal}
+          />
         ))}
         {!open && (
           <animated.div className={classes.buttonTitle} style={titleSpring}>
@@ -117,12 +133,12 @@ const styles = theme => ({
       margin: "25px 65px"
     },
     padding: "10px",
-    willChange: "width, height",
+    willChange: "width, height"
   },
   buttonTitle: {
     display: "flex",
     color: "white",
-    fontWeight: 600,
+    fontWeight: 700,
     justifyContent: "center",
     flexGrow: 1,
     width: "100%",

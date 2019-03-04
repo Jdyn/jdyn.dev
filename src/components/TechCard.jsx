@@ -46,6 +46,7 @@ const styles = theme => ({
     maxHeight: "570px",
     borderRadius: 10,
     backgroundColor: "white",
+    cursor: "grab",
     boxShadow: "0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3)"
   },
   container: {

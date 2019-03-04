@@ -11,7 +11,7 @@ const propTypes = {
 
 const to = index => ({
   x: 0,
-  y: index * -4,
+  y: index * -5,
   rotation: -10 + Math.random() * 20, // Randomize initial position in stack
   scale: 1,
   delay: index * 300

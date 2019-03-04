@@ -12,6 +12,7 @@ const propTypes = {
 
 const Home = props => {
   const { classes, cards, projects } = props;
+  
   return (
     <div className={classes.root}>
       {/* <div className={classes.stripe} /> */}
