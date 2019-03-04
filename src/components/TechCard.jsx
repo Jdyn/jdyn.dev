@@ -12,7 +12,7 @@ const propTypes = {
   index: PropTypes.number.isRequired
 };
 
-const trans = (rotation, scale, perspective) =>
+const trans = (rotation, scale) =>
   `perspective(${"3000px"}) rotateX(30deg) rotateY(${rotation /
     10}deg) rotateZ(${rotation}deg) scale(${scale})`;
 
@@ -21,13 +21,13 @@ const TechCard = props => {
 
   return (
     <animated.div
-      className={classes.card}
+      className={classes.container}
       style={{
         transform: interpolate([rotation, scale], trans)
       }}
       {...bind(index)}
     >
-      <div className={classes.container}>
+      <div className={classes.card}>
         <div className={classes.header}>
           <img alt="technology icon" src={card.icon} className={classes.techLogo} />
           <h2 className={classes.name}>{card.name}</h2>
@@ -39,7 +39,7 @@ const TechCard = props => {
 };
 
 const styles = theme => ({
-  card: {
+  container: {
     position: "relative",
     width: "45vh",
     maxWidth: "300px",
@@ -50,7 +50,7 @@ const styles = theme => ({
     cursor: "grab",
     boxShadow: "0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3)"
   },
-  container: {
+  card: {
     display: "flex",
     flexDirection: "column",
     position: "relative",
@@ -96,9 +96,6 @@ const styles = theme => ({
     fontWeight: 700,
     textTransform: "uppercase",
     letterSpacing: "0.125em",
-
-    // flexShrink: 1,
-    // width: "100%",
     justifyContent: "middle",
     alignItems: "center"
   }

@@ -12,12 +12,6 @@ export default [
     icon: "img/django.svg"
   },
   {
-    name: "Phoenix",
-    level: "2",
-    overview: "",
-    icon: "img/phoenix.svg"
-  },
-  {
     name: "iOS/Swift",
     level: "4",
     overview: "",
@@ -31,15 +25,21 @@ export default [
     icon: "img/html5.svg"
   },
   {
+    name: "Phoenix",
+    level: "2",
+    overview: "",
+    icon: "img/phoenix.svg"
+  },
+  {
     name: "React",
     level: "5",
     overview: "",
-    icon: "img/react.svg",
+    icon: "img/react.svg"
   },
   {
     name: "Node.JS",
     level: "5",
     overview: "",
-    icon: "img/nodejs.svg",
+    icon: "img/nodejs.svg"
   }
 ];

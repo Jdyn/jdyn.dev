@@ -6,13 +6,13 @@ import { useSpring, config, animated } from "react-spring";
 const propTypes = {
   classes: PropTypes.object.isRequired,
   setModal: PropTypes.func.isRequired,
-  project: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired
 };
 
 const Modal = props => {
-  const { classes, setModal, project } = props;
+  const { classes, setModal, item } = props;
 
-  const handleClickOutside = event => {
+  const handleClick = event => {
     event.preventDefault();
     if (event.target === event.currentTarget) {
       set({ width: "0%", opacity: 0, transform: "scale(0)" });
@@ -20,8 +20,8 @@ const Modal = props => {
     }
   };
 
-  const [{ opacity, ...rest }, set, stop] = useSpring(() => ({
-    config: config.stiff,
+  const [{ opacity, ...rest }, set] = useSpring(() => ({
+    config: config.wobbly,
     to: {
       width: "100%",
       transform: "scale(1)",
@@ -40,14 +40,9 @@ const Modal = props => {
   }));
 
   return (
-    <animated.div
-      id="root"
-      style={{ opacity: opacity }}
-      className={classes.root}
-      onClick={e => handleClickOutside(e)}
-    >
-      <animated.div className={classes.container} style={{ opacity: opacity, ...rest }}>
-        {project.name}
+    <animated.div style={{ opacity }} className={classes.root} onClick={e => handleClick(e)}>
+      <animated.div className={classes.container} style={{ opacity, ...rest }}>
+        {item.name}
         <div style={{ width: "800px", height: "900px" }} />
       </animated.div>
     </animated.div>

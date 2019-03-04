@@ -56,32 +56,39 @@ const TechStack = props => {
     }
   );
 
-  return springs.map((props, index) => (
-    <animated.div
-      className={classes.container}
-      key={index}
-      style={{
-        transform: interpolate([props.x, props.y], (x, y) => `translate3d(${x}px,${y}px,0)`)
-      }}
-    >
-      <TechCard
-        {...props}
-        index={index}
-        bind={bind}
-        card={cards[index]}
-      />
-    </animated.div>
-  ));
+  return (
+    <div className={classes.container}>
+      {springs.map((props, index) => (
+        <animated.div
+          className={classes.card}
+          key={index}
+          style={{
+            transform: interpolate([props.x, props.y], (x, y) => `translate3d(${x}px,${y}px,0)`)
+          }}
+        >
+          <TechCard {...props} index={index} bind={bind} card={cards[index]} />
+        </animated.div>
+      ))}
+    </div>
+  );
 };
 
 const styles = {
   container: {
     display: "flex",
+    justifyContent: "center",
+    position: "relative",
+    height: "650px",
+    width: "100%",
+    marginTop: "10%",
+    gridArea: "stack"
+  },
+  card: {
+    display: "flex",
     position: "absolute",
     width: "100%",
     height: "100%",
     willChange: "transform",
-    display: "flex",
     justifyContent: "center"
   }
 };

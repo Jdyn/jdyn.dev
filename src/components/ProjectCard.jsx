@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
-import { animated, useSpring, config } from "react-spring";
-import Modal from "./Modal";
+import { animated } from "react-spring";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -12,13 +11,8 @@ const propTypes = {
 const ProjectCard = props => {
   const { classes, style, handleModal, project } = props;
 
-  const handleOnClick = event => {
-    event.preventDefault();
-    handleModal(project);
-  };
-
   return (
-    <animated.div style={style} className={classes.container} onClick={e => handleOnClick(e)} />
+    <animated.div style={style} className={classes.container} onClick={() => handleModal(project)} />
   );
 };
 

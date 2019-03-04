@@ -6,7 +6,8 @@ import ProjectCard from "./ProjectCard";
 import Modal from "./Modal";
 
 const propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  projects: PropTypes.array.isRequired
 };
 
 const Projects = props => {
@@ -15,8 +16,8 @@ const Projects = props => {
   const [hovering, isHovering] = useState(false);
   const [modal, setModal] = useState(false);
   const [currentProject, setProject] = useState({});
-  const myRef = useRef();
 
+  const myRef = useRef();
   const handleClickOutside = e => {
     if (!myRef.current.contains(e.target) && modal === false) {
       set(false);
@@ -39,9 +40,8 @@ const Projects = props => {
   }, [modal]);
 
   const titleSpring = useSpring({
-    config: config.default,
     opacity: 1,
-    height: "50vh",
+    height: "65vh",
     from: { opacity: 0, height: "0px" }
   });
 
@@ -50,17 +50,17 @@ const Projects = props => {
     ref: containerRef,
     config: config.default,
     from: {
-      width: "25%",
+      width: "20%",
       background: "#555abf",
       boxShadow: "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
     },
     to: {
-      width: open ? "100%" : "25%",
+      width: open ? "100%" : "20%",
       background: open ? "white" : "#555abf",
       cursor: open ? "default" : "pointer",
       transform: open ? `translateY(0px)` : `translateY(${hovering ? "-10px" : "0px"})`,
       boxShadow: open
-        ? "0 50px 200px -20px rgba(50,50,93,.25), 0 30px 120px -30px rgba(0,0,0,.3)"
+        ? "0 0px 200px -20px rgba(50,50,93,.25), 0 30px 120px -30px rgba(0,0,0,.3)"
         : hovering
         ? "0 25px 100px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
         : "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
@@ -81,7 +81,7 @@ const Projects = props => {
 
   return (
     <div className={classes.container}>
-      {modal && <Modal setModal={setModal} project={currentProject} />}
+      {modal && <Modal setModal={setModal} item={currentProject} />}
       <animated.div
         ref={myRef}
         className={classes.display}
@@ -144,7 +144,6 @@ const styles = theme => ({
     width: "100%",
     textTransform: "uppercase",
     letterSpacing: "0.125em",
-    justifyContent: "center",
     alignItems: "center"
   }
 });
