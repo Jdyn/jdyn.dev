@@ -30,6 +30,7 @@ const TechCard = props => {
       <div className={classes.container}>
         <div className={classes.header}>
           <img alt="technology icon" src={card.icon} className={classes.techLogo} />
+          <h2 className={classes.name}>{card.name}</h2>
         </div>
         <div className={classes.footer} />
       </div>
@@ -58,8 +59,8 @@ const styles = theme => ({
   },
   techLogo: {
     position: "relative",
-    maxWidth: "50%",
-    height: "50%",
+    maxWidth: "35%",
+    height: "60%",
     userSelect: "none",
     marginTop: "5%",
     marginLeft: "5%"
@@ -80,16 +81,24 @@ const styles = theme => ({
   header: {
     display: "flex",
     position: "relative",
-    flexDirection: "row",
+    flexDirection: "column",
+    padding: "10px",
     height: "35%",
     borderRadius: 10,
     backgroundColor: theme.secondaryWhite
   },
   name: {
-    display: "flex",
+    display: "inline-flex",
     margin: 0,
+    marginTop: "5px",
     marginLeft: "15px",
-    flexGrow: 1,
+    fontSize: "1.1em",
+    fontWeight: 700,
+    textTransform: "uppercase",
+    letterSpacing: "0.125em",
+
+    // flexShrink: 1,
+    // width: "100%",
     justifyContent: "middle",
     alignItems: "center"
   }

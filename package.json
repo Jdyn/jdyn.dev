@@ -1,5 +1,6 @@
 {
   "name": "jdyn.github.io",
+  "homepage": "https://jdyn.dev",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

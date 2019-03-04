@@ -48,7 +48,7 @@ const Modal = props => {
     >
       <animated.div className={classes.container} style={{ opacity: opacity, ...rest }}>
         {project.name}
-        <div style={{ width: "800px", height: "500px" }} />
+        <div style={{ width: "800px", height: "900px" }} />
       </animated.div>
     </animated.div>
   );

@@ -12,15 +12,14 @@ const propTypes = {
 
 const Home = props => {
   const { classes, cards, projects } = props;
-  
+
   return (
     <div className={classes.root}>
       {/* <div className={classes.stripe} /> */}
       <div className={classes.stackHero}>
         <div className={classes.header}>
           <h1 style={{ margin: "10px 0" }}>
-            Hey I'm Jaden
-            <br /> this is my <code>stack</code>.
+            My stack.
           </h1>
         </div>
       </div>
@@ -60,6 +59,7 @@ const styles = theme => ({
     position: "relative",
     height: "650px",
     width: "100%",
+    marginTop: "10%",
     gridArea: "stack"
   },
   stackHero: {

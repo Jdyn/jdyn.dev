@@ -50,12 +50,12 @@ const Projects = props => {
     ref: containerRef,
     config: config.default,
     from: {
-      width: "20%",
+      width: "25%",
       background: "#555abf",
       boxShadow: "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
     },
     to: {
-      width: open ? "100%" : "20%",
+      width: open ? "100%" : "25%",
       background: open ? "white" : "#555abf",
       cursor: open ? "default" : "pointer",
       transform: open ? `translateY(0px)` : `translateY(${hovering ? "-10px" : "0px"})`,
@@ -85,7 +85,7 @@ const Projects = props => {
       <animated.div
         ref={myRef}
         className={classes.display}
-        style={{ ...rest, width: width, height: height }}
+        style={{ ...rest, width: width }}
         onClick={() => set(true)}
         onMouseOver={() => isHovering(true)}
         onMouseOut={() => isHovering(false)}
@@ -126,7 +126,7 @@ const styles = theme => ({
     flexWrap: "wrap",
     flexDirection: "row",
     borderRadius: 10,
-    minWidth: "128px",
+    minWidth: "200px",
     cursor: "pointer",
     margin: "25px",
     "@media (min-width: 700px)": {

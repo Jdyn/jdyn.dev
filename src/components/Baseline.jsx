@@ -20,7 +20,7 @@ const styles = theme => ({
     html: {
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
-      boxSizing: "border-box",
+      boxSizing: "border-box"
     },
     body: {
       margin: 0,
@@ -30,7 +30,20 @@ const styles = theme => ({
       fontWeight: 400,
       fontStyle: "normal",
       webkitTextSizeAdjust: "100%",
-      textRendering: "optimizeLegibility"
+      textRendering: "optimizeLegibility",
+      "&::-webkit-scrollbar": {
+        width: "11px",
+        height: "16px",
+        backgroundColor: "lightgrey"
+      },
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: "rgba(0,0,0,0.2)"
+      },
+      "&::-webkit-scrollbar-button": {
+        width: "0",
+        height: "0",
+        display: "none"
+      }
     },
     "*, *::before, *::after": {
       boxSizing: "inherit"

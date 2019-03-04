@@ -14,7 +14,7 @@ const to = index => ({
   y: index * -5,
   rotation: -10 + Math.random() * 20, // Randomize initial position in stack
   scale: 1,
-  delay: index * 300
+  delay: index * 200
 });
 
 const from = index => ({
@@ -42,7 +42,7 @@ const TechStack = props => {
         const isRemoved = removed.has(index);
         const x = isRemoved ? (200 + window.innerWidth) * dir : down ? xDelta : 0; // When a card is removed it flys out left or right, otherwise goes back to zero
         const rotation = xDelta / 100 + (isRemoved ? dir * 10 * velocity : 0); // Rotates the card as it is being removed.
-        const scale = down ? 1.1 : 1; // Clicking the card increases it's scale.
+        const scale = down ? 1.25 : 1; // Clicking the card increases it's scale.
         return {
           x,
           rotation,
@@ -69,7 +69,6 @@ const TechStack = props => {
         index={index}
         bind={bind}
         card={cards[index]}
-        iconColor={cards[index].iconColor}
       />
     </animated.div>
   ));
