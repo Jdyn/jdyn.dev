@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import ProjectCard from "./ProjectCard";
 import Modal from "./Modal";
+import ReactGA from "react-ga";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -26,6 +27,10 @@ const Projects = props => {
 
   const handleModal = project => {
     document.body.style.overflow = "hidden";
+    ReactGA.event({
+      category: "Projects",
+      action: `open-project-card-${project.name}`
+    });
     setProject(project);
     setModal(true);
   };
@@ -86,7 +91,13 @@ const Projects = props => {
         ref={myRef}
         className={classes.display}
         style={{ ...rest, width: width }}
-        onClick={() => set(true)}
+        onClick={() => {
+          ReactGA.event({
+            category: "Projects",
+            action: "open-container"
+          });
+          set(true);
+        }}
         onMouseOver={() => isHovering(true)}
         onMouseOut={() => isHovering(false)}
       >

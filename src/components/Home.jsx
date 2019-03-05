@@ -16,7 +16,7 @@ const Home = props => {
   return (
     <div className={classes.root}>
       <div className={classes.stackHero}>
-        <h1 style={{ margin: "auto 20px", userSelect: "none" }}>My stack.</h1>
+        <h1>My stack.</h1>
       </div>
       <TechStack cards={cards} />
       <Projects projects={projects} />
@@ -54,6 +54,10 @@ const styles = {
     "@media (min-width: 750px)": {
       textAlign: "right",
       justifyContent: "right"
+    },
+    "& h1": {
+      margin: "auto 20px",
+      userSelect: "none"
     }
   }
 };

@@ -6,6 +6,7 @@
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-ga": "^2.5.7",
     "react-jss": "^10.0.0-alpha.11",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",

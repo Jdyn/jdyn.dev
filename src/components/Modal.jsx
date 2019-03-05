@@ -13,7 +13,6 @@ const Modal = props => {
   const { classes, setModal, item } = props;
 
   const handleClick = event => {
-    event.preventDefault();
     if (event.target === event.currentTarget) {
       set({ width: "0%", opacity: 0, transform: "scale(0)" });
       document.body.style.overflow = "visible";
@@ -42,7 +41,6 @@ const Modal = props => {
   return (
     <animated.div style={{ opacity }} className={classes.root} onClick={e => handleClick(e)}>
       <animated.div className={classes.container} style={{ opacity, ...rest }}>
-        {/* <div className={classes.actions} /> */}
         <div className={classes.hero}>
           <h1>{item.name}</h1>
           <span>{item.description}</span>
@@ -55,10 +53,18 @@ const Modal = props => {
           </div>
           <div className={classes.overviewRight}>
             <h3>Links</h3>
+            {item.links.map((item, index) => (
+              <div key={index} className={classes.link}>
+                <a href={`${item.ref}`} target="_blank" rel="noopener noreferrer">
+                  {item.name}
+                  <img alt="link icon" src={"img/link.svg"} />
+                </a>
+              </div>
+            ))}
             <h3>Technologies</h3>
             {item.technologies.map((item, index) => (
               <div className={classes.techItem} key={index}>
-                <img alt="technology icon" src={item.icon} className={classes.techLogo} />
+                <img alt="technology icon" src={item.icon} />
                 {item.name}
               </div>
             ))}
@@ -90,7 +96,6 @@ const styles = theme => ({
     flexDirection: "column",
     maxWidth: "950px",
     borderRadius: 10,
-    // padding: "15px",
     margin: "auto",
     zIndex: 150,
     boxShadow: "0 50px 200px -20px rgba(50,50,93,.25), 0 30px 120px -30px rgba(0,0,0,.3)",
@@ -128,17 +133,15 @@ const styles = theme => ({
   overview: {
     display: "flex",
     position: "relative",
-    flexDirection: "column",
     width: "100%",
     padding: "15px",
-
+    flexDirection: "column-reverse",
     "@media (min-width: 750px)": {
       flexDirection: "row",
-      padding: "30px"
+      padding: "30px",
     }
   },
   overviewLeft: {
-    marginTop: "-10%",
     zIndex: 165,
     display: "flex",
     position: "relative",
@@ -146,15 +149,18 @@ const styles = theme => ({
     flexBasis: "65%",
     flexGrow: 1,
     backgroundColor: "#fff",
+    borderRadius: 5,
     border: "1px solid rgba(0,0,0,.05)",
     padding: "15px",
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
+    marginTop: "10%",
     "& p": {
       margin: 0,
       marginBottom: "15px"
     },
     "@media (min-width: 750px)": {
-      marginRight: "30px"
+      marginRight: "30px",
+      marginTop: "-10%",
     }
   },
   overviewRight: {
@@ -164,28 +170,33 @@ const styles = theme => ({
     flexBasis: "35%",
     position: "relative",
     padding: "15px",
-    marginTop: "10%",
+    borderRadius: 5,
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     backgroundColor: "#fff",
+    marginTop: "-10%",
     "@media (min-width: 750px)": {
-      marginTop: "-10%"
     }
   },
-  actions: {
-    width: "100%",
-    height: "30px",
-    backgroundColor: "white",
-    borderRadius: "8px 8px 0px 0px"
-  },
-  techLogo: {
-    width: "15%",
-    marginRight: "14px",
-    verticalAlign: "middle",
-    minWidth: "32px",
-    minHeight: "32px"
-  },
   techItem: {
-    marginBottom: "5px"
+    marginBottom: "5px",
+    "& img": {
+      width: "15%",
+      marginRight: "14px",
+      verticalAlign: "middle",
+      minWidth: "32px",
+      minHeight: "32px"
+    }
+  },
+  link: {
+    marginBottom: "10px",
+    "& img": {
+      verticalAlign: "middle",
+      marginLeft: "20px"
+    },
+    "& a": {
+      textDecoration: "none",
+      color: "black"
+    }
   }
 });
 

@@ -11,10 +11,10 @@ class HomeContainer extends React.Component {
       tech.docker,
       tech.django,
       tech.html,
-      tech.ios,
       tech.phoenix,
-      tech.node,
-      tech.react
+      tech.ios,
+      tech.react,
+      tech.node
     ];
 
     this.projects = [
