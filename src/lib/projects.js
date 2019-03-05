@@ -1,86 +1,61 @@
-export default [
-  {
-    name: "Rare Wind",
-    description: "#a8edea → #fed6e3",
-    css: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
-    height: 200
+import tech from "./technologies";
+
+export default {
+  academus: {
+    name: "Academus",
+    description: "A student's best friend",
+    image: "img/academus.png",
+    overview: [
+      "Academus is an app for students who seek a real polished and tailored experience with advanced features that give you an edge on school life that allow you to worry less. Since the inception of the idea in the latter half of 2018, Academus has grown beyond my expectations in part, due to it's ability to integrate with so many already existing solutions but also the small, yet versatile 6 person team we had, that was able to grow it into a reality.",
+      "The backend of Academus is built with Rails and Node, distributed through Docker, hosted on Microsoft Azure. Our mobile clients were built with Both modern languages, Swift and Kotin for iOS and Android respectively.",
+      "I was responsible for the construction of the iOS mobile application and the due dilligence Associated with that such as collecting user feedback and iterating on it quickly which made working on Academus very exciting. After releasing Academus on beta platforms such as Testflight, we began to grow exponentially reaching over 30% of our school and spreading to other schools in the US. Plans for new features every year are in place with constant student feedback in mind."
+    ],
+    technologies: [
+      tech.html,
+      tech.docker,
+      tech.rails,
+      tech.android,
+      tech.azure,
+      tech.ios,
+      tech.node
+    ],
+    links: [],
+    width: "605px"
   },
-  {
-    name: "Saint Petersburg",
-    description: "#f5f7fa → #c3cfe2",
-    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-    height: 400
+  typer: {
+    name: "Typer.io",
+    description: "",
+    image: "img/typer.png",
+    overview: [],
+    technologies: [],
+    links: [],
+    width: "605px"
   },
-  {
+  deepBlue: {
     name: "Deep Blue",
+    overview: [],
+    technologies: [],
+    links: [],
     description: "#e0c3fc → #8ec5fc",
-    css: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
-    height: 400
+    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+    width: "350px"
   },
-  {
+  ripeMalinka: {
     name: "Ripe Malinka",
+    overview: [],
+    technologies: [],
+    links: [],
     description: "#f093fb → #f5576c",
     css: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    height: 400
+    width: "350px"
   },
-  {
+  perfectWhite: {
     name: "Perfect White",
+    overview: [],
+    technologies: [],
+    links: [],
     description: "#fdfbfb → #ebedee",
-    css: "linear-gradient(135deg, #E3FDF5 0%, #FFE6FA 100%)",
-    height: 400
+    css: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
+    width: "350px"
   }
-  // {
-  //   name: 'Near Moon',
-  //   description: '#5ee7df → #b490ca',
-  //   css: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)',
-  //   height: 400
-  // },
-  // {
-  //   name: 'Wild Apple',
-  //   description: '#d299c2 → #fef9d7',
-  //   css: 'linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)',
-  //   height: 200
-  // },
-  // {
-  //   name: 'Ladoga Bottom',
-  //   description: '#ebc0fd → #d9ded8',
-  //   css: 'linear-gradient(135deg, #ebc0fd 0%, #d9ded8 100%)',
-  //   height: 400
-  // },
-  // {
-  //   name: 'Sunny Morning',
-  //   description: '#f6d365 → #fda085',
-  //   css: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
-  //   height: 200
-  // },
-  // {
-  //   name: 'Lemon Gate',
-  //   description: '#96fbc4 → #f9f586',
-  //   css: 'linear-gradient(135deg, #96fbc4 0%, #f9f586 100%)',
-  //   height: 400
-  // },
-  // {
-  //   name: 'Salt Mountain',
-  //   description: ' #FFFEFF → #D7FFFE',
-  //   css: 'linear-gradient(135deg, #FFFEFF 0%, #D7FFFE 100%)',
-  //   height: 200
-  // },
-  // {
-  //   name: 'New York',
-  //   description: ' #fff1eb → #ace0f9',
-  //   css: 'linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)',
-  //   height: 400
-  // },
-  // {
-  //   name: 'Soft Grass',
-  //   description: ' #c1dfc4 → #deecdd',
-  //   css: 'linear-gradient(135deg, #c1dfc4 0%, #deecdd 100%)',
-  //   height: 400
-  // },
-  // {
-  //   name: 'Japan Blush',
-  //   description: ' #ddd6f3 → #faaca8',
-  //   css: 'linear-gradient(135deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%)',
-  //   height: 200
-  // }
-];
+};

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
-import { animated } from "react-spring";
+import { animated, useSpring } from "react-spring";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -10,28 +10,44 @@ const propTypes = {
 
 const ProjectCard = props => {
   const { classes, style, handleModal, project } = props;
+  const [hovering, setHovering] = useState(false);
+
+  const scaleSpring = useSpring({
+    to: { transform: hovering ? "scale(1.03)" : "scale(1)" },
+    from: { transform: "scale(1)" }
+  });
 
   return (
-    <animated.div style={style} className={classes.container} onClick={() => handleModal(project)} />
+    <animated.div
+      style={{ ...style, ...scaleSpring }}
+      className={classes.container}
+      onMouseOver={() => setHovering(true)}
+      onMouseOut={() => setHovering(false)}
+      onClick={() => handleModal(project)}
+    />
   );
 };
 
 const styles = {
-  container: {
+  container: props => ({
     display: "flex",
     position: "relative",
     flexGrow: 1,
-    flexBasis: "auto",
-    width: "100%",
-    maxWidth: "350px",
+    flexBasis: props.project.width,
+    overflow: "hidden",
     height: "400px",
-    margin: "0 0 20px 0",
+    marginBottom: "20px",
+    borderRadius: 10,
+    willChange: "transform, opacity",
+    justifyContent: "center",
+    border: "1px solid rgba(0,0,0,.05)",
+    backgroundImage: `url(${props.project.image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
     "@media (min-width: 700px)": {
       margin: "10px"
-    },
-    borderRadius: 10,
-    willChange: "transform, opacity"
-  }
+    }
+  })
 };
 
 ProjectCard.propTypes = propTypes;

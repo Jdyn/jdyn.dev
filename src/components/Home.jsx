@@ -16,7 +16,7 @@ const Home = props => {
   return (
     <div className={classes.root}>
       <div className={classes.stackHero}>
-        <h1 style={{ margin: "auto 0", userSelect: "none" }}>My stack.</h1>
+        <h1 style={{ margin: "auto 20px", userSelect: "none" }}>My stack.</h1>
       </div>
       <TechStack cards={cards} />
       <Projects projects={projects} />

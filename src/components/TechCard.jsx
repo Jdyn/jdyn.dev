@@ -13,7 +13,7 @@ const propTypes = {
 };
 
 const trans = (rotation, scale) =>
-  `perspective(${"3000px"}) rotateX(30deg) rotateY(${rotation /
+  `perspective(${"2000px"}) rotateX(30deg) rotateY(${rotation /
     10}deg) rotateZ(${rotation}deg) scale(${scale})`;
 
 const TechCard = props => {

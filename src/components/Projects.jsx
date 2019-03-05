@@ -100,7 +100,7 @@ const Projects = props => {
         ))}
         {!open && (
           <animated.div className={classes.buttonTitle} style={titleSpring}>
-            projects
+            my work
           </animated.div>
         )}
       </animated.div>
