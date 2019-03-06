@@ -6,7 +6,7 @@ import { animated } from "react-spring";
 const propTypes = {
   classes: PropTypes.object.isRequired,
   style: PropTypes.object.isRequired,
-  project: PropTypes.array.isRequired,
+  project: PropTypes.object.isRequired,
   handleModal: PropTypes.func.isRequired
 };
 
@@ -29,18 +29,12 @@ const styles = {
     flexGrow: 1,
     flexBasis: props.project.width,
     overflow: "hidden",
-    height: "350px",
-    marginBottom: "20px",
     borderRadius: 10,
     willChange: "transform, opacity",
     justifyContent: "center",
-    border: "1px solid rgba(0,0,0,.05)",
     backgroundImage: `url(${props.project.image})`,
     backgroundSize: "cover",
-    backgroundPosition: "center",
-    "@media (min-width: 700px)": {
-      margin: "10px"
-    }
+    backgroundPosition: "center"
   })
 };
 

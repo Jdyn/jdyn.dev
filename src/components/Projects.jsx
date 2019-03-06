@@ -69,16 +69,20 @@ const Projects = props => {
   });
 
   const itemsRef = useRef();
-  const transitions = useTransition(open ? projects : [], item => item.name, {
+  const transitions = useTransition(projects, item => item.name, {
     ref: itemsRef,
     unique: true,
     trail: 400 / projects.length,
-    from: { opacity: 0, transform: "scale(0)", cursor: "default" },
-    enter: { opacity: 1, transform: "scale(1)", cursor: "pointer" },
-    leave: { opacity: 0, transform: "scale(0)" }
+    enter: { margin: "0px", height: "0px", opacity: 0, transform: "scale(0)", cursor: "pointer" },
+    update: {
+      height: open ? "350px" : "0px",
+      margin: open ? "10px" : "0px",
+      transform: open ? "scale(1)" : "scale(0)",
+      opacity: open ? 1 : 0
+    }
   });
 
-  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, open ? 0.3 : 0.1]);
+  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, open ? 0.1 : 0.5]);
 
   return (
     <div className={classes.container}>
@@ -99,7 +103,11 @@ const Projects = props => {
           <ProjectCard
             key={key}
             project={item}
-            style={{ ...props, background: item.css }}
+            style={{
+              ...props,
+              background: item.css,
+              border: open ? "1px solid rgba(0,0,0,.05)" : "none",
+            }}
             handleModal={handleModal}
           />
         ))}
@@ -136,9 +144,9 @@ const styles = theme => ({
     cursor: "pointer",
     margin: "25px",
     "@media (min-width: 700px)": {
-      margin: "25px 65px"
+      margin: "25px 65px",
+      padding: "10px"
     },
-    padding: "10px",
     willChange: "width, height"
   },
   buttonTitle: {
