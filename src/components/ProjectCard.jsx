@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
-import { animated, useSpring } from "react-spring";
+import { animated } from "react-spring";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -10,16 +10,10 @@ const propTypes = {
 
 const ProjectCard = props => {
   const { classes, style, handleModal, project } = props;
-  const [hovering, setHovering] = useState(false);
-
-  const scaleSpring = useSpring({
-    to: { transform: hovering ? "scale(1.03)" : "scale(1)" },
-    from: { transform: "scale(1)" }
-  });
 
   return (
     <animated.div
-      style={{ ...style, ...scaleSpring }}
+      style={style}
       className={classes.container}
       onClick={() => handleModal(project)}
     />
@@ -33,7 +27,7 @@ const styles = {
     flexGrow: 1,
     flexBasis: props.project.width,
     overflow: "hidden",
-    height: "400px",
+    height: "350px",
     marginBottom: "20px",
     borderRadius: 10,
     willChange: "transform, opacity",

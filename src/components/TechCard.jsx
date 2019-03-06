@@ -41,9 +41,9 @@ const TechCard = props => {
 const styles = theme => ({
   container: {
     position: "relative",
-    width: "45vh",
+    width: "85%",
     maxWidth: "300px",
-    height: "85vh",
+    height: "85%",
     maxHeight: "570px",
     borderRadius: 10,
     backgroundColor: "white",

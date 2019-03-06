@@ -28,14 +28,14 @@ const styles = {
   root: {
     display: "grid",
     gridTemplateColumns: "1fr",
-    gridTemplateRows: "min-content 100vh 1fr",
+    gridTemplateRows: "min-content min-content 1fr",
     gridTemplateAreas: `
     'stackHero'
     'stack'
     'projects'
     `,
     "@media (min-width: 750px)": {
-      gridTemplateColumns: "1fr 50vw",
+      gridTemplateColumns: "1fr 50%",
       gridTemplateRows: "min-content min-content",
       gridTemplateAreas: `
       'stackHero stack'

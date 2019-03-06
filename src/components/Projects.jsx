@@ -14,7 +14,6 @@ const propTypes = {
 const Projects = props => {
   const { classes, projects } = props;
   const [open, set] = useState(false);
-  const [hovering, isHovering] = useState(false);
   const [modal, setModal] = useState(false);
   const [currentProject, setProject] = useState({});
 
@@ -46,14 +45,14 @@ const Projects = props => {
 
   const titleSpring = useSpring({
     opacity: 1,
-    height: "65vh",
+    height: "65%",
     from: { opacity: 0, height: "0px" }
   });
 
   const containerRef = useRef();
   const { width, height, opacity, ...rest } = useSpring({
     ref: containerRef,
-    config: config.default,
+    config: config.stiff,
     from: {
       width: "20%",
       background: "#555abf",
@@ -63,11 +62,8 @@ const Projects = props => {
       width: open ? "100%" : "20%",
       background: open ? "white" : "#555abf",
       cursor: open ? "default" : "pointer",
-      transform: open ? `translateY(0px)` : `translateY(${hovering ? "-10px" : "0px"})`,
       boxShadow: open
         ? "0 0px 200px -20px rgba(50,50,93,.25), 0 30px 120px -30px rgba(0,0,0,.3)"
-        : hovering
-        ? "0 25px 100px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
         : "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
     }
   });
@@ -82,7 +78,7 @@ const Projects = props => {
     leave: { opacity: 0, transform: "scale(0)" }
   });
 
-  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef]);
+  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, open ? 0.3 : 0.1]);
 
   return (
     <div className={classes.container}>
@@ -136,6 +132,7 @@ const styles = theme => ({
     flexDirection: "row",
     borderRadius: 10,
     minWidth: "200px",
+    maxWidth: "1195px",
     cursor: "pointer",
     margin: "25px",
     "@media (min-width: 700px)": {
