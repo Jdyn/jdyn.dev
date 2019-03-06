@@ -5,7 +5,9 @@ import { animated } from "react-spring";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
-  style: PropTypes.object.isRequired
+  style: PropTypes.object.isRequired,
+  project: PropTypes.array.isRequired,
+  handleModal: PropTypes.func.isRequired
 };
 
 const ProjectCard = props => {

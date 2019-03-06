@@ -45,12 +45,12 @@ const Projects = props => {
 
   const titleSpring = useSpring({
     opacity: 1,
-    height: "65%",
+    height: "50%",
     from: { opacity: 0, height: "0px" }
   });
 
   const containerRef = useRef();
-  const { width, height, opacity, ...rest } = useSpring({
+  const { width, opacity, ...rest } = useSpring({
     ref: containerRef,
     config: config.stiff,
     from: {

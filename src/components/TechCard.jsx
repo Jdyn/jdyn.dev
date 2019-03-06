@@ -13,7 +13,7 @@ const propTypes = {
 };
 
 const trans = (rotation, scale) =>
-  `perspective(${"2000px"}) rotateX(30deg) rotateY(${rotation /
+  `perspective(${"3000px"}) rotateX(30deg) rotateY(${rotation /
     10}deg) rotateZ(${rotation}deg) scale(${scale})`;
 
 const TechCard = props => {
@@ -29,10 +29,15 @@ const TechCard = props => {
     >
       <div className={classes.card}>
         <div className={classes.header}>
-          <img alt="technology icon" src={card.icon} className={classes.techLogo} />
-          <h2 className={classes.name}>{card.name}</h2>
+          <img alt="technology icon" src={card.icon} />
+          <h2 className={classes.name}>
+            {card.name} <span>{card.level}</span>
+          </h2>
         </div>
-        <div className={classes.footer} />
+        <div className={classes.rating}>
+          <div className={classes.rate} style={{ width: card.level }} />
+        </div>
+        <div className={classes.overview}>hello</div>
       </div>
     </animated.div>
   );
@@ -55,49 +60,57 @@ const styles = theme => ({
     flexDirection: "column",
     position: "relative",
     width: "100%",
-    height: "100%"
-  },
-  techLogo: {
-    position: "relative",
-    maxWidth: "35%",
-    height: "60%",
-    userSelect: "none",
-    marginTop: "5%",
-    marginLeft: "5%"
+    height: "100%",
+    "& *": {
+      WebkitTouchCallout: "none",
+      WebkitUserSelect: "none"
+    }
   },
   overview: {
-    margin: "20px",
+    padding: "15px",
     userSelect: "none",
-    flexShrink: 1
-  },
-  footer: {
-    display: "flex",
-    position: "relative",
-    flexBasis: "50px",
-    flexGrow: 1,
-    width: "100%",
-    borderRadius: "10px 10px 10px 10px"
+    flexGrow: 1
   },
   header: {
     display: "flex",
     position: "relative",
     flexDirection: "column",
-    padding: "10px",
-    height: "35%",
-    borderRadius: 10,
-    backgroundColor: theme.secondaryWhite
+    height: "195px",
+    borderRadius: "10px 10px 0 0",
+    backgroundColor: theme.tertiaryWhite,
+    "& img": {
+      position: "relative",
+      maxWidth: "35%",
+      height: "60%",
+      userSelect: "none",
+      marginTop: "5%",
+      marginLeft: "5%"
+    },
+    "& h2": {
+      display: "inline-flex",
+      margin: "5px 15px 5px 15px",
+      fontSize: "1.1em",
+      fontWeight: 700,
+      textTransform: "uppercase",
+      letterSpacing: "0.125em",
+      justifyContent: "middle",
+      alignItems: "center",
+      "& span": {
+        textAlign: "right",
+        width: "100%"
+      }
+    }
   },
-  name: {
-    display: "inline-flex",
-    margin: 0,
-    marginTop: "5px",
-    marginLeft: "15px",
-    fontSize: "1.1em",
-    fontWeight: 700,
-    textTransform: "uppercase",
-    letterSpacing: "0.125em",
-    justifyContent: "middle",
-    alignItems: "center"
+  rating: {
+    display: "flex",
+    width: "100%",
+    height: "15px",
+    fontSize: "0.5em",
+    textAlign: "center",
+    backgroundColor: theme.quartinaryWhite
+  },
+  rate: {
+    backgroundColor: theme.primaryGrey
   }
 });
 

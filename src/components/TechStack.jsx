@@ -6,7 +6,8 @@ import withStyles from "react-jss";
 import TechCard from "./TechCard";
 
 const propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  cards: PropTypes.array.isRequired
 };
 
 const to = index => ({
@@ -34,7 +35,7 @@ const TechStack = props => {
 
   const bind = useGesture(
     ({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
-      const trigger = velocity > 0.2 && ((xDelta < -25 || xDelta > 25)); // Controls how much velocity is required to remove from stack.
+      const trigger = velocity > 0.2 && (xDelta < -25 || xDelta > 25); // Controls how much velocity is required to remove from stack.
       const dir = xDir < 0 ? -1 : 1; // Determines whether card was dragged left or right.
       if (!down && trigger) removed.add(index); // If mouse button is up and velocity is reached, add the card to removed.
       set(i => {
