@@ -88,7 +88,7 @@ const styles = theme => ({
     height: "100%",
     background: "rgba(0, 0, 0, 0.5)",
     overflowY: "auto",
-    padding: "50px 0"
+    padding: "80px 0"
   },
   container: {
     position: "relative",

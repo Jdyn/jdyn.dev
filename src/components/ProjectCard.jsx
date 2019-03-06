@@ -21,8 +21,6 @@ const ProjectCard = props => {
     <animated.div
       style={{ ...style, ...scaleSpring }}
       className={classes.container}
-      onMouseOver={() => setHovering(true)}
-      onMouseOut={() => setHovering(false)}
       onClick={() => handleModal(project)}
     />
   );

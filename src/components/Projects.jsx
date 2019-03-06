@@ -98,8 +98,6 @@ const Projects = props => {
           });
           set(true);
         }}
-        onMouseOver={() => isHovering(true)}
-        onMouseOut={() => isHovering(false)}
       >
         {transitions.map(({ item, key, props }) => (
           <ProjectCard
