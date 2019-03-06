@@ -82,7 +82,7 @@ const Projects = props => {
     }
   });
 
-  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, open ? 0.1 : 0.5]);
+  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, open ? 0.1 : 0.1]);
 
   return (
     <div className={classes.container}>
