@@ -69,10 +69,10 @@ const styles = theme => ({
   overview: {
     padding: "20px",
     userSelect: "none",
-    fontSize: "0.87em",
+    fontSize: "18px",
     flexGrow: 1,
-    letterSpacing: "0.055em"
-    // textAlign: "justify"
+    fontWeight: 400,
+    letterSpacing: "0.055em",
   },
   header: {
     display: "flex",
@@ -92,7 +92,7 @@ const styles = theme => ({
     "& h2": {
       display: "inline-flex",
       margin: "5px 15px 5px 15px",
-      fontSize: "1.1em",
+      fontSize: "20px",
       fontWeight: 700,
       textTransform: "uppercase",
       letterSpacing: "0.125em",

@@ -150,7 +150,6 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: "#fff",
     borderRadius: 5,
-    border: "1px solid rgba(0,0,0,.05)",
     padding: "15px",
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     marginTop: "10%",

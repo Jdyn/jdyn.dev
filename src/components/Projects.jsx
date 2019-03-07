@@ -109,7 +109,6 @@ const Projects = props => {
             style={{
               ...props,
               background: item.css,
-              border: open ? "1px solid rgba(0,0,0,.05)" : "none"
             }}
             handleModal={handleModal}
           />
