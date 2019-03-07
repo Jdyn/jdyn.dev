@@ -57,7 +57,8 @@ const styles = {
     },
     "& h1": {
       margin: "auto 20px",
-      userSelect: "none"
+      userSelect: "none",
+      paddingTop: "20px"
     }
   }
 };

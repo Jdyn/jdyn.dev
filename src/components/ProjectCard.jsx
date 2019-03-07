@@ -27,6 +27,7 @@ const styles = {
     display: "flex",
     position: "relative",
     flexGrow: 1,
+    cursor: "pointer",
     flexBasis: props.project.width,
     overflow: "hidden",
     borderRadius: 10,

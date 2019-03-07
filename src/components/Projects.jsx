@@ -44,9 +44,11 @@ const Projects = props => {
   }, [modal]);
 
   const titleSpring = useSpring({
-    opacity: 1,
-    height: "50%",
-    from: { opacity: 0, height: "0px" }
+    from: { opacity: 0, height: "0px" },
+    to: {
+      opacity: 1,
+      height: open ? "0" : "50%"
+    }
   });
 
   const containerRef = useRef();
@@ -72,8 +74,9 @@ const Projects = props => {
   const transitions = useTransition(projects, item => item.name, {
     ref: itemsRef,
     unique: true,
+    config: config.default,
     trail: 400 / projects.length,
-    enter: { margin: "0px", height: "0px", opacity: 0, transform: "scale(0)", cursor: "pointer" },
+    enter: { margin: "0px", height: "0px  ", opacity: 0, transform: "scale(0)" },
     update: {
       height: open ? "350px" : "0px",
       margin: open ? "10px" : "0px",
@@ -82,7 +85,7 @@ const Projects = props => {
     }
   });
 
-  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, open ? 0.1 : 0.1]);
+  useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, 0.1]);
 
   return (
     <div className={classes.container}>
@@ -106,16 +109,14 @@ const Projects = props => {
             style={{
               ...props,
               background: item.css,
-              border: open ? "1px solid rgba(0,0,0,.05)" : "none",
+              border: open ? "1px solid rgba(0,0,0,.05)" : "none"
             }}
             handleModal={handleModal}
           />
         ))}
-        {!open && (
-          <animated.div className={classes.buttonTitle} style={titleSpring}>
-            my work
-          </animated.div>
-        )}
+        <animated.div className={classes.buttonTitle} style={titleSpring}>
+          my work
+        </animated.div>
       </animated.div>
     </div>
   );
