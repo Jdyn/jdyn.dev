@@ -24,7 +24,7 @@ const Home = props => {
   );
 };
 
-const styles = {
+const styles = theme => ({
   root: {
     display: "grid",
     gridTemplateColumns: "1fr",
@@ -50,6 +50,7 @@ const styles = {
     textAlign: "center",
     justifyContent: "center",
     display: "flex",
+    // backgroundColor: theme.secondary,
     flexDirection: "column",
     "@media (min-width: 750px)": {
       textAlign: "right",
@@ -58,10 +59,11 @@ const styles = {
     "& h1": {
       margin: "auto 20px",
       userSelect: "none",
-      paddingTop: "20px"
+      paddingTop: "20px",
+      color: theme.color
     }
   }
-};
+});
 
 Home.propTypes = propTypes;
 

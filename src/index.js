@@ -7,15 +7,28 @@ import Baseline from "./components/Baseline";
 import ReactGA from "react-ga";
 
 const theme = {
-  // Whites
-  primaryWhite: "#fafafa",
-  secondaryWhite: "#f6f9fc",
-  tertiaryWhite: "#eef2f7",
-  quartinaryWhite: "#e6ebf1",
-  // Greys
-  primaryGrey: "#d7dadc",
-  // Misc
-  divider: "rgba(0, 0, 0, 0.05)"
+  light: {
+    color: "#212121",
+    primary: "#fafafa",
+    secondary: "#f6f9fc",
+    tertiary: "#eef2f7",
+    quartinary: "#e6ebf1",
+    primaryGrey: "#d7dadc",
+    modal: "#fafafa",
+    divider: "rgba(0, 0, 0, 0.05)",
+    shadow: "rgba(50, 50, 73, 0.4)"
+  },
+  dark: {
+    color: "#fafafa",
+    primary: "#323232",
+    secondary: "#212121",
+    tertiary: "#181818",
+    quartinary: "#1A1A1B",
+    primaryGrey: "#616161",
+    modal: "#212121",
+    divider: "rgba(0, 0, 0, 0.05)",
+    shadow: "rgba(0, 0, 0, 0.3)"
+  }
 };
 
 (() => {
@@ -26,7 +39,7 @@ const theme = {
 const app = (
   <>
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme.dark}>
         <Baseline>
           <App />
         </Baseline>

@@ -59,6 +59,7 @@ const TechStack = props => {
 
   return (
     <div className={classes.container}>
+      {console.log("hello")}
       {springs.map((props, index) => (
         <animated.div
           className={classes.card}
@@ -74,7 +75,7 @@ const TechStack = props => {
   );
 };
 
-const styles = {
+const styles = theme => ({
   container: {
     display: "flex",
     justifyContent: "center",
@@ -92,7 +93,7 @@ const styles = {
     willChange: "transform",
     justifyContent: "center"
   }
-};
+});
 
 TechStack.propTypes = propTypes;
 

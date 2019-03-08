@@ -12,7 +12,7 @@ const propTypes = {
 };
 
 const Projects = props => {
-  const { classes, projects } = props;
+  const { classes, projects, theme } = props;
   const [open, set] = useState(false);
   const [modal, setModal] = useState(false);
   const [currentProject, setProject] = useState({});
@@ -46,7 +46,7 @@ const Projects = props => {
   const titleSpring = useSpring({
     from: { opacity: 0, height: "0px" },
     to: {
-      opacity: 1,
+      opacity: open ? 0 : 1,
       height: open ? "0" : "50%"
     }
   });
@@ -62,11 +62,11 @@ const Projects = props => {
     },
     to: {
       width: open ? "100%" : "20%",
-      background: open ? "white" : "#555abf",
+      background: open ? theme.primary : "#555abf",
       cursor: open ? "default" : "pointer",
       boxShadow: open
-        ? "0 0px 200px -20px rgba(50,50,93,.25), 0 30px 120px -30px rgba(0,0,0,.3)"
-        : "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
+        ? `0 0px 200px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
+        : `0 0px 75px 10px ${theme.shadow}, 0 30px 60px -30px rgba(0,0,0,.3)`
     }
   });
 
@@ -108,7 +108,7 @@ const Projects = props => {
             project={item}
             style={{
               ...props,
-              background: item.css,
+              background: item.css
             }}
             handleModal={handleModal}
           />
@@ -125,7 +125,7 @@ const styles = theme => ({
   container: {
     gridArea: "projects",
     display: "flex",
-    backgroundColor: theme.quartinaryWhite,
+    backgroundColor: theme.secondary,
     position: "relative",
     alignItems: "center",
     justifyContent: "center",
@@ -164,4 +164,4 @@ const styles = theme => ({
 
 Projects.propTypes = propTypes;
 
-export default withStyles(styles)(Projects);
+export default withStyles(styles, { injectTheme: true })(Projects);

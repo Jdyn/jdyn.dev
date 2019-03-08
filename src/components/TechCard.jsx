@@ -31,7 +31,8 @@ const TechCard = props => {
         <div className={classes.header}>
           <img alt="technology icon" src={card.icon} />
           <h2 className={classes.name}>
-            {card.name} <span>{card.level}</span>
+            {/* {card.name} <span>{card.level}</span> */}
+            {card.name}
           </h2>
         </div>
         <div className={classes.rating}>
@@ -47,13 +48,13 @@ const styles = theme => ({
   container: {
     position: "relative",
     width: "85%",
-    maxWidth: "300px",
+    maxWidth: "310px",
     height: "85%",
-    maxHeight: "570px",
+    maxHeight: "600px",
     borderRadius: 10,
-    backgroundColor: "white",
     cursor: "grab",
-    boxShadow: "0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3)"
+    backgroundColor: theme.primary,
+    boxShadow: `0 12.5px 100px -10px ${theme.shadow}, 0 10px 10px -10px ${theme.shadow}`
   },
   card: {
     display: "flex",
@@ -71,8 +72,10 @@ const styles = theme => ({
     userSelect: "none",
     fontSize: "18px",
     flexGrow: 1,
-    fontWeight: 400,
-    letterSpacing: "0.055em",
+    color: theme.color,
+    fontWeight: "normal",
+    // lineHeight: "24px",
+    letterSpacing: "0.085em"
   },
   header: {
     display: "flex",
@@ -80,7 +83,8 @@ const styles = theme => ({
     flexDirection: "column",
     height: "195px",
     borderRadius: "10px 10px 0 0",
-    backgroundColor: theme.tertiaryWhite,
+    backgroundColor: theme.secondary,
+    color: theme.color,
     "& img": {
       position: "relative",
       maxWidth: "35%",
@@ -110,7 +114,7 @@ const styles = theme => ({
     height: "15px",
     fontSize: "0.5em",
     textAlign: "center",
-    backgroundColor: theme.quartinaryWhite
+    backgroundColor: theme.quartinary
   },
   rate: {
     backgroundColor: theme.primaryGrey

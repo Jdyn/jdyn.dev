@@ -10,7 +10,7 @@ const propTypes = {
 };
 
 const Modal = props => {
-  const { classes, setModal, item } = props;
+  const { classes, setModal, item, theme } = props;
 
   const handleClick = event => {
     if (event.target === event.currentTarget) {
@@ -57,7 +57,17 @@ const Modal = props => {
               <div key={index} className={classes.link}>
                 <a href={`${item.ref}`} target="_blank" rel="noopener noreferrer">
                   {item.name}
-                  <img alt="link icon" src={"img/link.svg"} />
+                  <div className={classes.linkImage}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                    </svg>
+                  </div>
                 </a>
               </div>
             ))}
@@ -74,7 +84,7 @@ const Modal = props => {
     </animated.div>
   );
 };
-
+// alt="link icon" src={"img/link.svg"}
 const styles = theme => ({
   root: {
     position: "fixed",
@@ -97,9 +107,9 @@ const styles = theme => ({
     maxWidth: "1000px",
     borderRadius: 10,
     margin: "auto",
+    backgroundColor: theme.primary,
     zIndex: 150,
-    boxShadow: "0 50px 200px -20px rgba(50,50,93,.25), 0 30px 120px -30px rgba(0,0,0,.3)",
-    backgroundColor: "white"
+    boxShadow: `0 50px 200px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
   },
   hero: props => ({
     display: "flex",
@@ -108,7 +118,7 @@ const styles = theme => ({
     textAlign: "center",
     padding: "125px 0px",
     width: "100%",
-    color: "white",
+    color: theme.color,
     "& h1, span": {
       marginTop: 0,
       zIndex: 160
@@ -138,7 +148,7 @@ const styles = theme => ({
     flexDirection: "column-reverse",
     "@media (min-width: 750px)": {
       flexDirection: "row",
-      padding: "30px",
+      padding: "30px"
     }
   },
   overviewLeft: {
@@ -148,9 +158,10 @@ const styles = theme => ({
     flexDirection: "column",
     flexBasis: "70%",
     flexGrow: 1,
-    backgroundColor: "#fff",
+    backgroundColor: theme.modal,
+    color: theme.color,
     borderRadius: 5,
-    padding: "15px",
+    padding: "20px",
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     marginTop: "10%",
     "& p": {
@@ -159,7 +170,7 @@ const styles = theme => ({
     },
     "@media (min-width: 750px)": {
       marginRight: "30px",
-      marginTop: "-10%",
+      marginTop: "-10%"
     }
   },
   overviewRight: {
@@ -168,13 +179,13 @@ const styles = theme => ({
     flexDirection: "column",
     flexBasis: "30%",
     position: "relative",
-    padding: "15px",
+    padding: "20px",
     borderRadius: 5,
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
-    backgroundColor: "#fff",
+    backgroundColor: theme.modal,
+    color: theme.color,
     marginTop: "-10%",
-    "@media (min-width: 750px)": {
-    }
+    "@media (min-width: 750px)": {}
   },
   techItem: {
     marginBottom: "5px",
@@ -188,17 +199,21 @@ const styles = theme => ({
   },
   link: {
     marginBottom: "10px",
-    "& img": {
-      verticalAlign: "middle",
-      marginLeft: "20px"
-    },
+    color: theme.color,
+    fill: theme.color,
     "& a": {
       textDecoration: "none",
-      color: "black"
+      color: theme.color,
+      display: "flex",
+      flexDirection: "row",
     }
+  },
+  linkImage: {
+    marginLeft: "20px",
+    fill: theme.color,
   }
 });
 
 Modal.propTypes = propTypes;
 
-export default withStyles(styles)(Modal);
+export default withStyles(styles, { injectTheme: true })(Modal);

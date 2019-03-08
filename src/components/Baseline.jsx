@@ -16,6 +16,20 @@ Baseline.propTypes = propTypes;
 Baseline.defaultProps = defaultProps;
 
 const styles = theme => ({
+  "@font-face": [
+    {
+      fontFamily: "Camphor",
+      src: "url(fonts/400-regular.woff2)",
+      fontWeight: "normal",
+      fontStyle: "normal"
+    },
+    {
+      fontFamily: "Camphor",
+      src: "url(fonts/600-bold.woff2)",
+      fontWeight: "bold",
+      fontStyle: "normal"
+    }
+  ],
   "@global": {
     html: {
       WebkitFontSmoothing: "antialiased",
@@ -24,10 +38,11 @@ const styles = theme => ({
     },
     body: {
       margin: 0,
-      backgroundColor: theme.primaryWhite,
+      backgroundColor: theme.primary,
+      color: theme.color,
       fontSize: "100%",
-      fontFamily: ["Open Sans", "Segoe UI", "sans-serif"],
-      fontWeight: 400,
+      fontFamily: ["Camphor", "Open Sans", "Segoe UI", "sans-serif"],
+      fontWeight: "normal",
       fontStyle: "normal",
       webkitTextSizeAdjust: "100%",
       textRendering: "optimizeLegibility",
@@ -44,6 +59,9 @@ const styles = theme => ({
         height: "0",
         display: "none"
       }
+    },
+    div: {
+      color: theme.color
     },
     "*, *::before, *::after": {
       boxSizing: "inherit"
