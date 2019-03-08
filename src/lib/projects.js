@@ -35,7 +35,7 @@ export default {
     name: "Typer.io",
     description: "",
     image: "img/typer.png",
-    overview: [],
+    overview: ["Details soon"],
     technologies: [],
     links: [],
     width: "605px"
@@ -49,8 +49,8 @@ export default {
     css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
     width: "350px"
   },
-  ripeMalinka: {
-    name: "Ripe Malinka",
+  lemonade: {
+    name: "Pink Lemonade",
     overview: [],
     technologies: [],
     links: [],
@@ -58,8 +58,8 @@ export default {
     css: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     width: "350px"
   },
-  perfectWhite: {
-    name: "Perfect White",
+  window: {
+    name: "Foggy Window",
     overview: [],
     technologies: [],
     links: [],

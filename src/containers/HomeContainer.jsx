@@ -7,6 +7,10 @@ class HomeContainer extends React.Component {
   constructor(props) {
     super(props);
 
+    this.introCard = {
+
+    }
+
     this.cards = [
       tech.docker,
       tech.django,
@@ -21,8 +25,8 @@ class HomeContainer extends React.Component {
       project.academus,
       project.typer,
       project.deepBlue,
-      project.ripeMalinka,
-      project.perfectWhite
+      project.lemonade,
+      project.window
     ];
   }
 

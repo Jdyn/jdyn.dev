@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useSprings, animated, interpolate } from "react-spring";
+import React, { useState, useRef } from "react";
+import { useSprings, animated, interpolate, useSpring } from "react-spring";
 import { useGesture } from "react-with-gesture";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
@@ -32,12 +32,16 @@ const TechStack = props => {
     ...to(index),
     from: from(index)
   }));
+  const [size, setSize] = useState(0);
 
   const bind = useGesture(
     ({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
       const trigger = velocity > 0.2 && (xDelta < -25 || xDelta > 25); // Controls how much velocity is required to remove from stack.
       const dir = xDir < 0 ? -1 : 1; // Determines whether card was dragged left or right.
-      if (!down && trigger) removed.add(index); // If mouse button is up and velocity is reached, add the card to removed.
+      if (!down && trigger) {
+        removed.add(index); // If mouse button is up and velocity is reached, add the card to removed.
+        setSize(removed.size);
+      }
       set(i => {
         if (index !== i) return; // Only change projects for the current card
         const isRemoved = removed.has(index);
@@ -52,14 +56,23 @@ const TechStack = props => {
           config: { friction: 50, tension: down ? 800 : isRemoved ? 200 : 500 }
         };
       });
-      if (!down && removed.size === cards.length)
-        setTimeout(() => removed.clear() || set(i => to(i)), 600);
+      if (!down && removed.size === cards.length) {
+        setTimeout(() => removed.clear() || set(i => to(i)), 700);
+        setTimeout(() => setSize(0), 900);
+      }
     }
   );
 
+  const hidden = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: size > cards.length - 1 ? 1 : 0 }
+  });
+
   return (
     <div className={classes.container}>
-      {console.log("hello")}
+      <animated.div style={hidden} className={classes.message}>
+        thank you for looking.
+      </animated.div>
       {springs.map((props, index) => (
         <animated.div
           className={classes.card}
@@ -92,6 +105,15 @@ const styles = theme => ({
     height: "100%",
     willChange: "transform",
     justifyContent: "center"
+  },
+  message: {
+    display: "flex",
+    position: "relative",
+    justifyContent: "center",
+    verticalAlign: "middle",
+    margin: "auto 0",
+    color: theme.color,
+    fontWeight: "bold"
   }
 });
 

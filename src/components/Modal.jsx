@@ -116,7 +116,7 @@ const styles = theme => ({
     position: "relative",
     flexDirection: "column",
     textAlign: "center",
-    padding: "125px 0px",
+    padding: "150px 0px",
     width: "100%",
     color: theme.color,
     "& h1, span": {
@@ -185,7 +185,6 @@ const styles = theme => ({
     backgroundColor: theme.modal,
     color: theme.color,
     marginTop: "-10%",
-    "@media (min-width: 750px)": {}
   },
   techItem: {
     marginBottom: "5px",

@@ -19,7 +19,7 @@ const styles = theme => ({
   "@font-face": [
     {
       fontFamily: "Camphor",
-      src: "url(fonts/400-regular.woff2)",
+      src: "url(fonts/300-regular.woff2)",
       fontWeight: "normal",
       fontStyle: "normal"
     },
