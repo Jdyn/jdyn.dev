@@ -10,7 +10,7 @@ const propTypes = {
 };
 
 const Modal = props => {
-  const { classes, setModal, item, theme } = props;
+  const { classes, setModal, item } = props;
 
   const handleClick = event => {
     if (event.target === event.currentTarget) {
@@ -215,4 +215,4 @@ const styles = theme => ({
 
 Modal.propTypes = propTypes;
 
-export default withStyles(styles, { injectTheme: true })(Modal);
+export default withStyles(styles)(Modal);

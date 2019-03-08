@@ -19,7 +19,7 @@ const styles = theme => ({
   "@font-face": [
     {
       fontFamily: "Camphor",
-      src: "url(fonts/300-regular.woff2)",
+      src: "url(fonts/300-light.woff2)",
       fontWeight: "normal",
       fontStyle: "normal"
     },
@@ -41,7 +41,7 @@ const styles = theme => ({
       backgroundColor: theme.primary,
       color: theme.color,
       fontSize: "100%",
-      fontFamily: ["Camphor", "Open Sans", "Segoe UI", "sans-serif"],
+      fontFamily: ["Open Sans", "Segoe UI", "sans-serif"],
       fontWeight: "normal",
       fontStyle: "normal",
       webkitTextSizeAdjust: "100%",

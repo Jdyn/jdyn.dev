@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useSprings, animated, interpolate, useSpring } from "react-spring";
 import { useGesture } from "react-with-gesture";
 import PropTypes from "prop-types";
