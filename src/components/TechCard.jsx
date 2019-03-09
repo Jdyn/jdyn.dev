@@ -47,9 +47,9 @@ const TechCard = props => {
 const styles = theme => ({
   container: {
     position: "relative",
-    width: "90%",
+    width: "80%",
     maxWidth: "305px",
-    height: "90%",
+    height: "85%",
     maxHeight: "650px",
     borderRadius: 10,
     cursor: "grab",
@@ -74,7 +74,7 @@ const styles = theme => ({
     flexGrow: 1,
     color: theme.color,
     fontWeight: "normal",
-    // lineHeight: "24px",
+    // lineHeight: "20px",
     letterSpacing: "0.085em"
   },
   header: {
@@ -83,7 +83,7 @@ const styles = theme => ({
     flexDirection: "column",
     height: "195px",
     borderRadius: "10px 10px 0 0",
-    backgroundColor: theme.secondary,
+    backgroundColor: theme.cardHeader,
     color: theme.color,
     "& img": {
       position: "relative",

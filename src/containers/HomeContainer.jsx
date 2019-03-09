@@ -6,11 +6,7 @@ import project from "../lib/projects";
 class HomeContainer extends React.Component {
   constructor(props) {
     super(props);
-
-    this.introCard = {
-
-    }
-
+    
     this.cards = [
       tech.docker,
       tech.django,

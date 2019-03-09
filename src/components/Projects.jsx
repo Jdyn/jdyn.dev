@@ -125,7 +125,7 @@ const styles = theme => ({
   container: {
     gridArea: "projects",
     display: "flex",
-    backgroundColor: theme.secondary,
+    backgroundColor: theme.project,
     position: "relative",
     alignItems: "center",
     justifyContent: "center",

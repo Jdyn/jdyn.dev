@@ -15,7 +15,7 @@ const to = index => ({
   y: index * -5,
   rotation: -10 + Math.random() * 20, // Randomize initial rotation in stack
   scale: 1,
-  delay: index * 150
+  delay: index * 175
 });
 
 const from = index => ({
@@ -28,11 +28,11 @@ const from = index => ({
 const TechStack = props => {
   const { classes, cards } = props;
   const [removed] = useState(() => new Set());
+  const [size, setSize] = useState(0);
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
     from: from(index)
   }));
-  const [size, setSize] = useState(0);
 
   const bind = useGesture(
     ({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
@@ -70,7 +70,7 @@ const TechStack = props => {
 
   return (
     <div className={classes.container}>
-      <animated.div style={hidden} className={classes.message}>
+      <animated.div style={hidden} className={classes.hidden}>
         thank you for looking.
       </animated.div>
       {springs.map((props, index) => (
@@ -106,7 +106,7 @@ const styles = theme => ({
     willChange: "transform",
     justifyContent: "center"
   },
-  message: {
+  hidden: {
     display: "flex",
     position: "relative",
     justifyContent: "center",

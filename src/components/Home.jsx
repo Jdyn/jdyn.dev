@@ -50,7 +50,6 @@ const styles = theme => ({
     textAlign: "center",
     justifyContent: "center",
     display: "flex",
-    // backgroundColor: theme.secondary,
     flexDirection: "column",
     "@media (min-width: 750px)": {
       textAlign: "right",

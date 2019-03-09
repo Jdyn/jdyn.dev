@@ -32,7 +32,7 @@ export default {
     width: "605px"
   },
   typer: {
-    name: "Typer.io",
+    name: "typer.io",
     description: "",
     image: "img/typer.png",
     overview: ["Details soon"],

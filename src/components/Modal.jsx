@@ -14,8 +14,8 @@ const Modal = props => {
 
   const handleClick = event => {
     if (event.target === event.currentTarget) {
-      set({ width: "0%", opacity: 0, transform: "scale(0)" });
       document.body.style.overflow = "visible";
+      set({ width: "0%", opacity: 0, transform: "scale(0)" });
     }
   };
 
@@ -98,7 +98,20 @@ const styles = theme => ({
     height: "100%",
     background: "rgba(0, 0, 0, 0.5)",
     overflowY: "auto",
-    padding: "80px 0"
+    padding: "80px 0",
+    "&::-webkit-scrollbar": {
+      width: "11px",
+      height: "16px",
+      backgroundColor: "lightgrey"
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(0,0,0,0.2)"
+    },
+    "&::-webkit-scrollbar-button": {
+      width: "0",
+      height: "0",
+      display: "none"
+    }
   },
   container: {
     position: "relative",
@@ -184,7 +197,7 @@ const styles = theme => ({
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     backgroundColor: theme.modal,
     color: theme.color,
-    marginTop: "-10%",
+    marginTop: "-10%"
   },
   techItem: {
     marginBottom: "5px",
@@ -204,12 +217,12 @@ const styles = theme => ({
       textDecoration: "none",
       color: theme.color,
       display: "flex",
-      flexDirection: "row",
+      flexDirection: "row"
     }
   },
   linkImage: {
     marginLeft: "20px",
-    fill: theme.color,
+    fill: theme.color
   }
 });
 

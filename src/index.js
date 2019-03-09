@@ -14,6 +14,8 @@ const theme = {
     tertiary: "#eef2f7",
     quartinary: "#e6ebf1",
     primaryGrey: "#d7dadc",
+    cardHeader: "#eef2f7",
+    project: "#e6ebf1",
     modal: "#fafafa",
     divider: "rgba(0, 0, 0, 0.05)",
     shadow: "rgba(50, 50, 73, 0.4)"
@@ -25,6 +27,8 @@ const theme = {
     tertiary: "#181818",
     quartinary: "#1A1A1B",
     primaryGrey: "#616161",
+    cardHeader: "#212121",
+    project: "#212121",
     modal: "#212121",
     divider: "rgba(0, 0, 0, 0.05)",
     shadow: "rgba(0, 0, 0, 0.3)"

@@ -7,7 +7,7 @@ export default {
   },
   django: {
     name: "Django",
-    level: "50%",
+    level: "70%",
     overview: "I know Django, I like Python. However, after using Phoenix, I've found myself prefering it over Django. The biggest plus for me would be the mature ecosystem surrounding Django which I sorely miss when im working in Elixir. It would not be my first choice of framework anymore, but I would haply work in a Django environment anytime.",
     icon: "img/django.svg"
   },
@@ -26,7 +26,7 @@ export default {
   phoenix: {
     name: "Phoenix",
     level: "55%",
-    overview: "Due to Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax, among other benefits, I believe Elixir will grow exponentially in the coming years. I built the backend of typer.io with Phoenix and plan to continue using it in projects to come. If the ecosystem was larger, I think it would be more widely adopted.",
+    overview: "Due to Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax, among other benefits, I believe Elixir will grow exponentially in the coming years. I built the API of typer.io with Phoenix and plan on using it in the future. If the ecosystem was larger, I think it would be more widely adopted.",
     icon: "img/phoenix.svg"
   },
   react: {
