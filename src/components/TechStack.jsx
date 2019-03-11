@@ -4,6 +4,7 @@ import { useGesture } from "react-with-gesture";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import TechCard from "./TechCard";
+import ReactGA from "react-ga";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -41,6 +42,10 @@ const TechStack = props => {
       if (!down && trigger) {
         removed.add(index); // If mouse button is up and velocity is reached, add the card to removed.
         setSize(removed.size);
+        ReactGA.event({
+          category: "TechStack",
+          action: "swipe-card"
+        });
       }
       set(i => {
         if (index !== i) return; // Only change projects for the current card
@@ -71,7 +76,8 @@ const TechStack = props => {
   return (
     <div className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
-        thank you for looking.
+        in the market
+        <span role="img" aria-label="victory-hand">✌</span>
       </animated.div>
       {springs.map((props, index) => (
         <animated.div
@@ -93,10 +99,13 @@ const styles = theme => ({
     display: "flex",
     justifyContent: "center",
     position: "relative",
-    height: "655px",
+    height: "550px",
+    maxHeight: "550px",
     width: "100%",
-    marginTop: "10%",
-    gridArea: "stack"
+    marginTop: "2.5%",
+    marginBottom: "2.5%",
+    gridArea: "stack",
+    zIndex: 85
   },
   card: {
     display: "flex",

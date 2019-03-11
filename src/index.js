@@ -43,7 +43,7 @@ const theme = {
 const app = (
   <>
     <BrowserRouter>
-      <ThemeProvider theme={theme.dark}>
+      <ThemeProvider theme={theme.light}>
         <Baseline>
           <App />
         </Baseline>

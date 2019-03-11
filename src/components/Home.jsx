@@ -35,7 +35,7 @@ const styles = theme => ({
     'projects'
     `,
     "@media (min-width: 750px)": {
-      gridTemplateColumns: "1fr 50%",
+      gridTemplateColumns: "1fr 1fr",
       gridTemplateRows: "min-content min-content",
       gridTemplateAreas: `
       'stackHero stack'
