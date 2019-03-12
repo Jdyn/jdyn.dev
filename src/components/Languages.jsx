@@ -7,8 +7,10 @@ const propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-const interp = index => radians =>
-  `translate3d(0, ${15 * Math.sin(radians + (index * 2 * Math.PI) / 1.6)}px, 0)`;
+const interp = (index, dir) => radians => {
+  return `translate3d(${dir * Math.sin(radians + (index * 2 * Math.PI) / 5)}px, ${dir *
+    Math.sin(radians + (index * 2 * Math.PI) / 1)}px, 0)`;
+};
 
 const Languages = props => {
   const { classes, languages } = props;
@@ -19,10 +21,10 @@ const Languages = props => {
     from: {
       radians: 0
     },
-    config: { duration: 7500 },
+    config: { duration: 7000 },
     reset: true
   });
-
+  console.log();
   return (
     <div className={classes.container}>
       {languages.map((item, key) => (
@@ -30,7 +32,18 @@ const Languages = props => {
           className={classes.language}
           key={key}
           style={{
-            transform: radians.interpolate(interp(key)),
+            transform: radians.interpolate(
+              interp(
+                key,
+                window.matchMedia("(min-width: 750px)").matches === true
+                  ? Math.random() > 0.5
+                    ? 100
+                    : -100
+                  : Math.random() > 0.5
+                  ? 55
+                  : -55
+              )
+            ),
             backgroundImage: `url(${item.icon})`
           }}
         />
@@ -49,34 +62,28 @@ const styles = theme => ({
     gridArea: "languages",
     padding: "0 25px",
     maxHeight: "600px",
+    height: "400px",
     backgroundColor: theme.secondary,
     "@media (min-width: 750px)": {
       flexDirection: "row"
-    },
-    "& > div:hover": {
-      transform: "scale(1.1) !important"
     }
   },
   language: {
-    width: "100%",
-    height: "100px",
-    boxShadow: `0 0 100px -10px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`,
+    height: "175px",
+    width: "100px",
+    boxShadow: `0 0 50px -10px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`,
     zIndex: 100,
     backgroundColor: theme.primary,
-    backgroundPosition: "bottom",
+    backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     willChange: "transform",
-    borderRadius: "10px",
-    margin: "5px",
-    backgroundSize: "contain",
+    borderRadius: "50%",
+    backgroundSize: "65%",
     transitionDuration: "0.2s !important",
     "@media (min-width: 750px)": {
       flexDirection: "row",
-      margin: "25px",
-      height: "450px",
-      width: "225px",
-      backgroundSize: "145%",
-      backgroundPosition: "right"
+      height: "175px",
+      width: "175px"
     },
     "&:after": {
       content: "''",
@@ -87,8 +94,7 @@ const styles = theme => ({
       height: "100%",
       zIndex: 155,
       background: theme.languageMask,
-      borderRadius: "8px 8px 0 0",
-      borderRadius: 10
+      borderRadius: "50%"
     }
   },
   languageHover: {
