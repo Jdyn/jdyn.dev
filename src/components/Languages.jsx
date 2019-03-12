@@ -35,13 +35,9 @@ const Languages = props => {
             transform: radians.interpolate(
               interp(
                 key,
-                window.matchMedia("(min-width: 750px)").matches === true
-                  ? Math.random() > 0.5
-                    ? Math.random() * (100 - 50 + 1) + 50
-                    : Math.random() * (-100 + -50 + 1) + 50
-                  : Math.random() > 0.5
-                  ? 55
-                  : -55
+                Math.random() > 0.5
+                  ? Math.random() * (100 - 50 + 1) + 50
+                  : Math.random() * (-100 + -50 + 1) + 50
               )
             ),
             backgroundImage: `url(${item.icon})`
@@ -76,7 +72,7 @@ const styles = theme => ({
     backgroundColor: theme.primary,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    willChange: "transform",
+    // willChange: "transform",
     borderRadius: "50%",
     backgroundSize: "65%",
     transitionDuration: "0.2s !important",

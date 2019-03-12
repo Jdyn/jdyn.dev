@@ -47,8 +47,8 @@ const TechCard = props => {
 const styles = theme => ({
   container: {
     position: "relative",
-    width: "90%",
-    maxWidth: "305px",
+    width: "100%",
+    maxWidth: "300px",
     height: "100%",
     // maxHeight: "650px",
     borderRadius: 10,
@@ -70,7 +70,7 @@ const styles = theme => ({
   overview: {
     padding: "20px",
     userSelect: "none",
-    fontSize: "19px",
+    fontSize: "17px",
     flexGrow: 1,
     color: theme.color,
     fontWeight: 500,

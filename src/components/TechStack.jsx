@@ -99,11 +99,10 @@ const styles = theme => ({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    height: "650px",
-    maxHeight: "650px",
     width: "100%",
-    marginTop: "2.5%",
-    marginBottom: "2.5%",
+    margin: "2.5% 0",
+    height: "585px",
+    maxHeight: "585px",
     gridArea: "stack",
     zIndex: 85
   },
@@ -111,7 +110,7 @@ const styles = theme => ({
     display: "flex",
     position: "absolute",
     width: "100%",
-    height: "85%",
+    height: "100%",
     willChange: "transform",
     justifyContent: "center"
   },

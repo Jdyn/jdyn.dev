@@ -14,7 +14,7 @@ export default {
   ios: {
     name: "iOS/Swift",
     level: "70%",
-    overview: "My first break into software development began with iOS working on Academus. Despite issues with XCode, the environment, and all the restrictions (at the time), Swift was one of the best languages I've used despite everything and building up the app from scratch really solitified my knowledge and allowed me to grow exponentially.",
+    overview: "My first break into software development began with iOS working on Academus. Swift was one of the best languages I've used and building up Academus iOS from scratch really solitified my knowledge and allowed me to grow exponentially.",
     icon: "img/technologies/ios.svg",
   },
   css: {
