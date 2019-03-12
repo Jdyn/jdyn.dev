@@ -54,7 +54,7 @@ const styles = theme => ({
     borderRadius: 10,
     cursor: "grab",
     backgroundColor: theme.primary,
-    boxShadow: `0 12.5px 100px -10px ${theme.shadow}, 0 10px 10px -10px ${theme.shadow}`
+    boxShadow: `0 12.5px 85px -5px ${theme.shadow}, 0 10px 10px -10px ${theme.shadow}`
   },
   card: {
     display: "flex",
@@ -70,10 +70,10 @@ const styles = theme => ({
   overview: {
     padding: "20px",
     userSelect: "none",
-    fontSize: "18px",
+    fontSize: "19px",
     flexGrow: 1,
     color: theme.color,
-    fontWeight: 400,
+    fontWeight: 500,
     // lineHeight: "20px",
     letterSpacing: "0.085em"
   },

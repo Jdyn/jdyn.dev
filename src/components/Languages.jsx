@@ -71,7 +71,7 @@ const styles = theme => ({
   language: {
     height: "175px",
     width: "100px",
-    boxShadow: `0 0 50px -10px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`,
+    boxShadow: '0 15px 35px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.07)',
     zIndex: 100,
     backgroundColor: theme.primary,
     backgroundPosition: "center",
