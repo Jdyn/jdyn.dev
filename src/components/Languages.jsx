@@ -21,10 +21,10 @@ const Languages = props => {
     from: {
       radians: 0
     },
-    config: { duration: 7000 },
+    config: { duration: 15000 },
     reset: true
   });
-  console.log();
+
   return (
     <div className={classes.container}>
       {languages.map((item, key) => (
@@ -37,8 +37,8 @@ const Languages = props => {
                 key,
                 window.matchMedia("(min-width: 750px)").matches === true
                   ? Math.random() > 0.5
-                    ? 100
-                    : -100
+                    ? Math.random() * (100 - 50 + 1) + 50
+                    : Math.random() * (-100 + -50 + 1) + 50
                   : Math.random() > 0.5
                   ? 55
                   : -55
@@ -63,7 +63,7 @@ const styles = theme => ({
     padding: "0 25px",
     maxHeight: "600px",
     height: "400px",
-    backgroundColor: theme.secondary,
+    backgroundColor: theme.tertiary,
     "@media (min-width: 750px)": {
       flexDirection: "row"
     }
@@ -71,7 +71,7 @@ const styles = theme => ({
   language: {
     height: "175px",
     width: "100px",
-    boxShadow: '0 15px 35px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.07)',
+    boxShadow: "0 15px 35px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.07)",
     zIndex: 100,
     backgroundColor: theme.primary,
     backgroundPosition: "center",

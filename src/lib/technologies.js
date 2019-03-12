@@ -38,7 +38,7 @@ export default {
   node: {
     name: "Node.JS",
     level: "75%",
-    overview: "Due to the innate speed of NodeJS and it's async I/O model, NodeJS is at the forefront of my mind when dealing with realtime data / communications and as a result, i've used extensively. Bringing modern ES6 into node makes it even better to work with and is the core of typer.io's main functionality.",
+    overview: "Due to the innate speed of NodeJS and it's async I/O model, NodeJS is at the forefront of my mind when dealing with realtime data / communications and as a result, i've used extensively. NodeJS is the core of typer.io's main functionality.",
     icon: "img/technologies/nodejs.svg"
   },
   rails: {
