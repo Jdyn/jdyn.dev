@@ -76,8 +76,7 @@ const TechStack = props => {
   return (
     <div className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
-        in the market
-        <span role="img" aria-label="victory-hand">✌</span>
+        Thanks
       </animated.div>
       {springs.map((props, index) => (
         <animated.div

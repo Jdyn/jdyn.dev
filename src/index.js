@@ -18,7 +18,8 @@ const theme = {
     project: "#e6ebf1",
     modal: "#fafafa",
     divider: "rgba(0, 0, 0, 0.05)",
-    shadow: "rgba(50, 50, 73, 0.4)"
+    shadow: "rgba(50, 50, 73, 0.4)",
+    languageMask: "rgba(255, 255, 255, 0.2)"
   },
   dark: {
     color: "#fafafa",
@@ -28,8 +29,9 @@ const theme = {
     quartinary: "#1A1A1B",
     primaryGrey: "#616161",
     cardHeader: "#212121",
-    project: "#212121",
+    project: "#1A1A1B",
     modal: "#212121",
+    languageMask: "rgba(0, 0, 0, 0.1)",
     divider: "rgba(0, 0, 0, 0.05)",
     shadow: "rgba(0, 0, 0, 0.3)"
   }

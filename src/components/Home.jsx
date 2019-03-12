@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import TechStack from "./TechStack";
 import Projects from "./Projects";
+import Languages from "./Languages";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -11,7 +12,7 @@ const propTypes = {
 };
 
 const Home = props => {
-  const { classes, cards, projects } = props;
+  const { classes, cards, projects, languages } = props;
 
   return (
     <div className={classes.root}>
@@ -19,6 +20,7 @@ const Home = props => {
         <h1>My stack.</h1>
       </div>
       <TechStack cards={cards} />
+      <Languages languages={languages} />
       <Projects projects={projects} />
     </div>
   );
@@ -32,6 +34,7 @@ const styles = theme => ({
     gridTemplateAreas: `
     'stackHero'
     'stack'
+    'languages'
     'projects'
     `,
     "@media (min-width: 750px)": {
@@ -39,6 +42,7 @@ const styles = theme => ({
       gridTemplateRows: "min-content min-content",
       gridTemplateAreas: `
       'stackHero stack'
+      'languages languages'
       'projects projects'`
     },
     overscrollBehaviorY: "contain",

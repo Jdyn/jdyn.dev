@@ -2,11 +2,12 @@ import React from "react";
 import Home from "../components/Home";
 import tech from "../lib/technologies";
 import project from "../lib/projects";
+import lang from "../lib/languages";
 
 class HomeContainer extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.cards = [
       tech.docker,
       tech.django,
@@ -14,7 +15,7 @@ class HomeContainer extends React.Component {
       tech.phoenix,
       tech.ios,
       tech.react,
-      tech.node,
+      tech.node
     ];
 
     this.projects = [
@@ -24,10 +25,12 @@ class HomeContainer extends React.Component {
       project.lemonade,
       project.window
     ];
+
+    this.languages = [lang.Python, lang.Swift, lang.elixir, lang.javaScript];
   }
 
   render() {
-    return <Home cards={this.cards} projects={this.projects} />;
+    return <Home cards={this.cards} projects={this.projects} languages={this.languages} />;
   }
 }
 

@@ -131,10 +131,10 @@ const styles = theme => ({
     textAlign: "center",
     padding: "150px 0px",
     width: "100%",
-    color: theme.color,
     "& h1, span": {
       marginTop: 0,
-      zIndex: 160
+      zIndex: 160,
+      color: "#fff"
     },
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     backgroundImage: `url(${props.item.image})`,
