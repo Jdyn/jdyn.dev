@@ -8,7 +8,8 @@ import Languages from "./Languages";
 const propTypes = {
   classes: PropTypes.object.isRequired,
   cards: PropTypes.array.isRequired,
-  projects: PropTypes.array.isRequired
+  projects: PropTypes.array.isRequired,
+  languages: PropTypes.array.isRequired
 };
 
 const Home = props => {
@@ -29,6 +30,7 @@ const Home = props => {
 const styles = theme => ({
   root: {
     display: "grid",
+    position: "relative",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "min-content min-content 1fr",
     gridTemplateAreas: `
@@ -37,6 +39,7 @@ const styles = theme => ({
     'languages'
     'projects'
     `,
+    overflow: "hidden",
     "@media (min-width: 750px)": {
       gridTemplateColumns: "1fr 1fr",
       gridTemplateRows: "min-content min-content",
@@ -44,10 +47,7 @@ const styles = theme => ({
       'stackHero stack'
       'languages languages'
       'projects projects'`
-    },
-    overscrollBehaviorY: "contain",
-    overflow: "hidden",
-    position: "relative"
+    }
   },
   stackHero: {
     gridArea: "stackHero",
@@ -62,7 +62,7 @@ const styles = theme => ({
     "& h1": {
       margin: "auto 20px",
       userSelect: "none",
-      paddingTop: "20px",
+      padding: "50px 0",
       color: theme.color
     }
   }

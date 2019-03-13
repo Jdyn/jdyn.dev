@@ -59,25 +59,25 @@ const styles = theme => ({
     padding: "0 25px",
     maxHeight: "600px",
     height: "400px",
+    width: "100%",
     backgroundColor: theme.tertiary,
-    "@media (min-width: 750px)": {
+    "@media (min-width: 650px)": {
       flexDirection: "row"
     }
   },
   language: {
-    height: "175px",
+    height: "100px",
     width: "100px",
     boxShadow: "0 15px 35px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.07)",
     zIndex: 100,
     backgroundColor: theme.primary,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    // willChange: "transform",
+    willChange: "transform",
     borderRadius: "50%",
     backgroundSize: "65%",
     transitionDuration: "0.2s !important",
-    "@media (min-width: 750px)": {
-      flexDirection: "row",
+    "@media (min-width: 650px)": {
       height: "175px",
       width: "175px"
     },

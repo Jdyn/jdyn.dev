@@ -117,7 +117,7 @@ const styles = theme => ({
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    maxWidth: "1000px",
+    maxWidth: "850px",
     borderRadius: 10,
     margin: "auto",
     backgroundColor: theme.primary,
