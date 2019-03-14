@@ -44,6 +44,7 @@ const Languages = props => {
 
   return (
     <div className={classes.container}>
+      <h1>My Suits</h1>
       <div className={classes.wrapper}>
         {springs.map((style, index) => (
           <animated.div
@@ -76,7 +77,6 @@ const Languages = props => {
           </animated.div>
         ))}
       </div>
-      <h1>My Suits.</h1>
     </div>
   );
 };
@@ -91,9 +91,13 @@ const styles = theme => ({
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      padding: "20px 0",
+      padding: "30px 0 20px 0",
       margin: 0,
-      color: theme.color,
+      color: theme.color, 
+      textTransform: "uppercase",
+      letterSpacing: "0.125em",
+      fontSize: "32px",
+      fontWeight: 700,
       backgroundColor: theme.tertiary
     }
   },
@@ -101,9 +105,9 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    alignItems: "center",
+    // alignItems: "center",
     justifyContent: "center",
-    paddingTop: "80px",
+    paddingBottom: "80px",
     width: "100%",
     maxHeight: "1000px",
     backgroundColor: theme.tertiary,
@@ -113,12 +117,12 @@ const styles = theme => ({
   },
   language: {
     display: "flex",
-    width: "250px", 
+    width: "250px",
     height: "425px",
     position: "relative",
     margin: "15px",
     borderRadius: "10px",
-    cursor: "pointer" 
+    cursor: "pointer"
   },
   card: {
     width: "100%",
