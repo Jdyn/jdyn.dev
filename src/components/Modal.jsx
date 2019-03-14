@@ -122,7 +122,7 @@ const styles = theme => ({
     margin: "auto",
     backgroundColor: theme.primary,
     zIndex: 150,
-    boxShadow: `0 50px 200px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
+    boxShadow: `0 50px 150px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
   },
   hero: props => ({
     display: "flex",

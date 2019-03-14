@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSprings, animated, interpolate, useSpring } from "react-spring";
+import { useSprings, animated, interpolate, useSpring, config } from "react-spring";
 import { useGesture } from "react-with-gesture";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
@@ -32,7 +32,8 @@ const TechStack = props => {
   const [size, setSize] = useState(0);
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
-    from: from(index)
+    from: from(index),
+    config: config.gentle
   }));
 
   const bind = useGesture(
