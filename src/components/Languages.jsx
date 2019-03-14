@@ -44,7 +44,7 @@ const Languages = props => {
 
   return (
     <div className={classes.container}>
-      <h1>My Suits</h1>
+      <h1>Suits</h1>
       <div className={classes.wrapper}>
         {springs.map((style, index) => (
           <animated.div
@@ -94,9 +94,8 @@ const styles = theme => ({
       padding: "30px 0 20px 0",
       margin: 0,
       color: theme.color, 
-      textTransform: "uppercase",
-      letterSpacing: "0.125em",
-      fontSize: "32px",
+      letterSpacing: "0.02em",
+      fontSize: "36px",
       fontWeight: 700,
       backgroundColor: theme.tertiary
     }

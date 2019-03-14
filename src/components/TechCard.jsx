@@ -13,7 +13,7 @@ const propTypes = {
 };
 
 const trans = (rotation, scale) =>
-  `perspective(${"2500px"}) rotateX(30deg) rotateY(${rotation /
+  `perspective(${"3500px"}) rotateX(30deg) rotateY(${rotation /
     10}deg) rotateZ(${rotation}deg) scale(${scale})`;
 
 const TechCard = props => {
@@ -29,16 +29,21 @@ const TechCard = props => {
     >
       <div className={classes.card}>
         <div className={classes.header}>
-          <img alt="technology icon" src={card.icon} />
-          <h2 className={classes.name}>
-            {/* {card.name} <span>{card.level}</span> */}
-            {card.name}
-          </h2>
+          <div className={classes.suitContainer}>
+            <img className={classes.icon} alt="tech" src={card.icon} />
+            <img className={classes.suit} alt="suit" src={card.suit} />
+          </div>
         </div>
-        <div className={classes.rating}>
+        {/* <div className={classes.rating}>
           <div className={classes.rate} style={{ width: card.level }} />
+        </div> */}
+        <div className={classes.overview} />
+        <div className={classes.footer}>
+          <div className={classes.suitContainer}>
+            <img className={classes.suit} alt="suit" src={card.suit} />
+            <img className={classes.icon} alt="tech" src={card.icon} />
+          </div>
         </div>
-        <div className={classes.overview}>{card.overview}</div>
       </div>
     </animated.div>
   );
@@ -81,17 +86,14 @@ const styles = theme => ({
     display: "flex",
     position: "relative",
     flexDirection: "column",
-    height: "195px",
+    height: "151px",
     borderRadius: "10px 10px 0 0",
-    backgroundColor: theme.cardHeader,
+    // backgroundColor: theme.cardHeader,
     color: theme.color,
-    "& img": {
-      position: "relative",
-      maxWidth: "35%",
-      height: "60%",
-      userSelect: "none",
-      marginTop: "5%",
-      marginLeft: "5%"
+    "& div": {
+      top: 0,
+      left: 0,
+      margin: "5% 0 0 5%",
     },
     "& h2": {
       display: "inline-flex",
@@ -107,6 +109,41 @@ const styles = theme => ({
         width: "100%"
       }
     }
+  },
+  icon: {
+    position: "relative",
+    width: "64px",
+    margin: "0 auto",
+    // height: "84px",
+    userSelect: "none"
+  },
+  suit: {
+    width: "46px",
+    height: "46px",
+    margin: "0 auto"
+  },
+  footer: {
+    display: "flex",
+    position: "relative",
+    // flexDirection: "column",
+    height: "151px",
+    borderRadius: "0 0 10px 10px",
+    // backgroundColor: theme.cardHeader,
+    "& div": {
+      bottom: 0,
+      right: 0,
+      margin: "0 5% 5% 0",
+    }
+  },
+  suitContainer: {
+    display: "flex",
+    // height: "100%",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "84px",
+    position: "absolute",
+    // backgroundColor: theme.primary,
+    borderRadius: "100% 0 10px 0"
   },
   rating: {
     display: "flex",

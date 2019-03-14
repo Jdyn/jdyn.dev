@@ -18,7 +18,7 @@ const Home = props => {
   return (
     <div className={classes.root}>
       <div className={classes.stackHero}>
-        <h1>My stack</h1>
+        <h1>My Stack.</h1>
       </div>
       <TechStack cards={cards} />
       <Languages languages={languages} />
@@ -64,10 +64,10 @@ const styles = theme => ({
       userSelect: "none",
       padding: "50px 0",
       color: theme.color,
-      textTransform: "uppercase",
-      letterSpacing: "0.125em",
-      fontSize: "32px",
-      fontWeight: 700
+      // textTransform: "uppercase",
+      // letterSpacing: "0.125em",
+      // fontSize: "32px",
+      // fontWeight: 700
     }
   }
 });

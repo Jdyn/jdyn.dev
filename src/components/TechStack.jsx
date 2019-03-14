@@ -102,7 +102,7 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     margin: "2.5% 0",
-    height: "585px",
+    height: "525px",
     maxHeight: "585px",
     gridArea: "stack",
     zIndex: 85
