@@ -36,7 +36,7 @@ const TechCard = props => {
         <div className={classes.rating}>
           <div className={classes.rate} style={{ width: card.level }} />
         </div>
-        <div className={classes.overview}>{card.overview}</div>
+        <p className={classes.overview}>{card.overview}</p>
       </div>
     </animated.div>
   );
@@ -66,12 +66,13 @@ const styles = theme => ({
     }
   },
   overview: {
+    margin: 0,
     padding: "20px",
     userSelect: "none",
     fontSize: "18px",
     flexGrow: 1,
     color: theme.color,
-    fontWeight: 400,
+    fontWeight: 500,
     // lineHeight: "20px",
     letterSpacing: "0.085em"
   },

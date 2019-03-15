@@ -1,6 +1,6 @@
 export default {
   light: {
-    color: "#212121",
+    color: "#4a4a4a",
     primary: "#fafafa",
     secondary: "#f6f9fc",
     tertiary: "#eef2f7",
@@ -9,9 +9,8 @@ export default {
     cardHeader: "#eef2f7",
     project: "#e6ebf1",
     modal: "#fafafa",
-    divider: "rgba(0, 0, 0, 0.05)",
+    accent: "rgb(27, 185, 120)",//"#b76ac4",
     shadow: "rgba(50, 50, 73, 0.4)",
-    languageMask: "rgba(255, 255, 255, 0.2)"
   },
   dark: {
     color: "#fafafa",
@@ -23,8 +22,7 @@ export default {
     cardHeader: "#212121",
     project: "#181818",
     modal: "#212121",
-    languageMask: "rgba(0, 0, 0, 0.1)",
-    divider: "rgba(0, 0, 0, 0.05)",
+    accent: "#555abf",
     shadow: "rgba(0, 0, 0, 0.3)"
   }
 };

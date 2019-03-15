@@ -7,7 +7,7 @@ import lang from "../lib/languages";
 class HomeContainer extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props)
+
     this.cards = [
       tech.docker,
       tech.django,
@@ -30,7 +30,15 @@ class HomeContainer extends React.Component {
   }
 
   render() {
-    return <Home cards={this.cards} projects={this.projects} languages={this.languages} />;
+    const { changeTheme } = this.props;
+    return (
+      <Home
+        changeTheme={changeTheme}
+        cards={this.cards}
+        projects={this.projects}
+        languages={this.languages}
+      />
+    );
   }
 }
 

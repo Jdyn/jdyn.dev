@@ -6,9 +6,13 @@ const routes = {
   home: "/"
 };
 
-const Router = () => (
+const Router = ({ changeTheme }) => (
   <Switch>
-    <Route exact path={routes.home} render={props => <HomeContainer />} />
+    <Route
+      exact
+      path={routes.home}
+      render={props => <HomeContainer {...props} changeTheme={changeTheme} />}
+    />
     <Redirect to={routes.home} />
   </Switch>
 );

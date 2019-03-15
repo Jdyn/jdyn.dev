@@ -102,7 +102,7 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    // alignItems: "center",
+    alignItems: "center",
     justifyContent: "center",
     paddingBottom: "80px",
     width: "100%",

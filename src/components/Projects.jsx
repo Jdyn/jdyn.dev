@@ -57,12 +57,12 @@ const Projects = props => {
     config: config.stiff,
     from: {
       width: "20%",
-      background: "#555abf",
+      background: theme.accent,
       boxShadow: "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
     },
     to: {
       width: open ? "100%" : "20%",
-      background: open ? theme.primary : "#555abf",
+      background: open ? theme.primary : theme.accent,
       cursor: open ? "default" : "pointer",
       boxShadow: open
         ? `0 0px 200px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
