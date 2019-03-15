@@ -13,7 +13,7 @@ const propTypes = {
 };
 
 const trans = (rotation, scale) =>
-  `perspective(${"2500px"}) rotateX(30deg) rotateY(${rotation /
+  `perspective(${"2700px"}) rotateX(30deg) rotateY(${rotation /
     10}deg) rotateZ(${rotation}deg) scale(${scale})`;
 
 const TechCard = props => {
@@ -22,9 +22,7 @@ const TechCard = props => {
   return (
     <animated.div
       className={classes.container}
-      style={{
-        transform: interpolate([rotation, scale], trans)
-      }}
+      style={{ transform: interpolate([rotation, scale], trans) }}
       {...bind(index)}
     >
       <div className={classes.card}>

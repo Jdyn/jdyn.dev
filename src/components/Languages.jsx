@@ -72,7 +72,7 @@ const Languages = props => {
                 opacity: style.opacity
               }}
             >
-              {state[index].name}
+              {/* {state[index].name} */}
             </animated.div>
           </animated.div>
         ))}

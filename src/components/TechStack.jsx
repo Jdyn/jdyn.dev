@@ -20,7 +20,7 @@ const to = index => ({
 });
 
 const from = index => ({
-  x: 0,
+  x: Math.random() > .5 ? window.innerWidth * 1 : window.innerWidth * -1,
   y: -1000,
   rotation: 0,
   scale: 1.5
@@ -33,7 +33,7 @@ const TechStack = props => {
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
     from: from(index),
-    config: config.gentle
+    config: {mass: 1, tension: 280, friction: 40} //config.slow
   }));
 
   const bind = useGesture(
@@ -102,8 +102,7 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     margin: "2.5% 0",
-    height: "585px",
-    maxHeight: "585px",
+    height: "535px",
     gridArea: "stack",
     zIndex: 85
   },
