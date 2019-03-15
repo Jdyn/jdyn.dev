@@ -44,7 +44,7 @@ const Languages = props => {
 
   return (
     <div className={classes.container}>
-      <h1>Suits</h1>
+      <h1>My Suits.</h1>
       <div className={classes.wrapper}>
         {springs.map((style, index) => (
           <animated.div
@@ -72,7 +72,7 @@ const Languages = props => {
                 opacity: style.opacity
               }}
             >
-              {state[index].name}
+              {/* {state[index].name} */}
             </animated.div>
           </animated.div>
         ))}
@@ -95,7 +95,7 @@ const styles = theme => ({
       margin: 0,
       color: theme.color, 
       letterSpacing: "0.02em",
-      fontSize: "36px",
+      // fontSize: "36px",
       fontWeight: 700,
       backgroundColor: theme.tertiary
     }

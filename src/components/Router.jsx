@@ -8,7 +8,7 @@ const routes = {
 
 const Router = () => (
   <Switch>
-    <Route exact path={routes.home} component={HomeContainer} />
+    <Route exact path={routes.home} render={props => <HomeContainer />} />
     <Redirect to={routes.home} />
   </Switch>
 );

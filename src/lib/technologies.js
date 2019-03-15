@@ -33,8 +33,8 @@ export default {
     name: "Phoenix",
     level: "55%",
     overview:
-      "Due to Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax, among other benefits, I believe Elixir will grow exponentially in the coming years. I built the API of typer.io with Phoenix and plan on using it in the future. If the ecosystem was larger, I think it would be more widely adopted.",
-    icon: "img/technologies/phoenix2.svg",
+      "Due to Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax, among other benefits, I believe Elixir will grow exponentially in the coming years. I built the API of typer.io with Phoenix and plan on using it in the future.",
+    icon: "img/technologies/phoenix.svg",
     suit: "img/languages/elixir.png"
   },
   react: {
