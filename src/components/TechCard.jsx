@@ -32,7 +32,7 @@ const TechCard = props => {
             {/* {card.name} <span>{card.level}</span> */}
             {card.name}
           </h2>
-        </div>
+        </div>  
         <div className={classes.rating}>
           <div className={classes.rate} style={{ width: card.level }} />
         </div>
@@ -71,6 +71,7 @@ const styles = theme => ({
     userSelect: "none",
     fontSize: "18px",
     flexGrow: 1,
+    hyphens: "auto",
     color: theme.color,
     fontWeight: 500,
     // lineHeight: "20px",
@@ -82,7 +83,7 @@ const styles = theme => ({
     flexDirection: "column",
     height: "195px",
     borderRadius: "10px 10px 0 0",
-    backgroundColor: theme.cardHeader,
+    backgroundColor: theme.tertiary,
     color: theme.color,
     "& img": {
       position: "relative",

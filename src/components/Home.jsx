@@ -50,6 +50,7 @@ const styles = theme => ({
     position: "relative",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "min-content min-content 1fr",
+    backgroundColor: theme.secondary,
     gridTemplateAreas: `
     'stackHero'
     'stack'
@@ -57,7 +58,7 @@ const styles = theme => ({
     'projects'
     `,
     overflow: "hidden",
-    "@media (min-width: 750px)": {
+    "@media (min-width: 650px)": {
       gridTemplateColumns: "1fr 1fr",
       gridTemplateRows: "min-content min-content",
       gridTemplateAreas: `
@@ -72,7 +73,7 @@ const styles = theme => ({
     justifyContent: "center",
     display: "flex",
     flexDirection: "column-reverse",
-    "@media (min-width: 750px)": {
+    "@media (min-width: 650px)": {
       textAlign: "right",
       justifyContent: "right",
     },
@@ -98,7 +99,7 @@ const styles = theme => ({
     lineHeight: "40px",
     padding: "0 15px",
     margin: "20px auto",
-    "@media (min-width: 750px)": {
+    "@media (min-width: 650px)": {
       margin: "20px auto 20px 20px",
     },
     fontWeight: 700,

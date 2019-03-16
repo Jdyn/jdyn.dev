@@ -16,7 +16,6 @@ const App = props => {
   const [type, setType] = useState(theme);
 
   const provideTheme = () => {
-    console.log("called")
     switch (type) {
       case types.dark:
         return themes.dark;

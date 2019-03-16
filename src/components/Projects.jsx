@@ -35,11 +35,11 @@ const Projects = props => {
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("touchend", handleClickOutside);
+    document.addEventListener("mouseup", handleClickOutside);
+    document.addEventListener("touchup", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchend", handleClickOutside);
+      document.removeEventListener("mouseup", handleClickOutside);
+      document.removeEventListener("touchup", handleClickOutside);
     };
   }, [modal]);
 
@@ -56,7 +56,7 @@ const Projects = props => {
     ref: containerRef,
     config: config.stiff,
     from: {
-      width: "20%",
+      width: "0%",
       background: theme.accent,
       boxShadow: "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
     },
@@ -66,7 +66,7 @@ const Projects = props => {
       cursor: open ? "default" : "pointer",
       boxShadow: open
         ? `0 0px 200px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
-        : `0 0px 75px 10px ${theme.shadow}, 0 30px 60px -30px rgba(0,0,0,.3)`
+        : `0 0px 35px 0px ${theme.shadow}, 0 30px 0px -30px rgba(0,0,0,.3)`
     }
   });
 
@@ -76,7 +76,12 @@ const Projects = props => {
     unique: true,
     config: config.default,
     trail: 400 / projects.length,
-    enter: { margin: "0px", height: "0px  ", opacity: 0, transform: "scale(0)" },
+    from: {
+      height: "0px",
+      transform: "scale(0)",
+      margin: "0px",
+      opacity: 0
+    },
     update: {
       height: open ? "350px" : "0px",
       margin: open ? "10px" : "0px",
@@ -125,7 +130,7 @@ const styles = theme => ({
   container: {
     gridArea: "projects",
     display: "flex",
-    backgroundColor: theme.project,
+    backgroundColor: theme.quartinary,
     position: "relative",
     alignItems: "center",
     justifyContent: "center",

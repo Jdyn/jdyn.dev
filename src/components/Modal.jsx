@@ -20,7 +20,7 @@ const Modal = props => {
   };
 
   const [{ opacity, ...rest }, set] = useSpring(() => ({
-    config: config.default,
+    config: { tension: 210, mass: 1, friction: 20 },
     to: {
       width: "100%",
       transform: "scale(1)",
@@ -84,7 +84,7 @@ const Modal = props => {
     </animated.div>
   );
 };
-// alt="link icon" src={"img/link.svg"}
+
 const styles = theme => ({
   root: {
     position: "fixed",
@@ -97,7 +97,8 @@ const styles = theme => ({
     width: "100%",
     height: "100%",
     background: "rgba(0, 0, 0, 0.5)",
-    overflowY: "auto",
+    overflowY: "scroll",
+    overflowX: "hidden",
     padding: "80px 0",
     "&::-webkit-scrollbar": {
       width: "11px",
@@ -122,7 +123,7 @@ const styles = theme => ({
     margin: "auto",
     backgroundColor: theme.primary,
     zIndex: 150,
-    boxShadow: `0 50px 150px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
+    boxShadow: `0 50px 50px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
   },
   hero: props => ({
     display: "flex",
@@ -140,7 +141,7 @@ const styles = theme => ({
     backgroundImage: `url(${props.item.image})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    borderRadius: "8px 8px 0 0",
+    borderRadius: "10px 10px 0 0",
     "&:after": {
       content: "''",
       position: "absolute",
@@ -150,7 +151,7 @@ const styles = theme => ({
       height: "100%",
       zIndex: 155,
       background: "rgba(0, 0, 0, 0.6)",
-      borderRadius: "8px 8px 0 0"
+      borderRadius: "10px 10px 0 0"
     }
   }),
   overview: {
@@ -159,7 +160,7 @@ const styles = theme => ({
     width: "100%",
     padding: "15px",
     flexDirection: "column-reverse",
-    "@media (min-width: 750px)": {
+    "@media (min-width: 650px)": {
       flexDirection: "row",
       padding: "30px"
     }
@@ -173,7 +174,7 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: theme.modal,
     color: theme.color,
-    borderRadius: 5,
+    borderRadius: 8,
     padding: "20px",
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     marginTop: "10%",
@@ -181,7 +182,7 @@ const styles = theme => ({
       margin: 0,
       marginBottom: "15px"
     },
-    "@media (min-width: 750px)": {
+    "@media (min-width: 650px)": {
       marginRight: "30px",
       marginTop: "-10%"
     }
@@ -193,7 +194,7 @@ const styles = theme => ({
     flexBasis: "30%",
     position: "relative",
     padding: "20px",
-    borderRadius: 5,
+    borderRadius: 8,
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     backgroundColor: theme.modal,
     color: theme.color,

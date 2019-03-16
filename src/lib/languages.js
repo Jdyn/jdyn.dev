@@ -12,7 +12,7 @@ export default {
     icon: "img/suits/elixir.png"
   },
   Swift: {
-    name: "swift",
+    name: "Swift",
     icon: "img/suits/swift.svg"
   }
 };

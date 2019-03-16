@@ -26,7 +26,7 @@ class HomeContainer extends React.Component {
       project.window
     ];
 
-    this.languages = [lang.Python, lang.Swift, lang.elixir, lang.javaScript];
+    this.languages = [lang.Python, lang.Swift, lang.javaScript, lang.elixir];
   }
 
   render() {
