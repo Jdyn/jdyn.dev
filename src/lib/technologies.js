@@ -10,7 +10,7 @@ export default {
     name: "Django",
     level: "70%",
     overview:
-      "I like Django. However, after using Phoenix, I've found myself prefering it over Django. The biggest plus for me would be the mature ecosystem surrounding Django which I sorely miss when im working in Elixir. It would not be my first choice of framework anymore, but I would haply work in a Django environment anytime.",
+      "I like Django. However after using Phoenix, I've found myself prefering it over Django. The biggest plus for me would be the mature ecosystem surrounding Django which I sorely miss when im working in Elixir. While it would not be my first choice, I enjoy working with Python and the ecosystem at large.",
     icon: "img/technologies/django.svg",
     suit: "img/languages/python.svg"
   },
@@ -18,7 +18,7 @@ export default {
     name: "iOS",
     level: "70%",
     overview:
-      "My first break into software development began with iOS working on Academus. Swift was one of the best languages I've used and building up Academus iOS from scratch really solitified my knowledge and allowed me to grow exponentially.",
+      "My first break into Software Development began with iOS working on Academus. The safety and structure given while working with Swift and Apple's platform is refreshing. Building up the Academus Mobile App from scratch really solitified my knowledge and allowed me to grow exponentially.",
     icon: "img/technologies/ios.svg",
     suit: "img/languages/swift.svg"
   },
@@ -26,7 +26,7 @@ export default {
     name: "CSS/HTML",
     level: "90%",
     overview:
-      "However frustrating CSS might be, some serious advancements have been made. Namely CSS Grid, and Flexbox. With the combination of these tools, you can pretty much achieve anything. All of my work incorporates Grid and Flexbox and has allowed me to really master the art of web development - i think.",
+      "However frustrating CSS might be, some serious advancements have been made. Namely CSS Grid, and Flexbox. With the combination of these tools, you can achieve almost anything. All of my work incorporates Grid and Flexbox to some extent and has allowed me to take designs to the next level.",
     icon: "img/technologies/html5.svg"
   },
   phoenix: {
@@ -41,7 +41,7 @@ export default {
     name: "React",
     level: "97%",
     overview:
-      "React is my bread and butter in the front-end. I am extremely well versed with React and can build anything. I have countless projects, including this site. JavaScript in general makes building more complex interactions much easier and is definitely here to stay.",
+      "React is my bread and butter in the front-end. Countless projects, including this site, have allowed me to become extremely skilled in React and the sky is the limit at this point. I think JavaScript makes building more complex interactions much easier and is definitely here to stay.",
     icon: "img/technologies/react.svg",
     suit: "img/languages/javascript.svg"
   },

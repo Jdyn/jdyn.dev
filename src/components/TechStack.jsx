@@ -16,14 +16,14 @@ const to = index => ({
   y: index * -5,
   rotation: -10 + Math.random() * 20, // Randomize initial rotation in stack
   scale: 1,
-  delay: index * 175
+  delay: index * 225
 });
 
 const from = index => ({
-  x: Math.random() > .5 ? window.innerWidth * 1 : window.innerWidth * -1,
-  y: -1000,
+  x: Math.random() > .55 ? window.innerWidth * 1 : window.innerWidth * -1,
+  y: 0,
   rotation: 0,
-  scale: 1.5
+  scale: 0.5
 });
 
 const TechStack = props => {
@@ -33,7 +33,7 @@ const TechStack = props => {
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
     from: from(index),
-    config: {mass: 1, tension: 280, friction: 40} //config.slow
+    config: {mass: 1, tension: 225, friction: 55} //config.slow
   }));
 
   const bind = useGesture(
@@ -77,7 +77,7 @@ const TechStack = props => {
   return (
     <div className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
-        Thanks
+      <span role="img" aria-label="victory-hand">✌</span>
       </animated.div>
       {springs.map((props, index) => (
         <animated.div
