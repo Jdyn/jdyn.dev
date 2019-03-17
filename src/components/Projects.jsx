@@ -113,7 +113,8 @@ const Projects = props => {
             project={item}
             style={{
               ...props,
-              background: item.css
+              background: item.css,
+              // height: open? "350px" : "0px"
             }}
             handleModal={handleModal}
           />

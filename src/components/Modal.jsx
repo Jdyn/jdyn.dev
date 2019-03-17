@@ -180,7 +180,8 @@ const styles = theme => ({
     marginTop: "10%",
     "& p": {
       margin: 0,
-      marginBottom: "15px"
+      marginBottom: "15px",
+      fontWeight: 500
     },
     "@media (min-width: 650px)": {
       marginRight: "30px",
@@ -195,6 +196,7 @@ const styles = theme => ({
     position: "relative",
     padding: "20px",
     borderRadius: 8,
+    fontWeight: 500,
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     backgroundColor: theme.modal,
     color: theme.color,
