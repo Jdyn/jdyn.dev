@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSprings, animated, interpolate, useSpring, config } from "react-spring";
+import { useSprings, animated, interpolate, useSpring } from "react-spring";
 import { useGesture } from "react-with-gesture";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
@@ -13,7 +13,7 @@ const propTypes = {
 
 const to = index => ({
   x: 0,
-  y: index * -5,
+  y: index * 2,
   rotation: -10 + Math.random() * 20, // Randomize initial rotation in stack
   scale: 1,
   delay: index * 225
@@ -53,7 +53,7 @@ const TechStack = props => {
         const isRemoved = removed.has(index);
         const x = isRemoved ? (200 + window.innerWidth) * dir : down ? xDelta : 0; // When a card is removed it flys out left or right, otherwise goes back to zero
         const rotation = xDelta / 100 + (isRemoved ? dir * 10 * velocity : 0); // Rotates the card as it is being removed.
-        const scale = down ? 1.1 : 1; // Clicking the card increases it's scale.
+        const scale = down ? 1.2 : 1; // Clicking the card increases it's scale.
         return {
           x,
           rotation,
@@ -77,7 +77,7 @@ const TechStack = props => {
   return (
     <div className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
-      <span role="img" aria-label="victory-hand">✌</span>
+      <span role="img" aria-label="folded-hands">🙏</span>
       </animated.div>
       {springs.map((props, index) => (
         <animated.div

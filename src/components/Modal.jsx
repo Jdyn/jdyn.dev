@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
-import { useSpring, config, animated } from "react-spring";
+import { useSpring, animated } from "react-spring";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,

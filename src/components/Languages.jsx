@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
-import { animated, useSprings, useSpring, interpolate } from "react-spring";
+import { animated, useSprings } from "react-spring";
 
 const propTypes = {
   classes: PropTypes.object.isRequired
@@ -142,7 +142,6 @@ const styles = theme => ({
     height: "100%",
     position: "absolute",
     willChange: "transform, opacity",
-    position: "absolute",
     padding: "15px",
     zIndex: 100,
     boxShadow: "0 15px 35px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.07)",

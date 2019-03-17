@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./containers/AppContainer";
-import Baseline from "./components/Baseline";
 import ReactGA from "react-ga";
+import "./styles/global.css";
 
 (() => {
   ReactGA.initialize("UA-135635293-1");
@@ -18,7 +18,7 @@ if (!theme) {
 const app = (
   <>
     <BrowserRouter>
-        <App theme={theme} />
+      <App theme={theme} />
     </BrowserRouter>
   </>
 );

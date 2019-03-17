@@ -14,8 +14,8 @@ class HomeContainer extends React.Component {
       tech.css,
       tech.phoenix,
       tech.ios,
-      tech.react,
-      tech.node
+      tech.node,
+      tech.react
     ];
 
     this.projects = [

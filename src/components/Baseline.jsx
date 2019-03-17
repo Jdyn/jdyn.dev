@@ -16,20 +16,6 @@ Baseline.propTypes = propTypes;
 Baseline.defaultProps = defaultProps;
 
 const styles = theme => ({
-  "@font-face": [
-    {
-      fontFamily: "Camphor",
-      src: "url(fonts/500-medium.woff2)",
-      fontWeight: "normal",
-      fontStyle: "normal"
-    },
-    {
-      fontFamily: "Camphor",
-      src: "url(fonts/600-bold.woff2)",
-      fontWeight: "bold",
-      fontStyle: "normal"
-    }
-  ],
   "@global": {
     html: {
       WebkitFontSmoothing: "antialiased",
@@ -41,7 +27,7 @@ const styles = theme => ({
       backgroundColor: theme.primary,
       color: theme.color,
       fontSize: "100%",
-      fontFamily: ["Open Sans", "Segoe UI", "sans-serif"],
+      fontFamily: ["Avenir Next", "Open Sans", "Segoe UI", "sans-serif"],
       fontWeight: "normal",
       fontStyle: "normal",
       webkitTextSizeAdjust: "100%",

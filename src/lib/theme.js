@@ -6,7 +6,7 @@ export default {
     tertiary: "#eef2f7",
     quartinary: "#e6ebf1",
     primaryGrey: "#d7dadc",
-    modal: "#fff",
+    modal: "#fafafa",
     accent: "#E91E63",
     shadow: "rgba(50, 50, 73, 0.4)"
   },

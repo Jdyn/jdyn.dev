@@ -1,18 +1,18 @@
 export default {
   javaScript: {
     name: "JavaScript",
-    icon: "img/suits/javascript.svg"
+    icon: "images/suits/javascript.svg"
   },
   Python: {
     name: "Python",
-    icon: "img/suits/python.svg"
+    icon: "images/suits/python.svg"
   },
   elixir: {
     name: "Elixir",
-    icon: "img/suits/elixir.png"
+    icon: "images/suits/elixir.png"
   },
   Swift: {
     name: "Swift",
-    icon: "img/suits/swift.svg"
+    icon: "images/suits/swift.svg"
   }
 };
