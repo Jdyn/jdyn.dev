@@ -181,7 +181,8 @@ const styles = theme => ({
     "& p": {
       margin: 0,
       marginBottom: "15px",
-      fontWeight: 500
+      fontWeight: 500,
+      fontSize: 19
     },
     "@media (min-width: 650px)": {
       marginRight: "30px",
