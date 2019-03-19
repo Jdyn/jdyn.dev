@@ -93,9 +93,7 @@ const Languages = props => {
                 transform: style.transform.interpolate(t => `${t} rotateX(180deg)`),
                 boxShadow: style.boxShadow
               }}
-            >
-              ok
-            </animated.div>
+            />
           </animated.div>
         ))}
       </div>
