@@ -20,7 +20,7 @@ const to = index => ({
 });
 
 const from = index => ({
-  x: Math.random() > .55 ? window.innerWidth * 1 : window.innerWidth * -1,
+  x: Math.random() > 0.55 ? window.innerWidth * 1 : window.innerWidth * -1,
   y: 0,
   rotation: 0,
   scale: 0.5
@@ -30,10 +30,14 @@ const TechStack = props => {
   const { classes, cards } = props;
   const [removed] = useState(() => new Set());
   const [size, setSize] = useState(0);
+  const [hovered, setHovered] = useState(false);
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
     from: from(index),
-    config: {mass: 1, tension: 225, friction: 55} //config.slow
+    onRest: () => {
+      console.log(hovered);
+    },
+    config: { mass: 1, tension: 225, friction: 55 } //config.slow
   }));
 
   const bind = useGesture(
@@ -53,7 +57,8 @@ const TechStack = props => {
         const isRemoved = removed.has(index);
         const x = isRemoved ? (200 + window.innerWidth) * dir : down ? xDelta : 0; // When a card is removed it flys out left or right, otherwise goes back to zero
         const rotation = xDelta / 100 + (isRemoved ? dir * 10 * velocity : 0); // Rotates the card as it is being removed.
-        const scale = down ? 1.15 : 1; // Clicking the card increases it's scale.
+        const scale = down ? 1.1 : 1; // Clicking the card increases it's scale.
+        setHovered(down);
         return {
           x,
           rotation,
@@ -77,7 +82,9 @@ const TechStack = props => {
   return (
     <div className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
-      <span role="img" aria-label="folded-hands">🙏</span>
+        <span role="img" aria-label="folded-hands">
+          🙏
+        </span>
       </animated.div>
       {springs.map((props, index) => (
         <animated.div
@@ -97,12 +104,11 @@ const TechStack = props => {
 const styles = theme => ({
   container: {
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
     position: "relative",
     width: "100%",
-    margin: "2.5% 0",
-    height: "535px",
+    marginBottom: "8%",
+    height: "540px",
+    justifyContent: "center",
     gridArea: "stack",
     zIndex: 85
   },

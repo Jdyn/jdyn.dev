@@ -32,7 +32,7 @@ const TechCard = props => {
             {/* {card.name} <span>{card.level}</span> */}
             {card.name}
           </h2>
-        </div>  
+        </div>
         <div className={classes.rating}>
           <div className={classes.rate} style={{ width: card.level }} />
         </div>
@@ -52,7 +52,7 @@ const styles = theme => ({
     borderRadius: 10,
     cursor: "grab",
     backgroundColor: theme.primary,
-    boxShadow: `0 12.5px 45px -5px ${theme.shadow}, 0 10px 10px -10px ${theme.shadow}`
+    boxShadow: `0 12.5px 35px -5px ${theme.shadow}, 0 10px 20px -10px ${theme.shadow}`
   },
   card: {
     display: "flex",

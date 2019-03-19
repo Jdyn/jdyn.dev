@@ -47,7 +47,7 @@ const Projects = props => {
     from: { opacity: 0, height: "0px" },
     to: {
       opacity: open ? 0 : 1,
-      height: open ? "0" : "45%"
+      height: open ? "0" : "75px"
     }
   });
 
@@ -61,7 +61,7 @@ const Projects = props => {
       boxShadow: "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
     },
     to: {
-      width: open ? "100%" : "20%",
+      width: open ? "100%" : "10%",
       background: open ? theme.primary : theme.accent,
       cursor: open ? "default" : "pointer",
       boxShadow: open
@@ -136,7 +136,8 @@ const styles = theme => ({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    minHeight: "350px"
+    minHeight: "350px",
+    minWidth: "200px"
   },
   display: {
     position: "relative",
@@ -151,7 +152,7 @@ const styles = theme => ({
     margin: "25px",
     "@media (min-width: 700px)": {
       margin: "25px 65px",
-      padding: "10px"
+      // padding: "10px"
     },
     willChange: "width, height"
   },

@@ -12,7 +12,7 @@ const propTypes = {
 // };
 
 const Languages = props => {
-  const { classes, languages } = props;
+  const { classes, languages, theme } = props;
   const [state, set] = useState(() =>
     languages.map(item => {
       item["flipped"] = false;
@@ -35,15 +35,22 @@ const Languages = props => {
   const springs = useSprings(
     languages.length,
     state.map(item => ({
-      transform: `perspective(600px) rotateX(${item.flipped ? 180 : 0}deg) scale(${
-        item.hovered ? 1.05 : 1.0
-      })`,
+      transform: `perspective(600px) rotateX(${item.flipped ? 180 : 0}deg)`,
+      index: item.hovered ? 200 : 100,
+      boxShadow: item.hovered
+        ? `0 30px 60px -8px ${
+            theme.shadow
+          }, 0 18px 36px -18px rgba(0,0,0,.3),0 -12px 36px -8px rgba(0,0,0,.025)`
+        : `0 13px 27px -5px ${
+            theme.shadow
+          }, 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)`,
       config: { mass: 5, tension: 400, friction: 50 }
     }))
   );
 
   const flipCard = (event, index) => {
-    event.preventDefault();
+    // event.preventDefault();
+    event.persist();
     let arr = [...state];
     arr[index] = { ...state[index], flipped: !state[index].flipped };
     set(arr);
@@ -55,35 +62,39 @@ const Languages = props => {
       <div className={classes.wrapper}>
         {springs.map((style, index) => (
           <animated.div
-            // style={{ transform: radians.interpolate(interp(index)) }}
             className={classes.language}
+            style={{ zIndex: state[index].hovered ? 101 : 100 }}
             key={index}
-            onClick={e => flipCard(e, index)}
-            onMouseOver={() => {
+            onMouseEnter={e => {
+              e.preventDefault();
               let arr = [...state];
               arr[index] = { ...state[index], hovered: true };
               set(arr);
             }}
-            onMouseLeave={() => {
+            onMouseLeave={e => {
+              e.preventDefault();
               let arr = [...state];
               arr[index] = { ...state[index], hovered: false };
               set(arr);
             }}
+            onClick={e => flipCard(e, index)}
           >
             <animated.div
               className={classes.back}
               style={{
                 transform: style.transform,
-                backgroundImage: `url(${state[index].icon})`
+                backgroundImage: `url(${state[index].icon})`,
+                boxShadow: style.boxShadow
               }}
             />
             <animated.div
               className={classes.front}
               style={{
-                transform: style.transform.interpolate(t => `${t} rotateX(180deg)`)
+                transform: style.transform.interpolate(t => `${t} rotateX(180deg)`),
+                boxShadow: style.boxShadow
               }}
             >
-              {/* <h1>Suit of {state[index].name}</h1> */}
+              ok
             </animated.div>
           </animated.div>
         ))}
@@ -134,7 +145,11 @@ const styles = theme => ({
     transformStyle: "preserve-3d",
     "@media (min-width: 650px)": {
       maxWidth: "250px",
-      margin: "10px"
+      margin: "8px"
+    },
+    transitionDuration: ".35s",
+    "&:hover": {
+      transform: "scale(1.05)"
     }
   },
   card: {
@@ -143,8 +158,6 @@ const styles = theme => ({
     position: "absolute",
     willChange: "transform, opacity",
     padding: "15px",
-    zIndex: 100,
-    boxShadow: "0 15px 35px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.07)",
     borderRadius: "10px",
     backfaceVisibility: "hidden"
   },
@@ -172,4 +185,4 @@ const styles = theme => ({
 
 Languages.propTypes = propTypes;
 
-export default withStyles(styles)(Languages);
+export default withStyles(styles, { injectTheme: true })(Languages);
