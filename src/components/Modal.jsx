@@ -74,7 +74,7 @@ const Modal = props => {
             <h3>Technologies</h3>
             {item.technologies.map((item, index) => (
               <div className={classes.techItem} key={index}>
-                <img alt="technology icon" src={item.icon} />
+                <img className={classes.techLogo} alt="technology icon" src={item.icon} />
                 {item.name}
               </div>
             ))}
