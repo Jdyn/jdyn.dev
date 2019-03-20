@@ -34,9 +34,6 @@ const TechStack = props => {
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
     from: from(index),
-    onRest: () => {
-      console.log(hovered);
-    },
     config: { mass: 1, tension: 225, friction: 55 } //config.slow
   }));
 
