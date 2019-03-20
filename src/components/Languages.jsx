@@ -36,6 +36,7 @@ const Languages = props => {
     languages.length,
     state.map(item => ({
       transform: `perspective(600px) rotateX(${item.flipped ? 180 : 0}deg)`,
+      scale: `scale(${item.hovered ? 1.05 : 1.0})`,
       boxShadow: item.hovered
         ? `0 30px 60px -8px ${
             theme.shadow
@@ -63,7 +64,8 @@ const Languages = props => {
           <animated.div
             className={classes.language}
             key={index}
-            onMouseEnter={e => {
+            style={{ transform: style.scale }}
+            onMouseOver={e => {
               e.preventDefault();
               let arr = [...state];
               arr[index] = { ...state[index], hovered: true };
@@ -144,10 +146,8 @@ const styles = theme => ({
       margin: "8px"
     },
     zIndex: 100,
-    transitionDuration: ".35s",
     "&:hover": {
-      zIndex: 105,
-      transform: "scale(1.05)"
+      zIndex: 105
     }
   },
   card: {

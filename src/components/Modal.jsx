@@ -209,6 +209,7 @@ const styles = theme => ({
       width: "15%",
       marginRight: "14px",
       verticalAlign: "middle",
+      maxWidth: "64px",
       minWidth: "32px",
       minHeight: "32px"
     }
