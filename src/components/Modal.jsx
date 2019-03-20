@@ -204,15 +204,15 @@ const styles = theme => ({
     marginTop: "-10%"
   },
   techItem: {
-    marginBottom: "5px",
-    "& img": {
-      width: "15%",
-      marginRight: "14px",
-      verticalAlign: "middle",
-      maxWidth: "64px",
-      minWidth: "32px",
-      minHeight: "32px"
-    }
+    marginBottom: "5px"
+  },
+  techLogo: {
+    width: "15%",
+    marginRight: "14px",
+    verticalAlign: "middle",
+    maxWidth: "64px",
+    minWidth: "32px",
+    minHeight: "32px"
   },
   link: {
     marginBottom: "10px",
