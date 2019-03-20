@@ -36,7 +36,6 @@ const Languages = props => {
     languages.length,
     state.map(item => ({
       transform: `perspective(600px) rotateX(${item.flipped ? 180 : 0}deg)`,
-      index: item.hovered ? 200 : 100,
       boxShadow: item.hovered
         ? `0 30px 60px -8px ${
             theme.shadow
@@ -63,7 +62,6 @@ const Languages = props => {
         {springs.map((style, index) => (
           <animated.div
             className={classes.language}
-            style={{ zIndex: state[index].hovered ? 101 : 100 }}
             key={index}
             onMouseEnter={e => {
               e.preventDefault();
@@ -145,8 +143,10 @@ const styles = theme => ({
       maxWidth: "250px",
       margin: "8px"
     },
+    zIndex: 100,
     transitionDuration: ".35s",
     "&:hover": {
+      zIndex: 105,
       transform: "scale(1.05)"
     }
   },
