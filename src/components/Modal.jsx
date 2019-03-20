@@ -72,12 +72,12 @@ const Modal = props => {
               </div>
             ))}
             <h3>Technologies</h3>
-            {item.technologies.map((item, index) => (
+            {/* {item.technologies.map((item, index) => (
               <div className={classes.techItem} key={index}>
                 <img className={classes.techLogo} alt="technology icon" src={item.icon} />
                 {item.name}
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </animated.div>
