@@ -27,7 +27,7 @@ const TechCard = props => {
     >
       <div className={classes.card}>
         <div className={classes.header}>
-          <img alt="technology icon" src={card.icon} />
+          <img alt="tech icon" src={card.icon} />
           <h2 className={classes.name}>
             {/* {card.name} <span>{card.level}</span> */}
             {card.name}

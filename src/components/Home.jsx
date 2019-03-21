@@ -89,6 +89,7 @@ const styles = theme => ({
     display: "flex",
     position: "relative",
     justifyContent: "center",
+    alignItems: "center",
     color: "#fff",
     outline: "none",
     border: "none",
