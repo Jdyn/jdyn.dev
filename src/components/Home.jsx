@@ -38,7 +38,7 @@ const Home = props => {
         </button>
       </div>
       <TechStack cards={cards} />
-      <Languages languages={languages} />
+      {/* <Languages languages={languages} /> */}
       <Projects projects={projects} />
     </div>
   );

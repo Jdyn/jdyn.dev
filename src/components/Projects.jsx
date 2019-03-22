@@ -136,7 +136,7 @@ const styles = theme => ({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    minHeight: "350px",
+    minHeight: "300px",
   },
   display: {
     position: "relative",

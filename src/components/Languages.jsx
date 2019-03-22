@@ -58,7 +58,7 @@ const Languages = props => {
 
   return (
     <div className={classes.container}>
-      <h1>My Suits.</h1>
+      {/* <h1>My Suits.</h1> */}
       <div className={classes.wrapper}>
         {springs.map((style, index) => (
           <animated.div
@@ -124,7 +124,7 @@ const styles = theme => ({
     position: "relative",
     alignItems: "center",
     justifyContent: "center",
-    padding: "0 10px 80px 10px",
+    padding: "0 10px 0 10px",
     width: "100%",
     maxHeight: "1000px",
     "@media (min-width: 650px)": {

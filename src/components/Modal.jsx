@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -19,18 +19,17 @@ const Modal = props => {
     }
   };
 
-  const [{ opacity, ...rest }, set] = useSpring(() => ({
-    config: { tension: 210, mass: 1, friction: 20 },
+  const [{ opacity, transform }, set] = useSpring(() => ({
+    config: config.stiff,
     to: {
-      width: "100%",
       transform: "scale(1)",
       opacity: 1
     },
     from: {
-      width: "0%",
       opacity: 0,
       transform: "scale(0)"
     },
+
     onRest: changes => {
       if (!changes.opacity) {
         setModal(false); // A proper hack...
@@ -40,13 +39,14 @@ const Modal = props => {
 
   return (
     <animated.div style={{ opacity }} className={classes.root} onClick={e => handleClick(e)}>
-      <animated.div className={classes.container} style={{ opacity, ...rest }}>
+      <animated.div className={classes.container} style={{ opacity, transform }}>
         <div className={classes.hero}>
           <h1>{item.name}</h1>
           <span>{item.description}</span>
         </div>
         <div className={classes.overview}>
           <div className={classes.overviewLeft}>
+          <h3>Overview</h3>
             {item.overview.map((text, index) => (
               <p key={index}>{text}</p>
             ))}
@@ -88,31 +88,35 @@ const Modal = props => {
 const styles = theme => ({
   root: {
     position: "fixed",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    // display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
     zIndex: 100,
     top: 0,
     left: 0,
     width: "100%",
     height: "100%",
     background: "rgba(0, 0, 0, 0.5)",
-    overflowY: "scroll",
-    overflowX: "hidden",
+    // overflowY: "scroll",
+    overflow: "auto",
     padding: "80px 0",
-    "&::-webkit-scrollbar": {
-      width: "11px",
-      height: "16px",
-      backgroundColor: "lightgrey"
-    },
-    "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "rgba(0,0,0,0.2)"
-    },
-    "&::-webkit-scrollbar-button": {
-      width: "0",
-      height: "0",
-      display: "none"
+    overscrollBehaviorY: "contain",
+    "@media (min-width: 550px)": {
+      padding: "80px 35px"
     }
+    // "&::-webkit-scrollbar": {
+    //   width: "11px",
+    //   height: "16px",
+    //   backgroundColor: "lightgrey"
+    // },
+    // "&::-webkit-scrollbar-thumb": {
+    //   backgroundColor: "rgba(0,0,0,0.2)"
+    // },
+    // "&::-webkit-scrollbar-button": {
+    //   width: "0",
+    //   height: "0",
+    //   display: "none"
+    // }
   },
   container: {
     position: "relative",
