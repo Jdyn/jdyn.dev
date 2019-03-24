@@ -80,7 +80,7 @@ const TechStack = props => {
     <div className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
         <span role="img" aria-label="folded-hands">
-          🙏
+          Thank you🙏
         </span>
       </animated.div>
       {springs.map((props, index) => (
@@ -104,7 +104,7 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     marginBottom: "15%",
-    height: "540px",
+    height: "555px",
     justifyContent: "center",
     gridArea: "stack",
     zIndex: 85
