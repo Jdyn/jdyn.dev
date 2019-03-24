@@ -7,7 +7,7 @@ export default {
     quartinary: "#e6ebf1",
     primaryGrey: "#d7dadc",
     modal: "#fafafa",
-    accent: "#E91E63",
+    accent: "#AD1457",
     shadow: "rgba(50,50,93,.3)"
   },
   dark: {

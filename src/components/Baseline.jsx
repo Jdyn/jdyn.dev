@@ -27,6 +27,7 @@ const styles = theme => ({
       backgroundColor: theme.primary,
       color: theme.color,
       fontSize: "100%",
+      fontDisplay: "auto",
       fontFamily: ["Avenir Next", "Open Sans", "Segoe UI", "sans-serif"],
       fontWeight: "normal",
       fontStyle: "normal",

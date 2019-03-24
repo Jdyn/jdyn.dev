@@ -41,7 +41,7 @@ export default {
     name: "React",
     level: "97%",
     overview:
-      "React is my bread and butter in the front-end. Countless projects, including this site, have allowed me to become extremely skilled in React and the sky is the limit at this point. I think JavaScript makes building more complex interactions much easier and is definitely here to stay.",
+      "React is my bread and butter in the front-end. Countless projects, including this site have allowed me to become extremely skilled with React and I look forward to building increasingly more complex products over time.",
     icon: "images/technologies/react.svg",
     suit: "images/languages/javascript.svg"
   },
