@@ -29,7 +29,6 @@ const Modal = props => {
       opacity: 0,
       transform: "scale(0)"
     },
-
     onRest: changes => {
       if (!changes.opacity) {
         setModal(false); // A proper hack...
@@ -97,13 +96,14 @@ const styles = theme => ({
     width: "100%",
     height: "100%",
     background: "rgba(0, 0, 0, 0.5)",
-    // overflowY: "scroll",
-    overflow: "auto",
+    overflowY: "scroll",
+    WebkitOverflowScrolling: 'touch',
+    // overflow: "auto",
     padding: "80px 0",
-    overscrollBehaviorY: "contain",
-    "@media (min-width: 550px)": {
-      padding: "80px 35px"
-    }
+    overscrollBehavior: "none",
+    // "@media (min-width: 550px)": {
+    //   padding: "80px 35px"
+    // }
     // "&::-webkit-scrollbar": {
     //   width: "11px",
     //   height: "16px",

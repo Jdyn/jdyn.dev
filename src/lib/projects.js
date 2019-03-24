@@ -59,7 +59,7 @@ export default {
     width: "350px"
   },
   window: {
-    name: "Foggy Window",
+    name: "Fog",
     overview: [],
     technologies: [],
     links: [],

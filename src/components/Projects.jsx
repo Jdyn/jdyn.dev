@@ -19,7 +19,7 @@ const Projects = props => {
 
   const myRef = useRef();
   const handleClickOutside = e => {
-    if (!myRef.current.contains(e.target) && modal === false) {
+    if (!myRef.current.contains(e.target) && !modal) {
       set(false);
     }
   };
@@ -36,10 +36,10 @@ const Projects = props => {
 
   useEffect(() => {
     document.addEventListener("mouseup", handleClickOutside);
-    document.addEventListener("touchup", handleClickOutside);
+    document.addEventListener("touchend", handleClickOutside);
     return () => {
       document.removeEventListener("mouseup", handleClickOutside);
-      document.removeEventListener("touchup", handleClickOutside);
+      document.removeEventListener("touchend", handleClickOutside);
     };
   }, [modal]);
 
@@ -47,7 +47,7 @@ const Projects = props => {
     from: { opacity: 0, height: "0px" },
     to: {
       opacity: open ? 0 : 1,
-      height: open ? "0" : "60px"
+      height: open ? "0" : "55px"
     }
   });
 
@@ -61,7 +61,7 @@ const Projects = props => {
       boxShadow: "0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)"
     },
     to: {
-      width: open ? "100%" : "20%",
+      width: open ? "100%" : "15%",
       background: open ? theme.primary : theme.accent,
       cursor: open ? "default" : "pointer",
       boxShadow: open
@@ -113,8 +113,7 @@ const Projects = props => {
             project={item}
             style={{
               ...props,
-              background: item.css,
-              // height: open? "350px" : "0px"
+              background: item.css
             }}
             handleModal={handleModal}
           />
@@ -136,7 +135,7 @@ const styles = theme => ({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    minHeight: "300px",
+    minHeight: "300px"
   },
   display: {
     position: "relative",
@@ -147,10 +146,11 @@ const styles = theme => ({
     borderRadius: 10,
     minWidth: "250px",
     maxWidth: "1195px",
+    // minHeight: "50px",
     cursor: "pointer",
     margin: "25px",
     "@media (min-width: 700px)": {
-      margin: "25px 65px",
+      margin: "25px 65px"
       // padding: "10px"
     },
     willChange: "width, height"
