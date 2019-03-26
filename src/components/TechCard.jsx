@@ -46,7 +46,7 @@ const styles = theme => ({
   container: {
     position: "relative",
     width: "100%",
-    maxWidth: "295px",
+    maxWidth: "300px",
     height: "100%",
     // maxHeight: "650px",
     borderRadius: 10,

@@ -103,8 +103,8 @@ const styles = theme => ({
     display: "flex",
     position: "relative",
     width: "100%",
-    marginBottom: "15%",
-    height: "555px",
+    marginBottom: "10%",
+    height: "550px",
     justifyContent: "center",
     gridArea: "stack",
     zIndex: 85
