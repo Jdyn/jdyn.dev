@@ -19,7 +19,7 @@ const Projects = props => {
 
   const myRef = useRef();
   const handleClickOutside = e => {
-    if (!myRef.current.contains(e.target) && !modal) {
+    if (!myRef.current.contains(e.target) && !modal && e.button === 0) {
       set(false);
     }
   };
@@ -36,10 +36,8 @@ const Projects = props => {
 
   useEffect(() => {
     document.addEventListener("mouseup", handleClickOutside);
-    document.addEventListener("touchend", handleClickOutside);
     return () => {
       document.removeEventListener("mouseup", handleClickOutside);
-      document.removeEventListener("touchend", handleClickOutside);
     };
   }, [modal]);
 

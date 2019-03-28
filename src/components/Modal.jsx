@@ -45,7 +45,7 @@ const Modal = props => {
         </div>
         <div className={classes.overview}>
           <div className={classes.overviewLeft}>
-          <h3>Overview</h3>
+            <h3>Overview</h3>
             {item.overview.map((text, index) => (
               <p key={index}>{text}</p>
             ))}
@@ -97,26 +97,25 @@ const styles = theme => ({
     height: "100%",
     background: "rgba(0, 0, 0, 0.5)",
     overflowY: "scroll",
-    WebkitOverflowScrolling: 'touch',
+    WebkitOverflowScrolling: "touch",
     // overflow: "auto",
     padding: "80px 0",
     overscrollBehavior: "none",
-    // "@media (min-width: 550px)": {
-    //   padding: "80px 35px"
-    // }
-    // "&::-webkit-scrollbar": {
-    //   width: "11px",
-    //   height: "16px",
-    //   backgroundColor: "lightgrey"
-    // },
-    // "&::-webkit-scrollbar-thumb": {
-    //   backgroundColor: "rgba(0,0,0,0.2)"
-    // },
-    // "&::-webkit-scrollbar-button": {
-    //   width: "0",
-    //   height: "0",
-    //   display: "none"
-    // }
+    "@media (min-width: 650px)": {
+      "&::-webkit-scrollbar": {
+        width: "11px",
+        height: "16px",
+        backgroundColor: "lightgrey"
+      },
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: "rgba(0,0,0,0.2)"
+      },
+      "&::-webkit-scrollbar-button": {
+        width: "0",
+        height: "0",
+        display: "none"
+      }
+    }
   },
   container: {
     position: "relative",
@@ -124,6 +123,7 @@ const styles = theme => ({
     flexDirection: "column",
     maxWidth: "900px",
     borderRadius: 10,
+    paddingTop: "30px",
     margin: "auto",
     backgroundColor: theme.primary,
     zIndex: 150,
@@ -141,11 +141,11 @@ const styles = theme => ({
       zIndex: 160,
       color: "#fff"
     },
-    boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
+    boxShadow: "0 0px 12px 0 rgba(0,0,0,.15)",
     backgroundImage: `url(${props.item.image})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    borderRadius: "10px 10px 0 0",
+    borderRadius: "10px 10px 15px 15px",
     "&:after": {
       content: "''",
       position: "absolute",
@@ -154,8 +154,8 @@ const styles = theme => ({
       width: "100%",
       height: "100%",
       zIndex: 155,
-      background: "rgba(0, 0, 0, 0.6)",
-      borderRadius: "10px 10px 0 0"
+      borderRadius: "10px 10px 15px 15px",
+      background: "rgba(0, 0, 0, 0.4)"
     }
   }),
   overview: {
@@ -190,7 +190,7 @@ const styles = theme => ({
     },
     "@media (min-width: 650px)": {
       marginRight: "30px",
-      marginTop: "-10%"
+      marginTop: "-15%"
     }
   },
   overviewRight: {
@@ -205,7 +205,10 @@ const styles = theme => ({
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     backgroundColor: theme.modal,
     color: theme.color,
-    marginTop: "-10%"
+    marginTop: "-35%",
+    "@media (min-width: 650px)": {
+      marginTop: "-15%"
+    }
   },
   techItem: {
     marginBottom: "5px"
