@@ -1,7 +1,7 @@
 export default {
   light: {
     color: "#4a4a4a",
-    primary: "#fafafa",
+    primary: "#fafafa", //#f0f0f0 #3c3c3c
     secondary: "#f6f8fa",
     tertiary: "#eef2f7",
     quartinary: "#e6ebf1",
@@ -12,7 +12,7 @@ export default {
   },
   dark: {
     color: "#fafafa",
-    primary: "#383838",
+    primary: "#353535",
     secondary: "#323232",
     tertiary: "#292929",
     quartinary: "#212121",

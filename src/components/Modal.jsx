@@ -123,7 +123,7 @@ const styles = theme => ({
     flexDirection: "column",
     maxWidth: "900px",
     borderRadius: 10,
-    paddingTop: "30px",
+    paddingTop: "15px",
     margin: "auto",
     backgroundColor: theme.primary,
     zIndex: 150,
@@ -186,7 +186,7 @@ const styles = theme => ({
       margin: 0,
       marginBottom: "15px",
       fontWeight: 500,
-      fontSize: 19
+      fontSize: 18
     },
     "@media (min-width: 650px)": {
       marginRight: "30px",
@@ -202,6 +202,7 @@ const styles = theme => ({
     padding: "20px",
     borderRadius: 8,
     fontWeight: 500,
+    fontSize: 18,
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     backgroundColor: theme.modal,
     color: theme.color,

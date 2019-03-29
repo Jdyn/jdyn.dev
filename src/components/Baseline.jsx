@@ -28,7 +28,7 @@ const styles = theme => ({
       color: theme.color,
       fontSize: "100%",
       fontDisplay: "auto",
-      fontFamily: ["Avenir Next", "Open Sans", "Segoe UI", "sans-serif"],
+      fontFamily: ["Museo Sans Rounded", "Open Sans", "Segoe UI", "sans-serif"],
       fontWeight: "normal",
       fontStyle: "normal",
       webkitTextSizeAdjust: "100%",
