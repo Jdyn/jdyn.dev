@@ -10,7 +10,7 @@ export default {
     name: "Django",
     level: "70%",
     overview:
-      "I like Django. However after using Phoenix, I've found myself prefering it over Django. The biggest plus for me would be the mature ecosystem surrounding Django which I sorely miss when im working in Elixir. While it would not be my first choice, I enjoy working with Python and the ecosystem at large.",
+      "I think Django certainly has its place. However after using Phoenix, I've found myself prefering it over Django. The biggest plus for me would be the mature ecosystem surrounding Django which I sorely miss when im working in Elixir. While it would not be my first choice, I enjoy working with Python and the ecosystem at large.",
     icon: "images/technologies/django.svg",
     suit: "images/languages/python.svg"
   },
@@ -18,7 +18,7 @@ export default {
     name: "iOS",
     level: "70%",
     overview:
-      "My first break into Software Development began with iOS working on Academus. The safety and structure given while working with Swift and Apple's platform is refreshing. Building up the Academus Mobile App from scratch really solitified my knowledge and allowed me to grow exponentially.",
+      "My break into software development began with iOS working on Academus. The safety and structure given while working with Swift and Apple's platform is refreshing. Building up Academus iOS from scratch really solitified my knowledge and allowed me to grow exponentially in my early years.",
     icon: "images/technologies/ios.svg",
     suit: "images/languages/swift.svg"
   },
@@ -26,14 +26,14 @@ export default {
     name: "CSS/HTML",
     level: "90%",
     overview:
-      "However frustrating CSS might be, some serious advancements have been made. Namely CSS Grid, and Flexbox. With the combination of these tools, you can achieve almost anything. All of my work incorporates Grid and Flexbox to some extent and has allowed me to take designs to the next level.",
+      "However frustrating CSS may be, some serious advancements have been made. Namely CSS Grid, and Flexbox. With the combination of these tools, designs that were considered complex have become rather simple. All of my work incorporates Grid and Flexbox to some degree and has allowed me to take designs to the next level.",
     icon: "images/technologies/html5.svg"
   },
   phoenix: {
     name: "Phoenix",
     level: "55%",
     overview:
-      "Due to Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax, among other benefits, I believe Elixir will grow exponentially in the coming years. I built the API of typer.io with Phoenix and plan on using it in the future.",
+      "Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax and other benefits puts Phoenix on quite the pedistal. I built the main API of typer.io with Phoenix and it was strangely refreshing. I think Phoenix has a lot more potential than it bargains for.",
     icon: "images/technologies/phoenix.svg",
     suit: "images/languages/elixir.png"
   },
@@ -49,7 +49,7 @@ export default {
     name: "Node.JS",
     level: "75%",
     overview:
-      "Due to the innate speed of NodeJS and it's async I/O model, NodeJS is at the forefront of my mind when dealing with realtime data / communications and as a result, i've used extensively. Bringing modern ES6 into node makes it even better to work with and is the core of typer.io's main functionality.",
+      "Due to the innate speed of NodeJS and it's async I/O model, Node is at the forefront of my mind when dealing with realtime communications. I've come to use it extensively and consider it to be quite an exceptional tool. However, with the rise of Go and Elixir, Node may have a lot to answer for in terms of scaleability.",
     icon: "images/technologies/nodejs.svg",
     suit: "images/languages/javascript.svg"
   },

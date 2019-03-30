@@ -8,7 +8,7 @@ export default {
     primaryGrey: "#d7dadc",
     modal: "#fafafa",
     accent: "#AD1457",
-    shadow: "rgba(50,50,93,.3)"
+    shadow: "rgba(50,50,73,.4)"
   },
   dark: {
     color: "#fafafa",

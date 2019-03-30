@@ -20,7 +20,7 @@ const Modal = props => {
   };
 
   const [{ opacity, transform }, set] = useSpring(() => ({
-    config: config.stiff,
+    config: config.default,
     to: {
       transform: "scale(1)",
       opacity: 1

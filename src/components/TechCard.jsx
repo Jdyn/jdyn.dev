@@ -48,12 +48,11 @@ const styles = theme => ({
     width: "100%",
     maxWidth: "300px",
     height: "100%",
-    // maxHeight: "650px",
     borderRadius: 10,
     cursor: "grab",
     backgroundColor: theme.primary,
-    boxShadow: `0 12.5px 35px -5px ${theme.shadow}, 0 10px 20px -10px ${theme.shadow}`
-  },
+    boxShadow: `0 12.5px 50px -10px ${theme.shadow}, 0 10px 10px -10px ${theme.shadow}`
+  },  
   card: {
     display: "flex",
     flexDirection: "column",
@@ -71,7 +70,7 @@ const styles = theme => ({
     userSelect: "none",
     fontSize: "18px",
     flexGrow: 1,
-    hyphens: "auto",
+    // hyphens: "auto",
     color: theme.color,
     fontWeight: 500,
     // lineHeight: "20px",

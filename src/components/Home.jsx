@@ -72,10 +72,12 @@ const styles = theme => ({
     textAlign: "center",
     justifyContent: "center",
     display: "flex",
+    // maxWidth: "650px",
+    // marginLeft: "auto",
     flexDirection: "column-reverse",
     "@media (min-width: 650px)": {
       textAlign: "right",
-      justifyContent: "right",
+      justifyContent: "right"
     },
     "& h1": {
       margin: "auto 0",
@@ -101,7 +103,7 @@ const styles = theme => ({
     padding: "0 15px",
     margin: "20px auto",
     "@media (min-width: 650px)": {
-      margin: "20px auto 20px 20px",
+      margin: "20px auto 20px 20px"
     },
     fontWeight: 700,
     cursor: "pointer",
@@ -114,7 +116,8 @@ const styles = theme => ({
     transitionDuration: ".2s",
     "&:hover": {
       transform: "translateY(-3px)",
-      boxShadow: "0 13px 27px -5px rgba(50,50,93,.25), 0 8px 35px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)"
+      boxShadow:
+        "0 13px 27px -5px rgba(50,50,93,.25), 0 8px 35px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)"
     },
     "&:active": {
       transform: "translateY(3px)"

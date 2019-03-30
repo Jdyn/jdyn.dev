@@ -13,7 +13,7 @@ const propTypes = {
 
 const to = index => ({
   x: 0,
-  y: index * 2,
+  y: index * -6 ,
   rotation: -10 + Math.random() * 20, // Randomize initial rotation in stack
   scale: 1,
   delay: index * 225
@@ -79,9 +79,7 @@ const TechStack = props => {
   return (
     <div className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
-        <span role="img" aria-label="folded-hands">
-          Thanks 🙏
-        </span>
+        Thank you for viewing.
       </animated.div>
       {springs.map((props, index) => (
         <animated.div
@@ -103,7 +101,8 @@ const styles = theme => ({
     display: "flex",
     position: "relative",
     width: "100%",
-    marginBottom: "10%",
+    maxWidth: "650px",
+    // marginBottom: "10%",
     height: "525px",
     justifyContent: "center",
     gridArea: "stack",
