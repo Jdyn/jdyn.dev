@@ -94,9 +94,11 @@ const Projects = props => {
     <div className={classes.container}>
       {modal && <Modal setModal={setModal} item={currentProject} />}
       <animated.div
+        id="projectsDisplay"
         ref={myRef}
         className={classes.display}
         style={{ ...rest, width: width }}
+        tabIndex="2"
         onClick={() => {
           ReactGA.event({
             category: "Projects",
@@ -104,11 +106,22 @@ const Projects = props => {
           });
           set(true);
         }}
+        onKeyDown={e => {
+          if (e.key === "Enter") {
+            if (
+              document.activeElement.tabIndex ===
+              document.getElementById("projectsDisplay").tabIndex
+            ) {
+              set(!open);
+            }
+          }
+        }}
       >
-        {transitions.map(({ item, key, props }) => (
+        {transitions.map(({ item, key, props }, index) => (
           <ProjectCard
             key={key}
             project={item}
+            tabIndex={open ? `${3 + index}` : -1}
             style={{
               ...props,
               background: item.css

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import { useSpring, animated, config } from "react-spring";
@@ -18,6 +18,20 @@ const Modal = props => {
       set({ width: "0%", opacity: 0, transform: "scale(0)" });
     }
   };
+
+  const handleKeydown = event => {
+    if (event.key === "Escape") {
+      document.body.style.overflow = "visible";
+      set({ width: "0%", opacity: 0, transform: "scale(0)" });
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeydown);
+    return () => {
+      document.removeEventListener("keydown", handleKeydown);
+    };
+  }, []);
 
   const [{ opacity, transform }, set] = useSpring(() => ({
     config: config.default,

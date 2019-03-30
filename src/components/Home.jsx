@@ -33,7 +33,7 @@ const Home = props => {
     <div className={classes.root}>
       <div className={classes.stackHero}>
         <h1>My Stack.</h1>
-        <button className={classes.themeButton} onClick={() => handleSwitch()}>
+        <button className={classes.themeButton} tabIndex="1" onClick={() => handleSwitch()}>
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}
         </button>
       </div>
@@ -92,7 +92,7 @@ const styles = theme => ({
     justifyContent: "center",
     alignItems: "center",
     color: "#fff",
-    outline: "none",
+    // outline: "none",
     border: "none",
     backgroundColor: theme.accent,
     borderRadius: 10,
@@ -120,9 +120,6 @@ const styles = theme => ({
     },
     "&:active": {
       transform: "translateY(3px)"
-    },
-    "&:focus": {
-      border: `1px solid ${theme.color}`,
     }
   }
 });

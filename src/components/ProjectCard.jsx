@@ -11,13 +11,21 @@ const propTypes = {
 };
 
 const ProjectCard = props => {
-  const { classes, style, handleModal, project } = props;
+  const { classes, style, handleModal, project, tabIndex } = props;
 
   return (
     <animated.div
       style={style}
+      tabIndex={tabIndex}
       className={classes.container}
       onClick={() => handleModal(project)}
+      onKeyDown={e => {
+        if (e.key === "Enter") {
+          if (`${document.activeElement.tabIndex}` === tabIndex) {
+            handleModal(project);
+          }
+        }
+      }}
     />
   );
 };

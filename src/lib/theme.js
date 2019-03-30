@@ -1,6 +1,6 @@
 export default {
   light: {
-    white: "#fff",
+    focus: "lightblue",
     color: "#4a4a4a",
     primary: "#fafafa", //#f0f0f0 #3c3c3c
     secondary: "#f6f8fa",
@@ -12,7 +12,7 @@ export default {
     shadow: "rgba(50,50,73,.4)"
   },
   dark: {
-    white: "#fff",
+    focus: "lightblue",
     color: "#fafafa",
     primary: "#353535",
     secondary: "#323232",
