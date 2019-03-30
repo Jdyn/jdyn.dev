@@ -16,12 +16,12 @@ const to = index => ({
   y: index * -6 ,
   rotation: -10 + Math.random() * 20, // Randomize initial rotation in stack
   scale: 1,
-  delay: index * 225
+  delay: index * 250
 });
 
 const from = index => ({
   x: Math.random() > 0.55 ? window.innerWidth * 1 : window.innerWidth * -1,
-  y: 0,
+  y: -1500,
   rotation: 0,
   scale: 0.5
 });

@@ -128,6 +128,7 @@ const styles = theme => ({
   container: {
     gridArea: "projects",
     display: "flex",
+    transitionDuration: "0.2s",
     backgroundColor: theme.quartinary,
     position: "relative",
     alignItems: "center",

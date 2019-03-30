@@ -123,7 +123,6 @@ const styles = theme => ({
     flexDirection: "column",
     maxWidth: "900px",
     borderRadius: 10,
-    paddingTop: "15px",
     margin: "auto",
     backgroundColor: theme.primary,
     zIndex: 150,
@@ -134,7 +133,7 @@ const styles = theme => ({
     position: "relative",
     flexDirection: "column",
     textAlign: "center",
-    padding: "150px 0px",
+    padding: "175px 0px",
     width: "100%",
     "& h1, span": {
       marginTop: 0,

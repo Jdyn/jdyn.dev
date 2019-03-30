@@ -48,6 +48,7 @@ const styles = theme => ({
   root: {
     display: "grid",
     position: "relative",
+    transitionDuration: "0.2s",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "min-content min-content 1fr",
     backgroundColor: theme.secondary,
@@ -72,8 +73,6 @@ const styles = theme => ({
     textAlign: "center",
     justifyContent: "center",
     display: "flex",
-    // maxWidth: "650px",
-    // marginLeft: "auto",
     flexDirection: "column-reverse",
     "@media (min-width: 650px)": {
       textAlign: "right",
@@ -121,6 +120,9 @@ const styles = theme => ({
     },
     "&:active": {
       transform: "translateY(3px)"
+    },
+    "&:focus": {
+      border: `1px solid ${theme.color}`,
     }
   }
 });

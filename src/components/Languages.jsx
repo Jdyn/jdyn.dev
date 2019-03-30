@@ -7,10 +7,6 @@ const propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-// const interp = index => radians => {
-//   return `translate3d(0, ${15 * Math.sin(radians + (index * 2 * Math.PI) / 1.6)}px, 0)`;
-// };
-
 const Languages = props => {
   const { classes, languages, theme } = props;
   const [state, set] = useState(() =>
@@ -20,17 +16,6 @@ const Languages = props => {
       return item;
     })
   );
-
-  // const { radians } = useSpring({
-  //   to: async next => {
-  //     while (1) await next({ radians: 2 * Math.PI });
-  //   },
-  //   from: {
-  //     radians: 0
-  //   },
-  //   config: { duration: 7500 },
-  //   reset: true
-  // });
 
   const springs = useSprings(
     languages.length,
@@ -49,8 +34,6 @@ const Languages = props => {
   );
 
   const flipCard = (event, index) => {
-    // event.preventDefault();
-    event.persist();
     let arr = [...state];
     arr[index] = { ...state[index], flipped: !state[index].flipped };
     set(arr);

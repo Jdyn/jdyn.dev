@@ -13,7 +13,7 @@ const propTypes = {
 };
 
 const trans = (rotation, scale) =>
-  `perspective(${"1500px"}) rotateX(30deg) rotateY(${rotation /
+  `perspective(${"1800px"}) rotateX(30deg) rotateY(${rotation /
     10}deg) rotateZ(${rotation}deg) scale(${scale})`;
 
 const TechCard = props => {
@@ -52,7 +52,7 @@ const styles = theme => ({
     cursor: "grab",
     backgroundColor: theme.primary,
     boxShadow: `0 12.5px 50px -10px ${theme.shadow}, 0 10px 10px -10px ${theme.shadow}`
-  },  
+  },
   card: {
     display: "flex",
     flexDirection: "column",
