@@ -250,7 +250,7 @@ const styles = theme => ({
       color: theme.color,
       display: "flex",
       alignItems: "center",
-      padding: "5px 10px",
+      padding: "10px 10px",
       flexDirection: "row"
     },
     "&:hover": {

@@ -18,7 +18,7 @@ export default {
     primary: "#353535",
     secondary: "#323232",
     tertiary: "#292929",
-    quartinary: "#212121",
+    quartinary: "#292929", // old 212121
     primaryGrey: "#616161",
     modal: "#292929",
     accent: "#555abf",
