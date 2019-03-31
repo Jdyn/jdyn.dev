@@ -121,7 +121,7 @@ const Projects = props => {
           <ProjectCard
             key={key}
             project={item}
-            tabIndex={open ? `${3 + index}` : -1}
+            tabIndex={modal ? -1 : open ? `${3 + index}` : -1}
             style={{
               ...props,
               background: item.css

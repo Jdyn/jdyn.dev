@@ -26,7 +26,7 @@ export default {
     name: "CSS/HTML",
     level: "90%",
     overview:
-      "However frustrating CSS may be, some serious advancements have been made. Namely CSS Grid, and Flexbox. With the combination of these tools, designs that were considered complex have become rather simple. All of my work incorporates Grid and Flexbox to some degree and has allowed me to take designs to the next level.",
+      "However frustrating CSS may be, some serious advancements have been made. Namely CSS Grid and Flexbox. With the combination of these tools, designs that were considered complex have become rather simple. All of my work incorporates Grid and Flexbox to some degree and has allowed me to take designs to the next level.",
     icon: "images/technologies/html5.svg"
   },
   phoenix: {
@@ -49,7 +49,7 @@ export default {
     name: "Node.JS",
     level: "75%",
     overview:
-      "Due to the innate speed of NodeJS and it's async I/O model, Node is at the forefront of my mind when dealing with realtime communications. I've come to use it extensively and consider it to be quite an exceptional tool. However, with the rise of Go and Elixir, Node may have a lot to answer for in terms of scaleability.",
+      "Due to the innate speed of Node and it's async I/O model, Node is my first consideration when features require real time communcations. I've come to use it extensively and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scaleability.",
     icon: "images/technologies/nodejs.svg",
     suit: "images/languages/javascript.svg"
   },

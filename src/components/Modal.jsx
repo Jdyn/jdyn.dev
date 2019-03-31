@@ -73,9 +73,9 @@ const Modal = props => {
                   <div className={classes.linkImage}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="32px"
-                      height="32px"
-                      viewBox="0 0 32 32"
+                      width="24px"
+                      height="24px"
+                      viewBox="0 0 24 24"
                     >
                       <path d="M0 0h24v24H0z" fill="none" />
                       <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
@@ -191,8 +191,8 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: theme.modal,
     color: theme.color,
-    borderRadius: 8,
-    padding: "20px",
+    borderRadius: 10,
+    padding: "10px 30px 30px 30px",
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     marginTop: "10%",
     "& p": {
@@ -212,8 +212,8 @@ const styles = theme => ({
     flexDirection: "column",
     flexBasis: "30%",
     position: "relative",
-    padding: "20px",
-    borderRadius: 8,
+    padding: "10px 30px 30px 30px",
+    borderRadius: 10,
     fontWeight: 500,
     fontSize: 18,
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
@@ -236,17 +236,31 @@ const styles = theme => ({
     minHeight: "32px"
   },
   link: {
-    marginBottom: "10px",
+    marginBottom: "5px",
     color: theme.color,
     fill: theme.color,
+    display: "flex",
+    justifyContent: "left",
+    alignItems: "center",
+    borderRadius: 10,
+    transitionDuration: ".15s",
     "& a": {
+      borderRadius: 10,
       textDecoration: "none",
       color: theme.color,
       display: "flex",
+      alignItems: "center",
+      padding: "5px 10px",
       flexDirection: "row"
+    },
+    "&:hover": {
+      backgroundColor: theme.primaryGrey
     }
   },
   linkImage: {
+    // display: "flex",
+    // alignItems: "center",
+    height: "24px",
     marginLeft: "20px",
     fill: theme.color
   }

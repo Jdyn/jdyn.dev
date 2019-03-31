@@ -25,7 +25,7 @@ export default {
       tech.node
     ],
     links: [
-      link("site", "https://academus.io/"),
+      link("Website", "https://academus.io/"),
       link("iOS store", "https://itunes.apple.com/us/app/academus/id1366365507?mt=8"),
       link("Android store", "https://play.google.com/store/apps/details?id=io.academus.android")
     ],

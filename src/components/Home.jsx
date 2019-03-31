@@ -81,7 +81,7 @@ const styles = theme => ({
     "& h1": {
       margin: "auto 0",
       userSelect: "none",
-      paddingBottom: "50px",
+      padding: "30px 0 50px 0",
       color: theme.color,
       fontWeight: 700
     }

@@ -8,7 +8,8 @@ export default {
     quartinary: "#e6ebf1",
     primaryGrey: "#d7dadc",
     modal: "#fafafa",
-    accent: "#AD1457",
+    accent: "#D81B60",
+    accentFocus: "#FF80AB",
     shadow: "rgba(50,50,73,.4)"
   },
   dark: {
@@ -21,6 +22,7 @@ export default {
     primaryGrey: "#616161",
     modal: "#292929",
     accent: "#555abf",
+    accentFocus: "#AD1457",
     shadow: "rgba(0, 0, 0, 0.3)"
   }
 };
