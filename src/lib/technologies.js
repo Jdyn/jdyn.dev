@@ -41,7 +41,7 @@ export default {
     name: "React",
     level: "97%",
     overview:
-      "React is a tool that really shook up the front-end landscape. Features that were once arduous are now elementary. I think the entire purpose of front-end frameworks is to enable the developer to iterate quicker and efficiently; I think React actualizes this idea very well.",
+      "React is a tool that really shook up the landscape of front-end tech as a whole. Features that were once arduous to implement are now considered elementary. I think the entire purpose of front-end frameworks is to enable the developer to iterate quicker and efficiently and I think React actualizes this idea very well.",
     icon: "images/technologies/react.svg",
     suit: "images/languages/javascript.svg"
   },
