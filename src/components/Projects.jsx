@@ -98,7 +98,7 @@ const Projects = props => {
         ref={myRef}
         className={classes.display}
         style={{ ...rest, width: width }}
-        tabIndex="2"
+        tabIndex="0"
         onClick={() => {
           ReactGA.event({
             category: "Projects",
@@ -155,6 +155,7 @@ const styles = theme => ({
     justifyContent: "center",
     flexWrap: "wrap",
     flexDirection: "row",
+    outline: "none",
     borderRadius: 10,
     minWidth: "250px",
     maxWidth: "1195px",

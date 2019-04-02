@@ -4,15 +4,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-ga": "^2.5.7",
-    "react-jss": "^10.0.0-alpha.11",
+    "react-jss": "^10.0.0-alpha.16",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5",
-    "react-spring": "^8.0.9",
-    "react-with-gesture": "^4.0.5"
+    "react-scripts": "2.1.8",
+    "react-spring": "^8.0.18",
+    "react-with-gesture": "^4.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
