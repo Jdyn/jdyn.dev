@@ -34,7 +34,7 @@ const styles = theme => ({
       webkitTextSizeAdjust: "100%",
       textRendering: "optimizeLegibility",
       "&::-webkit-scrollbar": {
-        width: "11px",
+        width: "15px",
         height: "16px",
         backgroundColor: "lightgrey"
       },

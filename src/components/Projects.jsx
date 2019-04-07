@@ -19,7 +19,12 @@ const Projects = props => {
 
   const myRef = useRef();
   const handleClickOutside = e => {
-    if (!myRef.current.contains(e.target) && !modal && e.button === 0) {
+    if (
+      !myRef.current.contains(e.target) &&
+      !modal &&
+      e.button === 0 &&
+      e.target !== document.getElementById("0729")
+    ) {
       set(false);
     }
   };
