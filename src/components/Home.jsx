@@ -4,6 +4,7 @@ import withStyles from "react-jss";
 import TechStack from "./TechStack";
 import Projects from "./Projects";
 import Languages from "./Languages";
+import Social from "./Social";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -32,6 +33,7 @@ const Home = props => {
   return (
     <div className={classes.root}>
       <div className={classes.stackHero}>
+        <Social />
         <h1>My Stack.</h1>
         <button className={classes.themeButton} onClick={() => handleSwitch()}>
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}

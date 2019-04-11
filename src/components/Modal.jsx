@@ -258,8 +258,6 @@ const styles = theme => ({
     }
   },
   linkImage: {
-    // display: "flex",
-    // alignItems: "center",
     height: "24px",
     marginLeft: "20px",
     fill: theme.color

@@ -14,7 +14,7 @@ export default {
   },
   dark: {
     focus: "lightblue",
-    color: "#fafafa",
+    color: "#f0f0f0",
     primary: "#353535",
     secondary: "#323232",
     tertiary: "#292929",
