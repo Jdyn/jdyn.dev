@@ -210,7 +210,7 @@ const styles = theme => ({
     zIndex: 165,
     display: "flex",
     flexDirection: "column",
-    flexBasis: "30%",
+    flexBasis: "35%",
     position: "relative",
     padding: "10px 30px 30px 30px",
     borderRadius: 10,

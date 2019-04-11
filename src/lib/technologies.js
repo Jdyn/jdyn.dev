@@ -41,7 +41,7 @@ export default {
     name: "React",
     level: "97%",
     overview:
-      "React is a tool that really shook up the landscape of front-end tech as a whole. Features that were once arduous to implement are now considered elementary. I think the entire purpose of front-end frameworks is to enable the developer to iterate quicker and efficiently and I think React actualizes this idea very well.",
+      "React is the tool I use to build complex applications. Features that were once arduous to implement are arguably elementary with React. The entire purpose of front-end frameworks is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
     icon: "images/technologies/react.svg",
     suit: "images/languages/javascript.svg"
   },
@@ -49,7 +49,7 @@ export default {
     name: "Node.JS",
     level: "75%",
     overview:
-      "Due to the innate speed of Node and it's async I/O model, Node is my first consideration when features require real time communcations. I've come to use it extensively and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
+      "Due to the innate speed of Node and it's unique async I/O model, Node is among my first considerations when implementing a realtime feature. I've found myself using it extensively and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
     icon: "images/technologies/nodejs.svg",
     suit: "images/languages/javascript.svg"
   },
