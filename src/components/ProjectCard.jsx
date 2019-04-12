@@ -39,7 +39,7 @@ const styles = {
     flexBasis: props.project.width,
     overflow: "hidden",
     borderRadius: 10,
-    willChange: "transform, opacity",
+    willChange: "transform, opacity, height, margin",
     justifyContent: "center",
     backgroundImage: `url(${props.project.image})`,
     backgroundSize: "cover",

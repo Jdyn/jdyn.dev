@@ -35,9 +35,11 @@ export default {
     name: "typer.io",
     description: "",
     image: "images/projects/typer.png",
-    overview: ["Details soon"],
-    technologies: [],
-    links: [],
+    overview: ["Details soon", ["In regards to the demo, custom matches, match history, discussions, and accounts are purposefully disabled."]],
+    technologies: [tech.phoenix, tech.react, tech.node, tech.css],
+    links: [
+      link("early DEMO", "http://typer-io-web.s3-website-us-west-1.amazonaws.com/")
+    ],
     width: "605px"
   },
   deepBlue: {
