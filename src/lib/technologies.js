@@ -41,7 +41,7 @@ export default {
     name: "React",
     level: "97%",
     overview:
-      "React is the tool I use to build complex applications. Features that were once arduous to implement are arguably elementary with React. The entire purpose of front-end frameworks is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
+      "React is the tool to use when building complex applications. Features that were once arduous to implement are arguably elementary with React. The entire purpose of front-end frameworks is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
     icon: "images/technologies/react.svg",
     suit: "images/languages/javascript.svg"
   },
