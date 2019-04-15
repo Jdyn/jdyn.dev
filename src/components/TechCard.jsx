@@ -70,10 +70,8 @@ const styles = theme => ({
     userSelect: "none",
     fontSize: "18px",
     flexGrow: 1,
-    // hyphens: "auto",
     color: theme.color,
     fontWeight: 500,
-    // lineHeight: "20px",
     letterSpacing: "0.085em"
   },
   header: {

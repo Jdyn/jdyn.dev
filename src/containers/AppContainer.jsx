@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import Router from "../components/Router";
-import Footer from "../components/Footer";
 import { ThemeProvider } from "react-jss";
 import themes from "../lib/theme";
 import Baseline from "../components/Baseline";
@@ -35,9 +33,7 @@ const App = props => {
     <>
       <ThemeProvider theme={provideTheme()}>
         <Baseline>
-          <Header />
           <Router changeTheme={changeTheme} />
-          <Footer />
         </Baseline>
       </ThemeProvider>
     </>
