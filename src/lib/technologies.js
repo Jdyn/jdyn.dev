@@ -10,7 +10,7 @@ export default {
     name: "Django",
     level: "70%",
     overview:
-      "I think Django certainly has its place. However after using Phoenix, I've found myself prefering it over Django. The biggest plus for me would be the mature ecosystem surrounding Django which I sorely miss when im working in Elixir. While it would not be my first choice, I enjoy working with Python and the ecosystem at large.",
+      "Django is a tool that has undoubtedly withstood the test of time. It has a very strong community and ecosystem. But Django is not without it's flaws. Similar to Node, recent technologies like Go and Elixir appear to be more well rounded. While it would not be my first choice, I enjoy working with Python and the ecosystem at large.",
     icon: "images/technologies/django.svg",
     suit: "images/languages/python.svg"
   },
@@ -18,7 +18,7 @@ export default {
     name: "iOS",
     level: "70%",
     overview:
-      "My break into software development began with iOS working on Academus. The safety and structure given while working with Swift and Apple's platform is refreshing. Building up Academus iOS from scratch really solitified my knowledge and allowed me to grow exponentially in my early years.",
+      "My break into software development began with iOS working on Academus. The type-safety and structure given while working with Swift and Apple's platform is welcomed. Building up Academus iOS from scratch really solitified my knowledge and allowed me to grow exponentially in my early years.",
     icon: "images/technologies/ios.svg",
     suit: "images/languages/swift.svg"
   },
@@ -26,14 +26,14 @@ export default {
     name: "CSS/HTML",
     level: "90%",
     overview:
-      "However frustrating CSS may be, some serious advancements have been made. Namely CSS Grid and Flexbox. With the combination of these tools, designs that were considered complex have become rather simple. All of my work incorporates Grid and Flexbox to some degree and has allowed me to take designs to the next level.",
+      "Serious advancements have been made with CSS in recent years. Namely CSS Grid and Flexbox. With the combination of these tools, executing more modern design patterns is trivial in comparison to earlier methods. All of my work incorporates Grid and Flexbox and has allowed me to take a level-headed approach while working with CSS.",
     icon: "images/technologies/html5.svg"
   },
   phoenix: {
     name: "Phoenix",
     level: "55%",
     overview:
-      "Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax and other benefits puts Phoenix on quite the pedistal. I built the main API of typer.io with Phoenix and it was strangely refreshing. I think Phoenix has a lot more potential than it bargains for.",
+      "Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax and other benefits puts Phoenix on quite a pedistal for me. I built the main API of typer.io with Phoenix and it was strangely refreshing. I think Phoenix has a lot more potential than it bargains for.",
     icon: "images/technologies/phoenix.svg",
     suit: "images/languages/elixir.png"
   },
@@ -41,7 +41,7 @@ export default {
     name: "React",
     level: "97%",
     overview:
-      "React is the tool to use when building complex applications. Features that were once arduous to implement are arguably elementary with React. The entire purpose of front-end frameworks is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
+      "React is the one tool to use when building complex applications. Features that were once arduous to implement are arguably elementary with React. I think the purpose of front-end frameworks is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
     icon: "images/technologies/react.svg",
     suit: "images/languages/javascript.svg"
   },
@@ -49,7 +49,7 @@ export default {
     name: "Node.JS",
     level: "75%",
     overview:
-      "Due to the innate speed of Node and it's unique async I/O model, Node is among my first considerations when implementing a realtime feature. I've found myself using it extensively and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
+      "Due to the innate speed of Node and it's unique async I/O model, Node is among my first considerations when implementing real time feature sets. I've found myself using it often and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
     icon: "images/technologies/nodejs.svg",
     suit: "images/languages/javascript.svg"
   },
