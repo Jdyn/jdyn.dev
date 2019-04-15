@@ -26,7 +26,7 @@ export default {
     name: "CSS/HTML",
     level: "90%",
     overview:
-      "Serious advancements have been made with CSS in recent years. Namely CSS Grid and Flexbox. With the combination of these tools, executing more modern design patterns is trivial in comparison to earlier methods. All of my work incorporates Grid and Flexbox and has allowed me to take a level-headed approach while working with CSS.",
+      "Serious advancements have been made with CSS in recent years. Namely CSS Grid and Flexbox. With the combination of these tools, executing more modern design patterns is trivial in comparison to earlier methods. All of my work incorporates Grid and Flexbox and has allowed me to take a level-headed approach to working with CSS.",
     icon: "images/technologies/html5.svg"
   },
   phoenix: {

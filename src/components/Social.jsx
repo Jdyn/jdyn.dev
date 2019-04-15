@@ -58,9 +58,9 @@ const styles = theme => ({
   container: {
     display: "flex",
     position: "relative",
+    gridArea: "social",
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: "5px"
   },
   wrapper: {
     "&:hover": {

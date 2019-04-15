@@ -33,12 +33,12 @@ const Home = props => {
   return (
     <div className={classes.root}>
       <div className={classes.stackHero}>
-        <Social />
         <h1>My Stack.</h1>
         <button className={classes.themeButton} onClick={() => handleSwitch()}>
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}
         </button>
       </div>
+      <Social />
       <TechStack cards={cards} />
       {/* <Languages languages={languages} /> */}
       <Projects projects={projects} />
@@ -57,16 +57,16 @@ const styles = theme => ({
     gridTemplateAreas: `
     'stackHero'
     'stack'
-    'languages'
+    'social'
     'projects'
     `,
     overflow: "hidden",
     "@media (min-width: 650px)": {
       gridTemplateColumns: "1fr 1fr",
-      gridTemplateRows: "min-content min-content",
+      gridTemplateRows: "1fr min-content min-content",
       gridTemplateAreas: `
       'stackHero stack'
-      'languages languages'
+      'social stack'
       'projects projects'`
     }
   },
@@ -83,7 +83,7 @@ const styles = theme => ({
     "& h1": {
       margin: "auto 0",
       userSelect: "none",
-      padding: "30px 0 50px 0",
+      padding: "15px 0 0 0",
       color: theme.color,
       fontWeight: 700
     }
