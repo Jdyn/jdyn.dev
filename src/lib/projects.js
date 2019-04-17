@@ -16,13 +16,13 @@ export default {
       "With Academus, I constructed the iOS mobile application and performed the due dilligence Associated with it such as collecting user feedback and iterating on it quickly which made working on Academus very exciting. After releasing Academus on beta platforms such as Testflight, we began to grow exponentially, reaching over 30% of our school population and then onto other schools in the US. Plans for new features every year are in place with constant student feedback in mind."
     ],
     technologies: [
-      tech.css,
-      tech.docker,
-      tech.rails,
-      tech.android,
-      tech.azure,
       tech.ios,
-      tech.node
+      tech.android,
+      tech.rails,
+      tech.azure,
+      tech.node,
+      tech.docker,
+      tech.css
     ],
     links: [
       link("Website", "https://academus.io/"),
@@ -36,10 +36,8 @@ export default {
     description: "",
     image: "images/projects/typer.png",
     overview: ["Details soon"],
-    technologies: [tech.phoenix, tech.react, tech.node, tech.css],
-    links: [
-      link("early DEMO", "http://typer-io-web.s3-website-us-west-1.amazonaws.com/")
-    ],
+    technologies: [tech.react, tech.node, tech.phoenix, tech.css],
+    links: [link("WIP demo", "http://typer-io-web.s3-website-us-west-1.amazonaws.com/")],
     width: "605px"
   },
   deepBlue: {
