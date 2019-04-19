@@ -51,7 +51,7 @@ const Projects = props => {
     from: { opacity: 0, height: "0px" },
     to: {
       opacity: open ? 0 : 1,
-      height: open ? "0" : "55px"
+      height: open ? "0" : "65px"
     }
   });
 
@@ -165,7 +165,7 @@ const styles = theme => ({
     borderRadius: 10,
     minWidth: "250px",
     maxWidth: "1195px",
-    // minHeight: "50px",
+    // minHeight: "65px",
     cursor: "pointer",
     margin: "25px",
     "@media (min-width: 700px)": {
@@ -177,10 +177,13 @@ const styles = theme => ({
   buttonTitle: {
     display: "flex",
     color: "white",
+    position: "relative",
+    // marginTop: "-20px",
     fontWeight: 700,
     justifyContent: "center",
     flexGrow: 1,
     width: "100%",
+    // height: "100%",
     textTransform: "uppercase",
     letterSpacing: "0.125em",
     alignItems: "center"

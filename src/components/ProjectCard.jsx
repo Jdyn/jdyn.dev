@@ -39,11 +39,14 @@ const styles = {
     flexBasis: props.project.width,
     overflow: "hidden",
     borderRadius: 10,
+    outline: "none",
     willChange: "transform, opacity, height, margin",
     justifyContent: "center",
+    // border: "1px solid rgb(0,0,0,.05)",
+    boxShadow: "0px 0px 10px rgb(30,30,70,.4)",
     backgroundImage: `url(${props.project.image})`,
     backgroundSize: "cover",
-    backgroundPosition: "center"
+    backgroundPosition: "center",
   })
 };
 

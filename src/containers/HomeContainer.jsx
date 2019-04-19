@@ -21,7 +21,7 @@ class HomeContainer extends React.Component {
     this.projects = [
       project.academus,
       project.typer,
-      project.deepBlue,
+      project.jdyn,
       project.lemonade,
       project.window
     ];

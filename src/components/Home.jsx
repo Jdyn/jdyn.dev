@@ -90,7 +90,6 @@ const styles = theme => ({
   },
   themeButton: {
     display: "flex",
-    position: "relative",
     justifyContent: "center",
     alignItems: "center",
     color: "#fff",
@@ -100,7 +99,6 @@ const styles = theme => ({
     borderRadius: 10,
     fontSize: "15px",
     height: "50px",
-    lineHeight: "40px",
     padding: "0 15px",
     margin: "20px auto",
     "@media (min-width: 650px)": {

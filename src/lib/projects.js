@@ -36,17 +36,21 @@ export default {
     description: "",
     image: "images/projects/typer.png",
     overview: ["Details soon"],
-    technologies: [tech.react, tech.node, tech.phoenix, tech.css],
+    technologies: [tech.react, tech.phoenix, tech.node, tech.css, tech.ec2, tech.rds],
     links: [link("WIP demo", "http://typer-io-web.s3-website-us-west-1.amazonaws.com/")],
     width: "605px"
   },
-  deepBlue: {
-    name: "Deep Blue",
-    overview: [],
-    technologies: [],
-    links: [],
-    description: "#e0c3fc → #8ec5fc",
-    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+  jdyn: {
+    name: "jdyn.dev",
+    description: "Portfolio",
+    image: "images/projects/jdyn.png",
+    overview: [
+      "The goal of the site is to hopefully be a testament to my design philosphies over time. Similar to how architecture changes drastically through periods of time, we have and will see the internet as a whole follow this trend. I intend to update and evolve the site as the Internet and I do.",
+      "The site will of course act as a portfolio of sorts and I will try to update it with recent work as often as possible.",
+      "I might build a blog if there is something I want to say."
+    ],
+    technologies: [tech.react],
+    links: [link("Source", "https://github.com/Jdyn/jdyn.github.io")],
     width: "350px"
   },
   lemonade: {

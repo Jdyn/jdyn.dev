@@ -189,6 +189,7 @@ const styles = theme => ({
     flexDirection: "column",
     flexBasis: "70%",
     flexGrow: 1,
+    lineHeight: "25px",
     backgroundColor: theme.modal,
     color: theme.color,
     borderRadius: 10,
@@ -203,7 +204,7 @@ const styles = theme => ({
     },
     "@media (min-width: 650px)": {
       marginRight: "30px",
-      marginTop: "-15%"
+      marginTop: "-125px"
     }
   },
   overviewRight: {
@@ -211,7 +212,7 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     flexBasis: "35%",
-    position: "relative",
+    position: "relative", 
     padding: "10px 30px 30px 30px",
     borderRadius: 10,
     fontWeight: 500,
@@ -219,10 +220,7 @@ const styles = theme => ({
     boxShadow: "0 5px 12px 0 rgba(0,0,0,.15)",
     backgroundColor: theme.modal,
     color: theme.color,
-    marginTop: "-35%",
-    "@media (min-width: 650px)": {
-      marginTop: "-15%"
-    }
+    marginTop: "-125px"
   },
   techItem: {
     marginBottom: "5px"
