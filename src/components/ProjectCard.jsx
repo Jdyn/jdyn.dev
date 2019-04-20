@@ -30,7 +30,7 @@ const ProjectCard = props => {
   );
 };
 
-const styles = {
+const styles = theme => ({
   container: props => ({
     display: "flex",
     position: "relative",
@@ -43,12 +43,12 @@ const styles = {
     willChange: "transform, opacity, height, margin",
     justifyContent: "center",
     // border: "1px solid rgb(0,0,0,.05)",
-    boxShadow: "0px 0px 10px rgb(30,30,70,.4)",
+    boxShadow: `0px 0px 10px -3px ${theme.shadow}`,
     backgroundImage: `url(${props.project.image})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   })
-};
+});
 
 ProjectCard.propTypes = propTypes;
 
