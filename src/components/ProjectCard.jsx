@@ -7,11 +7,20 @@ const propTypes = {
   classes: PropTypes.object.isRequired,
   style: PropTypes.object.isRequired,
   project: PropTypes.object.isRequired,
-  handleModal: PropTypes.func.isRequired
+  handleModal: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired
 };
 
 const ProjectCard = props => {
-  const { classes, style, handleModal, project, tabIndex } = props;
+  const { classes, style, project, handleModal, tabIndex } = props;
+
+  const keyPressed = event => {
+    if (event.key === "Enter") {
+      if (`${document.activeElement.tabIndex}` === tabIndex) {
+        handleModal(project);
+      }
+    }
+  };
 
   return (
     <animated.div
@@ -19,13 +28,7 @@ const ProjectCard = props => {
       tabIndex={tabIndex}
       className={classes.container}
       onClick={() => handleModal(project)}
-      onKeyDown={e => {
-        if (e.key === "Enter") {
-          if (`${document.activeElement.tabIndex}` === tabIndex) {
-            handleModal(project);
-          }
-        }
-      }}
+      onKeyDown={keyPressed}
     />
   );
 };
@@ -42,11 +45,10 @@ const styles = theme => ({
     outline: "none",
     willChange: "transform, opacity, height, margin",
     justifyContent: "center",
-    // border: "1px solid rgb(0,0,0,.05)",
     boxShadow: `0px 0px 10px -3px ${theme.shadow}`,
     backgroundImage: `url(${props.project.image})`,
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: "center"
   })
 });
 

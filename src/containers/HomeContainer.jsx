@@ -1,12 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 import Home from "../components/Home";
 import tech from "../lib/technologies";
 import project from "../lib/projects";
 import lang from "../lib/languages";
 
-class HomeContainer extends React.Component {
+class HomeContainer extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      currentTheme: localStorage.getItem("theme")
+    };
 
     this.cards = [
       tech.docker,
@@ -29,11 +33,21 @@ class HomeContainer extends React.Component {
     this.languages = [lang.Python, lang.Swift, lang.javaScript, lang.elixir];
   }
 
+  handleThemeChange = () => {
+    if (this.state.currentTheme === "LIGHT") {
+      this.props.changeTheme("DARK");
+      this.setState({ currentTheme: "DARK" });
+    } else if (this.state.currentTheme === "DARK") {
+      this.props.changeTheme("LIGHT");
+      this.setState({ currentTheme: "LIGHT" });
+    }
+  };
+
   render() {
-    const { changeTheme } = this.props;
     return (
       <Home
-        changeTheme={changeTheme}
+        changeTheme={this.handleThemeChange}
+        currentTheme={this.state.currentTheme}
         cards={this.cards}
         projects={this.projects}
         languages={this.languages}

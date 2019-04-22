@@ -1,46 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import TechStack from "./TechStack";
 import Projects from "./Projects";
 import Languages from "./Languages";
+import Button from "./reusable/Button";
 import Social from "./Social";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
   cards: PropTypes.array.isRequired,
   projects: PropTypes.array.isRequired,
-  languages: PropTypes.array.isRequired
+  languages: PropTypes.array.isRequired,
+  changeTheme: PropTypes.func.isRequired,
+  currentTheme: PropTypes.string.isRequired
 };
 
 const Home = props => {
-  const { classes, cards, projects, languages, changeTheme, theme } = props;
-  const [currentTheme, set] = useState(localStorage.getItem("theme"));
-
-  useEffect(() => {
-    const newTheme = localStorage.getItem("theme");
-    set(newTheme);
-  }, [theme]);
-
-  const handleSwitch = () => {
-    if (currentTheme === "LIGHT") {
-      changeTheme("DARK");
-    } else if (currentTheme === "DARK") {
-      changeTheme("LIGHT");
-    }
-  };
+  const { classes, cards, projects, changeTheme, currentTheme } = props;
 
   return (
     <div className={classes.root}>
       <div className={classes.stackHero}>
         <h1>My Stack.</h1>
-        <button className={classes.themeButton} onClick={() => handleSwitch()}>
+        <Button width="150px" onClick={changeTheme}>
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}
-        </button>
+        </Button>
       </div>
       <Social />
       <TechStack cards={cards} />
-      {/* <Languages languages={languages} /> */}
       <Projects projects={projects} />
     </div>
   );
@@ -87,43 +75,9 @@ const styles = theme => ({
       color: theme.color,
       fontWeight: 700
     }
-  },
-  themeButton: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "#fff",
-    outline: "none",
-    border: "none",
-    backgroundColor: theme.accent,
-    borderRadius: 10,
-    fontSize: "15px",
-    height: "50px",
-    padding: "0 15px",
-    margin: "20px auto",
-    "@media (min-width: 650px)": {
-      margin: "20px auto 20px 20px"
-    },
-    fontWeight: 700,
-    cursor: "pointer",
-    width: "150px",
-    zIndex: 50,
-    boxShadow:
-      "0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)",
-    textTransform: "uppercase",
-    letterSpacing: "0.125em",
-    transitionDuration: ".2s",
-    "&:hover": {
-      transform: "translateY(-3px)",
-      boxShadow:
-        "0 13px 27px -5px rgba(50,50,93,.25), 0 8px 35px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)"
-    },
-    "&:active": {
-      transform: "translateY(3px)"
-    }
   }
 });
 
 Home.propTypes = propTypes;
 
-export default withStyles(styles, { injectTheme: true })(Home);
+export default withStyles(styles)(Home);

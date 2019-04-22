@@ -57,5 +57,3 @@ const styles = theme => ({
 });
 
 export default withStyles(styles)(Baseline);
-
-// Inspired by Material-UI baseline CSS. - Thanks...

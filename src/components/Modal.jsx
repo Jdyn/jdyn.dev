@@ -101,9 +101,6 @@ const Modal = props => {
 const styles = theme => ({
   root: {
     position: "fixed",
-    // display: "flex",
-    // justifyContent: "center",
-    // alignItems: "center",
     zIndex: 100,
     top: 0,
     left: 0,
@@ -112,7 +109,6 @@ const styles = theme => ({
     background: "rgba(0, 0, 0, 0.5)",
     overflowY: "scroll",
     WebkitOverflowScrolling: "touch",
-    // overflow: "auto",
     padding: "80px 0",
     overscrollBehavior: "none",
     "@media (min-width: 650px)": {
