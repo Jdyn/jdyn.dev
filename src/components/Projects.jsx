@@ -51,7 +51,7 @@ const Projects = props => {
     from: { opacity: 0, height: "0px" },
     to: {
       opacity: open ? 0 : 1,
-      height: open ? "0" : "65px"
+      height: open ? "0" : "60px"
     }
   });
 
