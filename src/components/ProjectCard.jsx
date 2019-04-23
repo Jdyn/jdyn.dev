@@ -8,12 +8,10 @@ const propTypes = {
   style: PropTypes.object.isRequired,
   project: PropTypes.object.isRequired,
   handleModal: PropTypes.func.isRequired,
-  tabIndex: PropTypes.number.isRequired
 };
 
 const ProjectCard = props => {
   const { classes, style, project, handleModal, tabIndex } = props;
-
   const keyPressed = event => {
     if (event.key === "Enter") {
       if (`${document.activeElement.tabIndex}` === tabIndex) {

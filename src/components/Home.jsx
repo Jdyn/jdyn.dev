@@ -6,6 +6,7 @@ import Projects from "./Projects";
 import Languages from "./Languages";
 import Button from "./reusable/Button";
 import Social from "./Social";
+import formatTime from "../util/formatTime"
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -30,6 +31,7 @@ const Home = props => {
       <Social />
       <TechStack cards={cards} />
       <Projects projects={projects} />
+      <footer className={classes.footer}>updated {formatTime(1556026665461)}</footer>
     </div>
   );
 };
@@ -40,22 +42,25 @@ const styles = theme => ({
     position: "relative",
     transitionDuration: "0.2s",
     gridTemplateColumns: "1fr",
-    gridTemplateRows: "min-content min-content 1fr",
+    gridTemplateRows: "min-content min-content 1fr in-content",
     backgroundColor: theme.secondary,
     gridTemplateAreas: `
     'stackHero'
     'stack'
     'social'
     'projects'
+    'footer'
     `,
     overflow: "hidden",
     "@media (min-width: 650px)": {
       gridTemplateColumns: "1fr 1fr",
-      gridTemplateRows: "1fr min-content min-content",
+      gridTemplateRows: "1fr min-content min-content min-content",
       gridTemplateAreas: `
       'stackHero stack'
       'social stack'
-      'projects projects'`
+      'projects projects'
+      'footer footer'
+      `
     }
   },
   stackHero: {
@@ -75,6 +80,15 @@ const styles = theme => ({
       color: theme.color,
       fontWeight: 700
     }
+  },
+  footer: {
+    gridArea: "footer",
+    paddingBottom: "10px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: theme.quartinary,
+    color: theme.primaryGrey
   }
 });
 

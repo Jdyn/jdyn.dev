@@ -45,9 +45,8 @@ export default {
     description: "Portfolio",
     image: "images/projects/jdyn.png",
     overview: [
-      "The goal of the site is to hopefully be a testament to my design philosphies over time. Similar to how architecture changes drastically through periods of time, we have and will see the internet as a whole follow this trend. I intend to update and evolve the site as the Internet and I do.",
-      "The site will of course act as a portfolio of sorts and I will try to update it with recent work as often as possible.",
-      "I might build a blog if there is something I want to say."
+      "The goal of the site is to hopefully be a testament to my design philosphies over time. Similar to how architecture changes drastically through periods of time, I think the internet as a whole follows a similar trend. I intend to update and evolve the site as the Internet and I do.",
+      "Aside from design, the site is of course mainly a portfolio + random stuff and I will try to update it with recent work as often as possible.",
     ],
     technologies: [tech.react],
     links: [link("Source", "https://github.com/Jdyn/jdyn.github.io")],
