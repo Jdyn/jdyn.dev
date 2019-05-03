@@ -32,6 +32,7 @@ const propTypes = {
 
 const Button = props => (
   <button
+    id={props.id}
     onClick={props.onClick}
     className={props.secondary ? props.classes.secondary : props.classes.primary}
   >

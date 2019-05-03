@@ -24,14 +24,14 @@ const Home = props => {
     <div className={classes.root}>
       <div className={classes.stackHero}>
         <h1>My Stack.</h1>
-        <Button width="150px" onClick={changeTheme}>
+        <Button id="themeSwitch" width="150px" onClick={changeTheme}>
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}
         </Button>
       </div>
       <Social />
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1556026665461)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1556853569614)}</footer>
     </div>
   );
 };
@@ -42,7 +42,7 @@ const styles = theme => ({
     position: "relative",
     transitionDuration: "0.2s",
     gridTemplateColumns: "1fr",
-    gridTemplateRows: "min-content min-content 1fr in-content",
+    gridTemplateRows: "min-content min-content 1fr min-content",
     backgroundColor: theme.secondary,
     gridTemplateAreas: `
     'stackHero'
@@ -85,6 +85,7 @@ const styles = theme => ({
     gridArea: "footer",
     paddingBottom: "10px",
     display: "flex",
+    flexShrink: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: theme.quartinary,

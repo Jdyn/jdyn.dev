@@ -16,16 +16,33 @@ const Projects = props => {
   const [open, set] = useState(false);
   const [modal, setModal] = useState(false);
   const [currentProject, setProject] = useState({});
+  const [scrolled, setScroll] = useState(false);
 
   const myRef = useRef();
+
   const handleClickOutside = e => {
     if (
       !myRef.current.contains(e.target) &&
       !modal &&
-      e.target !== document.getElementById("0729")
+      e.target !== document.getElementById("0729") &&
+      e.target !== document.getElementById("themeSwitch")
     ) {
       set(false);
     }
+  };
+
+  const handleTouchOutside = e => {
+    if (
+      !myRef.current.contains(e.target) &&
+      !modal &&
+      e.target !== document.getElementById("0729") &&
+      e.target !== document.getElementById("themeSwitch") &&
+      !scrolled
+    ) {
+      set(false);
+    }
+
+    setScroll(false);
   };
 
   const handleModal = project => {
@@ -38,14 +55,20 @@ const Projects = props => {
     setModal(true);
   };
 
+  const handleScroll = e => {
+    setScroll(true);
+  };
+
   useEffect(() => {
     document.addEventListener("mouseup", handleClickOutside);
-    document.addEventListener("touchstart", handleClickOutside);
+    document.addEventListener("touchend", handleTouchOutside);
+    document.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("mouseup", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
+      document.removeEventListener("touchend", handleTouchOutside);
+      document.removeEventListener("scroll", handleScroll);
     };
-  }, [modal]);
+  }, [modal, scrolled]);
 
   const titleSpring = useSpring({
     from: { opacity: 0, height: "0px" },
