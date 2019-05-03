@@ -31,7 +31,7 @@ const Home = props => {
       <Social />
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1556853569614)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1556855531299)}</footer>
     </div>
   );
 };
@@ -89,7 +89,7 @@ const styles = theme => ({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: theme.quartinary,
-    color: theme.primaryGrey
+    color: theme.color
   }
 });
 

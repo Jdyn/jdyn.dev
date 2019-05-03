@@ -12,6 +12,7 @@ const social = props => {
     <div className={classes.container}>
       <a
         className={classes.wrapper}
+        aria-label="View my work on Github"
         href="https://github.com/Jdyn"
         target="_blank"
         rel="noopener noreferrer"
@@ -33,8 +34,14 @@ const social = props => {
         </div>
       </a>
 
-      <a href="https://www.linkedin.com/in/jadenmoore/" target="_blank" rel="noopener noreferrer">
-        <div className={classes.wrapper}>
+      <a
+        className={classes.wrapper}
+        aria-label="View my information on LinkedIn"
+        href="https://www.linkedin.com/in/jadenmoore/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div>
           <svg
             aria-hidden="true"
             focusable="false"
@@ -60,7 +67,7 @@ const styles = theme => ({
     position: "relative",
     gridArea: "social",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   wrapper: {
     "&:hover": {
