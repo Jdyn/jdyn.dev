@@ -219,7 +219,7 @@ const styles = theme => ({
     marginTop: "-125px"
   },
   techItem: {
-    marginBottom: "5px"
+    marginBottom: "8px"
   },
   techLogo: {
     width: "15%",

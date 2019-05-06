@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import TechStack from "./TechStack";
 import Projects from "./Projects";
-import Languages from "./Languages";
+// import Languages from "./Languages";
 import Button from "./reusable/Button";
 import Social from "./Social";
-import formatTime from "../util/formatTime"
+import formatTime from "../util/formatTime";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -29,9 +29,10 @@ const Home = props => {
         </Button>
       </div>
       <Social />
+      {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1556855531299)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1557173555331)}</footer>
     </div>
   );
 };

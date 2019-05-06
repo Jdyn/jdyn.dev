@@ -33,16 +33,23 @@ export default {
     name: "Phoenix",
     level: "55%",
     overview:
-      "Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax and other benefits puts Phoenix on quite a pedistal for me. I built the main API of typer.io with Phoenix and it was strangely refreshing. I think Phoenix has a lot more potential than it bargains for.",
+      "Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax and other benefits puts Phoenix on quite a pedistal for me. I built the main API of typer.io with Phoenix and it was strangely refreshing. I think Phoenix (and Elixir) has a lot more potential than it bargains for.",
     icon: "images/technologies/phoenix.svg",
     suit: "images/languages/elixir.png"
   },
   react: {
     name: "React",
     level: "97%",
-    overview:
-      "React is the best tool for developing complex applications. Features that were once arduous to implement are arguably elementary with React. The most fundamental purpose of a front-end framework is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
+    overview: 
+      "React's sudden reign over the web is certainly not unfounded, features that were once arduous to implement are arguably elementary with React. The most fundamental purpose of a front-end framework is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
     icon: "images/technologies/react.svg",
+    suit: "images/languages/javascript.svg"
+  },
+  redux: {
+    name: "Redux",
+    level: "95%",
+    overview: "",
+    icon: "images/technologies/redux.svg",
     suit: "images/languages/javascript.svg"
   },
   node: {
