@@ -38,14 +38,14 @@ export default {
     overview: [
       "The ultimate goal of this project is to create a community for people who are genuinely interested in improving their typing abilities, but perhaps find conventional methods to be boring or unrewarding. I think because humans are inherently competitive by nature, incorporating a competitive aspect to typing can make learning and improving more interesting.",
       "The backend of typer.io is built with Phoenix and Node, distributed in AWS EC2 instances. Phoenix is connected to a Postgres DB supplied by Amazon RDS (currently). The web client is built entirely with React and utilizes Redux for state management.",
-      "To dive a little deeper, Phoenix handles most of the sites general feature sets through a robust REST API, including the forum, leaderboards, accounts, etc. Node, currently handles the realtime communication in the actual game. I don't know how good of an idea this was in retrospect due to scalability concerns, but there are options available. Namely clustering multiple Node instances in PM2 or docker, and creating a centralized storage between them with Redis. This will likely be all but neccessary if I were to continue using Node. Another option would be to ditch Node all together (for the game) and use Phoenix's built in WebSocket support which has proven to be very scalable, having reached over 2 million concurrent web socket connections at once recently.",
-      "I am the only developer thus far but would love if anyone wanted to help out, there is a lot to do. you can message me on LinkedIn or email me."
+      "To dive a little deeper, Phoenix handles most of the sites general feature sets through a robust REST API, including the forum, leaderboards, accounts, etc. Node, currently handles the realtime communication in the actual game. I don't know how good of an idea this was in retrospect due to scalability concerns, but there are options available. Namely clustering multiple Node instances in PM2 or docker, and creating a centralized storage between them with Redis. This will likely be all but neccessary if I were to continue using Node. Another option would be to ditch Node all together (atleast for the game portion) and use Phoenix's built in WebSocket support which has proven to be very scalable, having reached over 2 million concurrent web socket connections at once recently.",
+      "This is a personal project but would love if anyone wanted to help out, there is a lot to do. you can message me on LinkedIn or email me."
     ],
     technologies: [
       tech.react,
       tech.redux,
-      tech.phoenix,
       tech.node,
+      tech.phoenix,
       tech.css,
       tech.ec2,
       tech.rds
