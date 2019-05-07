@@ -41,7 +41,7 @@ export default {
     name: "React.js",
     level: "97%",
     overview: 
-      "React's sudden reign over the web is certainly not unfounded, features that were once arduous to implement are arguably elementary with React. The most fundamental purpose of a front-end framework is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
+      "React's sudden popularity across developers is certainly not unfounded, features that were once arduous to implement are arguably elementary with React. The most fundamental purpose of a front-end framework is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
     icon: "images/technologies/react.svg",
     suit: "images/languages/javascript.svg"
   },
