@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import { useSpring, animated, config } from "react-spring";
+import ReactGA from "react-ga";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -24,6 +25,13 @@ const Modal = props => {
       document.body.style.overflow = "visible";
       set({ width: "0%", opacity: 0, transform: "scale(0)" });
     }
+  };
+
+  const handleLinkClick = (event, desc) => {
+    ReactGA.event({
+      category: "Projects",
+      action: `project-link-click-${desc}`
+    });
   };
 
   useEffect(() => {
@@ -51,7 +59,11 @@ const Modal = props => {
   }));
 
   return (
-    <animated.div style={{ opacity }} className={classes.root} onClick={e => handleClick(e)}>
+    <animated.div
+      style={{ opacity }}
+      className={classes.root}
+      onClick={e => handleClick(e)}
+    >
       <animated.div className={classes.container} style={{ opacity, transform }}>
         <div className={classes.hero}>
           <h1>{item.name}</h1>
@@ -68,7 +80,12 @@ const Modal = props => {
             <h3>Links</h3>
             {item.links.map((item, index) => (
               <div key={index} className={classes.link}>
-                <a href={`${item.ref}`} target="_blank" rel="noopener noreferrer">
+                <a
+                  onClick={e => handleLinkClick(e, item.desc)}
+                  href={`${item.ref}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {item.name}
                   <div className={classes.linkImage}>
                     <svg
@@ -208,7 +225,7 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     flexBasis: "35%",
-    position: "relative", 
+    position: "relative",
     padding: "10px 30px 30px 30px",
     borderRadius: 10,
     fontWeight: 500,

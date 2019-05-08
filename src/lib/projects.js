@@ -1,8 +1,9 @@
 import tech from "./technologies";
 
-const link = (name, ref) => ({
+const link = (name, ref, desc) => ({
   name,
-  ref
+  ref,
+  desc
 });
 
 export default {
@@ -25,9 +26,17 @@ export default {
       tech.css
     ],
     links: [
-      link("Website", "https://academus.io/"),
-      link("iOS", "https://itunes.apple.com/us/app/academus/id1366365507?mt=8"),
-      link("Android", "https://play.google.com/store/apps/details?id=io.academus.android")
+      link("Website", "https://academus.io/", "academus-homepage"),
+      link(
+        "iOS",
+        "https://itunes.apple.com/us/app/academus/id1366365507?mt=8",
+        "academus-ios-homepage"
+      ),
+      link(
+        "Android",
+        "https://play.google.com/store/apps/details?id=io.academus.android",
+        "academus-android-homepage"
+      )
     ],
     width: "605px"
   },
@@ -50,7 +59,13 @@ export default {
       tech.ec2,
       tech.rds
     ],
-    links: [link("WIP demo", "http://typer-io-web.s3-website-us-west-1.amazonaws.com/")],
+    links: [
+      link(
+        "WIP demo",
+        "http://typer-io-web.s3-website-us-west-1.amazonaws.com/",
+        "typer.io-homepage"
+      )
+    ],
     width: "605px"
   },
   jdyn: {
@@ -62,7 +77,9 @@ export default {
       "Aside from design, the site is of course mainly a portfolio + random stuff and I will try to update it with recent work as often as possible."
     ],
     technologies: [tech.react],
-    links: [link("Source", "https://github.com/Jdyn/jdyn.github.io")],
+    links: [
+      link("Source", "https://github.com/Jdyn/jdyn.github.io", "jdyn.dev-source-code")
+    ],
     width: "350px"
   },
   lemonade: {
