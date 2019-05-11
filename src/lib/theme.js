@@ -14,8 +14,9 @@ export default {
     shadow: "rgba(50,50,73,.4)",
     stripeBackground:
       "linear-gradient(rgba(246,249,252,0), #f6f9fc 61%,#f6f9fc 60%,#f6f9fc)",
-    stripeTopLeft: "#53f",
-    stripeTopRight: "#4553ff",
+    stripeTopLeft: "#4553ff" ,
+    stripeTopMiddle: "#4f40ff",
+    stripeTopRight: "#53f" ,
     stripeRight: "#D81B60",
     stripeBottom: "#1fa2ff"
   },
@@ -33,7 +34,8 @@ export default {
     accentFocus: "#AD1457",
     shadow: "rgba(0, 0, 0, 0.3)",
     stripeBackground: "linear-gradient(150deg,#202020 15%,#343434 70%,#474747 94%)",
-    stripeTopLeft: "#252525",
+    stripeTopLeft: "#222222",
+    stripeTopMiddle: "#252525",
     stripeTopRight: "#282828",
     stripeRight: "#454545",
     stripeBottom: "#353535"

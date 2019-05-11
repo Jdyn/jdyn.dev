@@ -18,6 +18,7 @@ const Stripes = props => {
       <span />
       <span />
       <span />
+      <span />
       <span>{width > 650 && <Social />}</span>
     </div>
   );
@@ -38,21 +39,22 @@ const styles = theme => ({
     "& span:first-child": {
       gridColumn: "span 1",
       background: theme.stripeTopLeft
-      //   boxShadow: "0 5px 20px 0 rgb(0,0,0,.3)"
     },
     "& span:nth-child(2)": {
-      gridColumn: "span 6",
-      background: theme.stripeTopRight
-      //   boxShadow: "0 5px 20px 0 rgb(0,0,0,.3)"
+      gridColumn: "span 2",
+      background: theme.stripeTopMiddle
     },
     "& span:nth-child(3)": {
+      gridColumn: "span 4",
+      background: theme.stripeTopRight
+    },
+    "& span:nth-child(4)": {
       gridColumn: "7",
       gridRow: "3",
       borderRadius: "16px 0 0 16px",
       background: theme.stripeRight
-      //   boxShadow: "0 5px 20px 0 rgb(0,0,0,.3)"
     },
-    "& span:nth-child(4)": {
+    "& span:nth-child(5)": {
       display: "flex",
       justifyContent: "center",
       alignItems: "flex-end",
