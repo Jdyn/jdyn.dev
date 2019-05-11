@@ -56,6 +56,7 @@ const styles = theme => ({
     border: "none",
     fontWeight: 700,
     fontSize: 16,
+    zIndex: 10,
     padding: "0 15px",
     borderRadius: 8,
     height: "50px",

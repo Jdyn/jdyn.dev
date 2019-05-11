@@ -67,7 +67,8 @@ const styles = theme => ({
     position: "relative",
     gridArea: "social",
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
+    zIndex: 50
   },
   wrapper: {
     "&:hover": {
@@ -77,7 +78,10 @@ const styles = theme => ({
     "& div": {
       height: "64px",
       width: "64px",
-      color: theme.color
+      color: theme.color,
+      "@media (min-width: 650px)": {
+        color: theme.white,
+      },
     }
   }
 });

@@ -14,9 +14,9 @@ const propTypes = {
 const to = index => ({
   x: 0,
   y: index * -6,
-  rotation: -10 + Math.random() * 20, // Randomize initial rotation in stack
+  rotation: -10 + Math.random() * 25, // Randomize initial rotation in stack
   scale: 1,
-  delay: index * 250
+  delay: index * 150
 });
 
 const from = index => ({
@@ -102,7 +102,7 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     maxWidth: "650px",
-    // marginBottom: "10%",
+    marginTop: "6%",
     height: "525px",
     justifyContent: "center",
     gridArea: "stack",

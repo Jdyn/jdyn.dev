@@ -20,7 +20,7 @@ const App = props => {
       case types.light:
         return themes.light;
       default:
-        return themes.light;
+        return themes.dark;
     }
   };
 

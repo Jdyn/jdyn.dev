@@ -46,7 +46,7 @@ const styles = theme => ({
   container: {
     position: "relative",
     width: "100%",
-    maxWidth: "300px",
+    maxWidth: "285px",
     height: "100%",
     borderRadius: 10,
     cursor: "grab",
@@ -68,7 +68,7 @@ const styles = theme => ({
     margin: 0,
     padding: "20px",
     userSelect: "none",
-    fontSize: "18px",
+    fontSize: 17,
     flexGrow: 1,
     color: theme.color,
     fontWeight: 500,
@@ -93,7 +93,7 @@ const styles = theme => ({
     "& h2": {
       display: "inline-flex",
       margin: "5px 15px 5px 15px",
-      fontSize: "20px",
+      fontSize: 20,
       fontWeight: 700,
       textTransform: "uppercase",
       letterSpacing: "0.125em",

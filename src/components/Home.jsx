@@ -7,6 +7,8 @@ import Projects from "./Projects";
 import Button from "./reusable/Button";
 import Social from "./Social";
 import formatTime from "../util/formatTime";
+import Stripes from "./Stripes";
+import useWindowDimensions from "../lib/useWindow";
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
@@ -20,19 +22,22 @@ const propTypes = {
 const Home = props => {
   const { classes, cards, projects, changeTheme, currentTheme } = props;
 
+  const { height, width } = useWindowDimensions();
+
+
   return (
     <div className={classes.root}>
+      <Stripes />
       <div className={classes.stackHero}>
         <h1>My Stack.</h1>
         <Button id="themeSwitch" width="150px" onClick={changeTheme}>
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}
         </Button>
       </div>
-      <Social />
-      {/* <Languages languages={props.languages} /> */}
+      {width < 650 && <Social />} {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1557326109678)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1557605048803)}</footer>
     </div>
   );
 };
@@ -44,7 +49,8 @@ const styles = theme => ({
     transitionDuration: "0.2s",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "min-content min-content 1fr min-content",
-    backgroundColor: theme.secondary,
+    backgroundColor: theme.tertiary,
+    // zIndex: -2,
     gridTemplateAreas: `
     'stackHero'
     'stack'
@@ -69,6 +75,7 @@ const styles = theme => ({
     textAlign: "center",
     justifyContent: "center",
     display: "flex",
+    zIndex: 15,
     flexDirection: "column-reverse",
     "@media (min-width: 650px)": {
       textAlign: "right",
@@ -78,7 +85,10 @@ const styles = theme => ({
       margin: "auto 0",
       userSelect: "none",
       padding: "15px 0 0 0",
-      color: theme.color,
+      color: theme.white,
+      "@media (min-width: 600px)": {
+        color: theme.color
+      },
       fontWeight: 700
     }
   },
@@ -89,7 +99,7 @@ const styles = theme => ({
     flexShrink: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: theme.quartinary,
+    // backgroundColor: theme.quartinary,
     color: theme.color
   }
 });

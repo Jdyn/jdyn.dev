@@ -12,7 +12,7 @@ import "./styles/global.css";
 
 let theme = localStorage.getItem("theme");
 if (!theme) {
-  theme = localStorage.setItem("theme", "LIGHT");
+  theme = localStorage.setItem("theme", "DARK");
 }
 
 const app = (

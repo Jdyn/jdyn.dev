@@ -171,16 +171,19 @@ const styles = theme => ({
     gridArea: "projects",
     display: "flex",
     transitionDuration: "0.2s",
-    backgroundColor: theme.quartinary,
+    // backgroundColor: theme.quartinary,
     position: "relative",
-    alignItems: "center",
+    alignItems: "flex-end",
     justifyContent: "center",
     width: "100%",
-    minHeight: "300px"
+    minHeight: "300px",
+    zIndex: 10,
+    pointerEvents: "none"
   },
   display: {
     position: "relative",
     display: "flex",
+    pointerEvents: "auto",
     justifyContent: "center",
     flexWrap: "wrap",
     flexDirection: "row",
