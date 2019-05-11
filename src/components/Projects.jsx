@@ -176,7 +176,7 @@ const styles = theme => ({
     alignItems: "flex-end",
     justifyContent: "center",
     width: "100%",
-    minHeight: "300px",
+    minHeight: "250px",
     zIndex: 10,
     pointerEvents: "none"
   },
