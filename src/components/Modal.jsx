@@ -59,11 +59,7 @@ const Modal = props => {
   }));
 
   return (
-    <animated.div
-      style={{ opacity }}
-      className={classes.root}
-      onClick={e => handleClick(e)}
-    >
+    <animated.div style={{ opacity }} className={classes.root} onClick={e => handleClick(e)}>
       <animated.div className={classes.container} style={{ opacity, transform }}>
         <div className={classes.hero}>
           <h1>{item.name}</h1>
@@ -118,7 +114,7 @@ const Modal = props => {
 const styles = theme => ({
   root: {
     position: "fixed",
-    zIndex: 100,
+    zIndex: 300,
     top: 0,
     left: 0,
     width: "100%",
@@ -131,7 +127,7 @@ const styles = theme => ({
     overscrollBehavior: "none",
     "@media (min-width: 650px)": {
       "&::-webkit-scrollbar": {
-        width: "11px",
+        width: "15px",
         height: "16px",
         backgroundColor: "lightgrey"
       },
@@ -153,7 +149,7 @@ const styles = theme => ({
     borderRadius: 10,
     margin: "auto",
     backgroundColor: theme.primary,
-    zIndex: 150,
+    // zIndex: 400,
     boxShadow: `0 50px 50px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
   },
   hero: props => ({

@@ -24,7 +24,7 @@ const styles = theme => ({
     },
     body: {
       margin: 0,
-      backgroundColor: theme.primary,
+      backgroundColor: theme.tertiary,
       color: theme.color,
       fontSize: "100%",
       fontDisplay: "swap",

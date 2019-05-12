@@ -24,7 +24,6 @@ const Home = props => {
 
   const { height, width } = useWindowDimensions();
 
-
   return (
     <div className={classes.root}>
       <Stripes />
@@ -49,8 +48,7 @@ const styles = theme => ({
     transitionDuration: "0.2s",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "min-content min-content 1fr min-content",
-    backgroundColor: theme.tertiary,
-    // zIndex: -2,
+    zIndex: 0,
     gridTemplateAreas: `
     'stackHero'
     'stack'
@@ -75,7 +73,7 @@ const styles = theme => ({
     textAlign: "center",
     justifyContent: "center",
     display: "flex",
-    zIndex: 15,
+    // zIndex: 15,
     flexDirection: "column-reverse",
     "@media (min-width: 650px)": {
       textAlign: "right",

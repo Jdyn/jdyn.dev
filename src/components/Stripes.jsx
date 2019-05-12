@@ -30,7 +30,7 @@ const styles = theme => ({
     position: "absolute",
     grid: "repeat(4, 180px)/repeat(7, 1fr)",
     top: 0,
-    zIndex: 5,
+    zIndex: 0,
     width: "100%",
     overflow: "hidden",
     transformOrigin: 0,
