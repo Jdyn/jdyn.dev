@@ -36,7 +36,7 @@ const Home = props => {
       {width < 650 && <Social />} {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1557616739433)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1557696022775)}</footer>
     </div>
   );
 };

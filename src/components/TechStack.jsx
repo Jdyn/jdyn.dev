@@ -31,6 +31,7 @@ const TechStack = props => {
   const [removed] = useState(() => new Set());
   const [size, setSize] = useState(0);
   const [hovered, setHovered] = useState(false);
+  
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
     from: from(index),
