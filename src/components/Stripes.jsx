@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import Social from "./Social";
-import useWindowDimensions from "../lib/useWindow";
+// import useWindowDimensions from "../lib/useWindow";
 
 const propTypes = {
   classes: PropTypes.object.isRequired
@@ -11,7 +11,6 @@ const propTypes = {
 const Stripes = props => {
   const { classes } = props;
 
-  const { height, width } = useWindowDimensions();
 
   return (
     <div className={classes.stripes}>

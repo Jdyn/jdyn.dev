@@ -9,7 +9,7 @@ class HomeContainer extends Component {
     super(props);
 
     this.state = {
-      currentTheme: localStorage.getItem("theme")
+      currentTheme: ""
     };
 
     this.cards = [
@@ -31,6 +31,10 @@ class HomeContainer extends Component {
     ];
 
     this.languages = [lang.Python, lang.Swift, lang.javaScript, lang.elixir];
+  }
+
+  componentDidMount() {
+    this.setState({ currentTheme: localStorage.getItem("theme") });
   }
 
   handleThemeChange = () => {

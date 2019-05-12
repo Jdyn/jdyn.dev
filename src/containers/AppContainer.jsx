@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Router from "../components/Router";
 import { ThemeProvider } from "react-jss";
 import themes from "../lib/theme";
 import Baseline from "../components/Baseline";
+import HomeContainer from "./HomeContainer";
 
 const types = {
   dark: "DARK",
@@ -10,8 +10,7 @@ const types = {
 };
 
 const App = props => {
-  const { theme } = props;
-  const [type, setType] = useState(theme);
+  const [type, setType] = useState("dark");
 
   const provideTheme = () => {
     switch (type) {
@@ -33,7 +32,7 @@ const App = props => {
     <>
       <ThemeProvider theme={provideTheme()}>
         <Baseline>
-          <Router changeTheme={changeTheme} />
+          <HomeContainer />
         </Baseline>
       </ThemeProvider>
     </>
