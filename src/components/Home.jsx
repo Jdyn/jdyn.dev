@@ -73,7 +73,7 @@ const styles = theme => ({
     textAlign: "center",
     justifyContent: "center",
     display: "flex",
-    // zIndex: 15,
+    zIndex: 15,
     flexDirection: "column-reverse",
     "@media (min-width: 650px)": {
       textAlign: "right",
@@ -81,7 +81,7 @@ const styles = theme => ({
     },
     "& h1": {
       margin: "auto 0",
-      userSelect: "none",
+      // userSelect: "none",
       padding: "15px 0 0 0",
       color: theme.white,
       "@media (min-width: 600px)": {

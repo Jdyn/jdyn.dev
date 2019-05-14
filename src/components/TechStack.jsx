@@ -106,7 +106,8 @@ const styles = theme => ({
     marginTop: "6%",
     height: "525px",
     justifyContent: "center",
-    gridArea: "stack"
+    gridArea: "stack",
+    zIndex: 15
   },
   card: {
     display: "flex",
