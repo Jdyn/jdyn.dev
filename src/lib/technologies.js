@@ -26,7 +26,7 @@ export default {
     name: "CSS/HTML",
     level: "90%",
     overview:
-      "Serious advancements have been made with CSS in recent years. Namely CSS Grid and Flexbox. With the combination of these tools, executing more modern design patterns is trivial in comparison to earlier methods. All of my work incorporates Grid and Flexbox and has allowed me to take a level-headed approach to working with CSS.",
+      "Serious advancements have been made with CSS in recent years. Namely CSS Grid and Flexbox. With the combination of these tools, executing more modern design patterns is trivial in comparison to earlier methods. Flexbox and Grid have allowed me to take a level-headed approach to working with CSS.",
     icon: "images/technologies/html5.svg"
   },
   phoenix: {
@@ -41,7 +41,7 @@ export default {
     name: "React.js",
     level: "97%",
     overview: 
-      "React's sudden popularity across developers is certainly not unfounded, features that were once arduous to implement are arguably elementary with React. The most fundamental purpose of a front-end framework is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
+      "React's rise in popularity among developers is certainly not unfounded, features that were once arduous to implement are arguably elementary with React. The most fundamental purpose of a front-end framework is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
     icon: "images/technologies/react.svg",
     suit: "images/languages/javascript.svg"
   },
@@ -56,7 +56,7 @@ export default {
     name: "Node.js",
     level: "75%",
     overview:
-      "Due to the innate speed of Node and it's unique async I/O model, Node is among my first considerations when implementing real time feature sets. I've found myself using it often and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
+      "Due to the innate speed of Node and it's unique async I/O model, Node is among my first considerations when implementing real time features. I've found myself using it often and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
     icon: "images/technologies/nodejs.svg",
     suit: "images/languages/javascript.svg"
   },

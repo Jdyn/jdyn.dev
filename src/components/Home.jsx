@@ -95,6 +95,7 @@ const styles = theme => ({
     paddingBottom: "10px",
     display: "flex",
     flexShrink: 1,
+    fontSize: 16,
     height: "125px",
     justifyContent: "center",
     alignItems: "flex-end",
