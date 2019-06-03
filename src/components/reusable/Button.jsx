@@ -76,7 +76,7 @@ const styles = theme => ({
   },
   primary: props => ({
     extend: "button",
-    margin: "20px auto",
+    margin: "10px auto",
     backgroundColor: theme.accent,
     color: "#fff",
     height: "50px",

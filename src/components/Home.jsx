@@ -36,7 +36,7 @@ const Home = props => {
       {width < 650 && <Social />} {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1557696022775)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1559555215328)}</footer>
     </div>
   );
 };
@@ -82,9 +82,9 @@ const styles = theme => ({
     "& h1": {
       margin: "auto 0",
       // userSelect: "none",
-      padding: "15px 0 0 0",
+      padding: "10px 0 0 0",
       color: theme.white,
-      "@media (min-width: 600px)": {
+      "@media (min-width: 650px)": {
         color: theme.color
       },
       fontWeight: 700

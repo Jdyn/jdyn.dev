@@ -1,7 +1,7 @@
 export default {
   docker: {
     name: "Docker",
-    level: "35%",
+    level: "40%",
     overview:
       "Docker is a tool I would like to use more - and certainly plan on using more in the near future. I've deployed a relatively simple setup using docker (reverse proxy django / node setup with nginx) and was quite fond. I certainly have a lot more to learn about this tool but look forward to it.",
     icon: "images/technologies/docker.svg"
@@ -31,7 +31,7 @@ export default {
   },
   phoenix: {
     name: "Phoenix",
-    level: "55%",
+    level: "85%",
     overview:
       "Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax and other benefits puts Phoenix on quite a pedistal for me. I built the main API of typer.io with Phoenix and it was strangely refreshing. I think Phoenix (and Elixir) has a lot more potential than it bargains for.",
     icon: "images/technologies/phoenix.svg",
@@ -54,7 +54,7 @@ export default {
   },
   node: {
     name: "Node.js",
-    level: "75%",
+    level: "80%",
     overview:
       "Due to the innate speed of Node and it's unique async I/O model, Node is among my first considerations when implementing real time features. I've found myself using it often and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
     icon: "images/technologies/nodejs.svg",

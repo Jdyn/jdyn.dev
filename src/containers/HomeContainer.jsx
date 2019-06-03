@@ -14,7 +14,6 @@ class HomeContainer extends Component {
 
     this.cards = [
       tech.docker,
-      tech.django,
       tech.css,
       tech.phoenix,
       tech.ios,
