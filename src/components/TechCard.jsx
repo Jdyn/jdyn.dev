@@ -29,8 +29,8 @@ const TechCard = props => {
         <div className={classes.header}>
           <img alt="tech icon" src={card.icon} />
           <h2 className={classes.name}>
-            {card.name} <span>{card.level}</span>
-            {/* {card.name} */}
+            {/* {card.name} <span>{card.level}</span> */}
+            {card.name}
           </h2>
         </div>
         <div className={classes.rating}>

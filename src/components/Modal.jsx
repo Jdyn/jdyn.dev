@@ -101,7 +101,9 @@ const Modal = props => {
             {item.technologies.map((item, index) => (
               <div className={classes.techItem} key={index}>
                 <img className={classes.techLogo} alt="technology icon" src={item.icon} />
-                {item.name}
+                <a target="_blank" rel="noopener noreferrer" href={item.href}>
+                  {item.name}
+                </a>
               </div>
             ))}
           </div>
@@ -233,7 +235,10 @@ const styles = theme => ({
     marginTop: "-125px"
   },
   techItem: {
-    marginBottom: "8px"
+    marginBottom: "8px",
+    "& a": {
+      color: theme.color
+    }
   },
   techLogo: {
     width: "15%",
