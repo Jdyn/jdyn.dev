@@ -81,13 +81,13 @@ export default {
     ],
     width: "350px"
   },
-  lemonade: {
-    name: "Pink Lemonade",
+  new: {
+    name: "Coming Soon",
+    description: "Upcoming Project",
+    image: "images/projects/new.png",
     overview: [],
-    technologies: [],
+    technologies: [tech.next, tech.react, tech.redux, tech.phoenix],
     links: [],
-    description: "#f093fb → #f5576c",
-    css: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     width: "350px"
   },
   window: {

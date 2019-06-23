@@ -25,7 +25,7 @@ class HomeContainer extends Component {
       project.academus,
       project.typer,
       project.jdyn,
-      project.lemonade,
+      project.new,
       project.window
     ];
 

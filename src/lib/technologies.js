@@ -40,7 +40,7 @@ export default {
   react: {
     name: "React.js",
     level: "97%",
-    overview: 
+    overview:
       "React's rise in popularity among developers is certainly not unfounded, features that were once arduous to implement are arguably elementary with React. The most fundamental purpose of a front-end framework is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
     icon: "images/technologies/react.svg",
     suit: "images/languages/javascript.svg"
@@ -50,6 +50,13 @@ export default {
     level: "95%",
     overview: "",
     icon: "images/technologies/redux.svg",
+    suit: "images/languages/javascript.svg"
+  },
+  next: {
+    name: "Next.js",
+    level: "",
+    overview: "",
+    icon: "images/technologies/next.svg",
     suit: "images/languages/javascript.svg"
   },
   node: {
