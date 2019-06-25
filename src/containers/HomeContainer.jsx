@@ -25,8 +25,8 @@ class HomeContainer extends Component {
       project.academus,
       project.typer,
       project.jdyn,
-      project.new,
-      project.window
+      project.window,
+      project.new
     ];
 
     this.languages = [lang.Python, lang.Swift, lang.javaScript, lang.elixir];

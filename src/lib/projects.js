@@ -88,7 +88,7 @@ export default {
     overview: [],
     technologies: [tech.next, tech.react, tech.redux, tech.phoenix],
     links: [],
-    width: "350px"
+    width: "605px"
   },
   window: {
     name: "Fog",

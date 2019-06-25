@@ -11,7 +11,7 @@ const propTypes = {
 const Stripes = props => {
   const { classes } = props;
 
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <div className={classes.stripes}>

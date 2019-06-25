@@ -22,7 +22,7 @@ const propTypes = {
 const Home = props => {
   const { classes, cards, projects, changeTheme, currentTheme } = props;
 
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <div className={classes.root}>
@@ -36,7 +36,7 @@ const Home = props => {
       {width < 650 && <Social />} {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1561267245139)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1561454406303)}</footer>
     </div>
   );
 };

@@ -30,7 +30,7 @@ const TechStack = props => {
   const { classes, cards } = props;
   const [removed] = useState(() => new Set());
   const [size, setSize] = useState(0);
-  const [hovered, setHovered] = useState(false);
+  // const [hovered, setHovered] = useState(false);
   
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
@@ -56,7 +56,7 @@ const TechStack = props => {
         const x = isRemoved ? (200 + window.innerWidth) * dir : down ? xDelta : 0; // When a card is removed it flys out left or right, otherwise goes back to zero
         const rotation = xDelta / 100 + (isRemoved ? dir * 10 * velocity : 0); // Rotates the card as it is being removed.
         const scale = down ? 1.15 : 1; // Clicking the card increases it's scale.
-        setHovered(down);
+        // setHovered(down);
         return {
           x,
           rotation,
