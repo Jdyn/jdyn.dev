@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Router from "../components/Router";
 import { ThemeProvider } from "react-jss";
 import themes from "../lib/theme";
-import Baseline from "../components/Baseline";
+import Baseline from "../components/reusable/Baseline";
 
 const types = {
   dark: "DARK",

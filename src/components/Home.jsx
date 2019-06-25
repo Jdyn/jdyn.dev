@@ -7,12 +7,12 @@ import Projects from "./Projects";
 import Button from "./reusable/Button";
 import Social from "./Social";
 import formatTime from "../util/formatTime";
-import Stripes from "./Stripes";
+import Stripes from "./reusable/Stripes";
 import useWindowDimensions from "../lib/useWindow";
 
 const propTypes = {
-  classes: PropTypes.object.isRequired,
   cards: PropTypes.array.isRequired,
+  classes: PropTypes.object.isRequired,
   projects: PropTypes.array.isRequired,
   languages: PropTypes.array.isRequired,
   changeTheme: PropTypes.func.isRequired,
