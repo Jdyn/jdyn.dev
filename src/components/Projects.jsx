@@ -189,25 +189,17 @@ const styles = theme => ({
     borderRadius: 10,
     minWidth: "250px",
     maxWidth: "1195px",
-    // minHeight: "65px",
     cursor: "pointer",
-    margin: "25px",
-    "@media (min-width: 700px)": {
-      margin: "25px 65px"
-      // padding: "10px"
-    },
     willChange: "width, height"
   },
   buttonTitle: {
     display: "flex",
     color: "white",
     position: "relative",
-    // marginTop: "-20px",
     fontWeight: 700,
     justifyContent: "center",
     flexGrow: 1,
     width: "100%",
-    // height: "100%",
     textTransform: "uppercase",
     letterSpacing: "0.125em",
     alignItems: "center"

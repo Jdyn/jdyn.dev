@@ -68,9 +68,9 @@ const styles = theme => ({
     gridArea: "social",
     flexDirection: "row",
     justifyContent: "center",
-    zIndex: 50
   },
   wrapper: {
+    zIndex: 15,
     "&:hover": {
       transform: "translateY(-3px)"
     },

@@ -151,7 +151,6 @@ const styles = theme => ({
     borderRadius: 10,
     margin: "auto",
     backgroundColor: theme.primary,
-    // zIndex: 400,
     boxShadow: `0 50px 50px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
   },
   hero: props => ({

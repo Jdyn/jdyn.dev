@@ -27,16 +27,18 @@ const Home = props => {
   return (
     <div className={classes.root}>
       <Stripes />
-      <div className={classes.stackHero}>
-        <h1>My Stack.</h1>
+      <header className={classes.header}>
         <Button id="themeSwitch" width="150px" onClick={changeTheme}>
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}
         </Button>
+      </header>
+      <div className={classes.stackHero}>
+        <h1>My Stack.</h1>
       </div>
       {width < 650 && <Social />} {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1561454406303)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1561622622196)}</footer>
     </div>
   );
 };
@@ -50,6 +52,7 @@ const styles = theme => ({
     gridTemplateRows: "min-content min-content 1fr min-content",
     zIndex: 0,
     gridTemplateAreas: `
+    'header'
     'stackHero'
     'stack'
     'social'
@@ -59,8 +62,9 @@ const styles = theme => ({
     overflow: "hidden",
     "@media (min-width: 650px)": {
       gridTemplateColumns: "1fr 1fr",
-      gridTemplateRows: "1fr min-content min-content min-content",
+      gridTemplateRows: "min-content 1fr min-content min-content min-content",
       gridTemplateAreas: `
+      'header header'
       'stackHero stack'
       'social stack'
       'projects projects'
@@ -81,7 +85,6 @@ const styles = theme => ({
     },
     "& h1": {
       margin: "auto 0",
-      // userSelect: "none",
       padding: "10px 0 0 0",
       color: theme.white,
       "@media (min-width: 650px)": {
@@ -99,8 +102,11 @@ const styles = theme => ({
     height: "125px",
     justifyContent: "center",
     alignItems: "flex-end",
-    // backgroundColor: theme.quartinary,
     color: theme.color
+  },
+  header: {
+    gridArea: "header",
+    zIndex: 50
   }
 });
 

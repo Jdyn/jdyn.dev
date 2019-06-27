@@ -62,7 +62,6 @@ const styles = theme => ({
       gridRow: 4,
       background: theme.stripeBottom,
       borderRadius: "0 16px 0 0"
-      //   boxShadow: "0 5px 20px 0 rgb(0,0,0,.3)"
     }
   }
 });

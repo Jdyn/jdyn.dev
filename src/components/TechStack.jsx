@@ -103,7 +103,6 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     maxWidth: "650px",
-    marginTop: "6%",
     height: "525px",
     justifyContent: "center",
     gridArea: "stack",
@@ -115,7 +114,7 @@ const styles = theme => ({
     width: "100%",
     height: "100%",
     willChange: "transform",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   hidden: {
     display: "flex",
