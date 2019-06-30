@@ -4,14 +4,15 @@ import withStyles from "react-jss";
 import { animated } from "react-spring";
 
 const propTypes = {
-  classes: PropTypes.object.isRequired,
   style: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
   project: PropTypes.object.isRequired,
   handleModal: PropTypes.func.isRequired,
 };
 
 const ProjectCard = props => {
   const { classes, style, project, handleModal, tabIndex } = props;
+  
   const keyPressed = event => {
     if (event.key === "Enter") {
       if (`${document.activeElement.tabIndex}` === tabIndex) {
@@ -43,7 +44,7 @@ const styles = theme => ({
     outline: "none",
     willChange: "transform, opacity, height, margin",
     justifyContent: "center",
-    boxShadow: `0px 0px 10px -3px ${theme.shadow}`,
+    boxShadow: `0px 0px 20px 0px ${theme.shadow}`,
     backgroundImage: `url(${props.project.image})`,
     backgroundSize: "cover",
     backgroundPosition: "center"

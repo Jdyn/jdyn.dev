@@ -67,7 +67,7 @@ const styles = theme => ({
     position: "relative",
     gridArea: "social",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   wrapper: {
     zIndex: 15,
@@ -80,8 +80,8 @@ const styles = theme => ({
       width: "64px",
       color: theme.color,
       "@media (min-width: 650px)": {
-        color: theme.white,
-      },
+        color: theme.white
+      }
     }
   }
 });

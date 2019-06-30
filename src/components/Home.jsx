@@ -1,14 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
-import withStyles from "react-jss";
-import TechStack from "./TechStack";
-import Projects from "./Projects";
-// import Languages from "./Languages";
 import Button from "./reusable/Button";
 import Social from "./Social";
-import formatTime from "../util/formatTime";
 import Stripes from "./reusable/Stripes";
+import Projects from "./Projects";
+import TechStack from "./TechStack";
+import PropTypes from "prop-types";
+import withStyles from "react-jss";
+import formatTime from "../util/formatTime";
 import useWindowDimensions from "../lib/useWindow";
+// import Languages from "./Languages";
 
 const propTypes = {
   cards: PropTypes.array.isRequired,
@@ -35,10 +35,11 @@ const Home = props => {
       <div className={classes.stackHero}>
         <h1>My Stack.</h1>
       </div>
-      {width < 650 && <Social />} {/* <Languages languages={props.languages} /> */}
+      {width < 650 && <Social />}
+      {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1561622622196)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1561901353708)}</footer>
     </div>
   );
 };
