@@ -50,7 +50,7 @@ const styles = theme => ({
       margin: 0,
       padding: "20px",
       userSelect: "none",
-      fontSize: 17,
+      fontSize: 16,
       flexGrow: 1,
       color: theme.color,
       fontWeight: 500,
@@ -91,7 +91,6 @@ const styles = theme => ({
       fontWeight: 700,
       textTransform: "uppercase",
       letterSpacing: "0.125em",
-      justifyContent: "middle",
       alignItems: "center",
       "& span": {
         textAlign: "right",

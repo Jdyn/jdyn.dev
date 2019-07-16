@@ -80,7 +80,7 @@ const TechStack = props => {
   return (
     <div className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
-        Thank you for viewing.
+        Cheers
       </animated.div>
       {springs.map((props, index) => (
         <animated.div

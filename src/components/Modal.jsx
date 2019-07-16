@@ -13,27 +13,6 @@ const propTypes = {
 const Modal = props => {
   const { classes, setModal, item } = props;
 
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeydown);
-    return () => {
-      document.removeEventListener("keydown", handleKeydown);
-    };
-  }, [handleKeydown]);
-
-  const closeModal = event => {
-    if (event.target === event.currentTarget) {
-      document.body.style.overflow = "visible";
-      set({ width: "0%", opacity: 0, transform: "scale(0)" });
-    }
-  };
-
-  const handleKeydown = event => {
-    if (event.key === "Escape") {
-      document.body.style.overflow = "visible";
-      set({ width: "0%", opacity: 0, transform: "scale(0)" });
-    }
-  };
-
   const handleLinkClick = (event, desc) => {
     ReactGA.event({
       category: "Projects",
@@ -58,8 +37,33 @@ const Modal = props => {
     }
   }));
 
+  useEffect(() => {
+    const handleKeydown = event => {
+      if (event.key === "Escape") {
+        document.body.style.overflow = "visible";
+        set({ width: "0%", opacity: 0, transform: "scale(0)" });
+      }
+    };
+
+    document.addEventListener("keydown", handleKeydown);
+    return () => {
+      document.removeEventListener("keydown", handleKeydown);
+    };
+  }, [set]);
+
+  const closeModal = event => {
+    if (event.target === event.currentTarget) {
+      document.body.style.overflow = "visible";
+      set({ width: "0%", opacity: 0, transform: "scale(0)" });
+    }
+  };
+
   return (
-    <animated.div style={{ opacity }} className={classes.root} onClick={e => closeModal(e)}>
+    <animated.div
+      style={{ opacity }}
+      className={classes.root}
+      onClick={e => closeModal(e)}
+    >
       <animated.div className={classes.container} style={{ opacity, transform }}>
         <div className={classes.hero}>
           <h1>{item.name}</h1>

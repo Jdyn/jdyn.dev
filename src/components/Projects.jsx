@@ -20,31 +20,6 @@ const Projects = props => {
 
   const myRef = useRef();
 
-  const handleClickOutside = e => {
-    if (
-      !myRef.current.contains(e.target) &&
-      !modal &&
-      e.target !== document.getElementById("0729") &&
-      e.target !== document.getElementById("themeSwitch")
-    ) {
-      set(false);
-    }
-  };
-
-  const handleTouchOutside = e => {
-    if (
-      !myRef.current.contains(e.target) &&
-      !modal &&
-      e.target !== document.getElementById("0729") &&
-      e.target !== document.getElementById("themeSwitch") &&
-      !scrolled
-    ) {
-      set(false);
-    }
-
-    setScroll(false);
-  };
-
   const handleModal = project => {
     document.body.style.overflow = "hidden";
     ReactGA.event({
@@ -60,6 +35,31 @@ const Projects = props => {
   };
 
   useEffect(() => {
+    const handleClickOutside = e => {
+      if (
+        !myRef.current.contains(e.target) &&
+        !modal &&
+        e.target !== document.getElementById("0729") &&
+        e.target !== document.getElementById("themeSwitch")
+      ) {
+        set(false);
+      }
+    };
+
+    const handleTouchOutside = e => {
+      if (
+        !myRef.current.contains(e.target) &&
+        !modal &&
+        e.target !== document.getElementById("0729") &&
+        e.target !== document.getElementById("themeSwitch") &&
+        !scrolled
+      ) {
+        set(false);
+      }
+
+      setScroll(false);
+    };
+
     document.addEventListener("mouseup", handleClickOutside);
     document.addEventListener("touchend", handleTouchOutside);
     document.addEventListener("scroll", handleScroll);
