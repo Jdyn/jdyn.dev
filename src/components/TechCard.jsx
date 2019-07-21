@@ -50,7 +50,7 @@ const styles = theme => ({
       margin: 0,
       padding: "20px",
       userSelect: "none",
-      fontSize: 16,
+      fontSize: 17,
       flexGrow: 1,
       color: theme.color,
       fontWeight: 500,
