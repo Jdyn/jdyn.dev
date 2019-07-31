@@ -78,7 +78,7 @@ const TechStack = props => {
   });
 
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
         Cheers
       </animated.div>
@@ -93,7 +93,7 @@ const TechStack = props => {
           <TechCard {...props} index={index} bind={bind} card={cards[index]} />
         </animated.div>
       ))}
-    </div>
+    </section>
   );
 };
 

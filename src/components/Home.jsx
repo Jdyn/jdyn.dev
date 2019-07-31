@@ -32,9 +32,9 @@ const Home = props => {
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}
         </Button>
       </header>
-      <div className={classes.stackHero}>
+      <section className={classes.stackHero}>
         <h1>My Stack.</h1>
-      </div>
+      </section>
       {width < 650 && <Social />}
       {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />

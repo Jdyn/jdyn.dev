@@ -120,7 +120,7 @@ const Projects = props => {
   useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, 0.1]);
 
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       {modal && <Modal setModal={setModal} item={currentProject} />}
       <animated.div
         id="projectsDisplay"
@@ -162,7 +162,7 @@ const Projects = props => {
           my work
         </animated.div>
       </animated.div>
-    </div>
+    </section>
   );
 };
 
