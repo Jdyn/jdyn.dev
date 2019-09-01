@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import Social from "../Social";
-import useWindowDimensions from "../../lib/useWindow";
 
 const propTypes = {
   classes: PropTypes.object.isRequired
@@ -11,15 +10,15 @@ const propTypes = {
 const Stripes = props => {
   const { classes } = props;
 
-  const { width } = useWindowDimensions();
-
   return (
     <div className={classes.stripes}>
       <span />
       <span />
       <span />
       <span />
-      <span>{width > 650 && <Social />}</span>
+      <span>
+        <Social />
+      </span>
     </div>
   );
 };

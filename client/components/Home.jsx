@@ -7,7 +7,6 @@ import TechStack from "./TechStack";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import formatTime from "../util/formatTime";
-import useWindowDimensions from "../lib/useWindow";
 // import Languages from "./Languages";
 
 const propTypes = {
@@ -22,8 +21,6 @@ const propTypes = {
 const Home = props => {
   const { classes, cards, projects, changeTheme, currentTheme } = props;
 
-  const { width } = useWindowDimensions();
-
   return (
     <div className={classes.root}>
       <Stripes />
@@ -35,7 +32,7 @@ const Home = props => {
       <section className={classes.stackHero}>
         <h1>My Stack.</h1>
       </section>
-      {width < 650 && <Social />}
+      <Social />
       {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
