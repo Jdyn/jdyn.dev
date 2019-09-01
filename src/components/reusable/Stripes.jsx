@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
-import Social from "./Social";
-// import useWindowDimensions from "../lib/useWindow";
+import Social from "../Social";
+import useWindowDimensions from "../../lib/useWindow";
 
 const propTypes = {
   classes: PropTypes.object.isRequired
@@ -11,6 +11,7 @@ const propTypes = {
 const Stripes = props => {
   const { classes } = props;
 
+  const { width } = useWindowDimensions();
 
   return (
     <div className={classes.stripes}>
@@ -61,7 +62,6 @@ const styles = theme => ({
       gridRow: 4,
       background: theme.stripeBottom,
       borderRadius: "0 16px 0 0"
-      //   boxShadow: "0 5px 20px 0 rgb(0,0,0,.3)"
     }
   }
 });

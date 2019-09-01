@@ -13,8 +13,7 @@ class HomeContainer extends Component {
     };
 
     this.cards = [
-      tech.docker,
-      tech.django,
+      // tech.docker,
       tech.css,
       tech.phoenix,
       tech.ios,
@@ -26,8 +25,8 @@ class HomeContainer extends Component {
       project.academus,
       project.typer,
       project.jdyn,
-      project.lemonade,
-      project.window
+      project.window,
+      project.new
     ];
 
     this.languages = [lang.Python, lang.Swift, lang.javaScript, lang.elixir];

@@ -30,7 +30,7 @@ const TechStack = props => {
   const { classes, cards } = props;
   const [removed] = useState(() => new Set());
   const [size, setSize] = useState(0);
-  const [hovered, setHovered] = useState(false);
+  // const [hovered, setHovered] = useState(false);
   
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
@@ -56,7 +56,7 @@ const TechStack = props => {
         const x = isRemoved ? (200 + window.innerWidth) * dir : down ? xDelta : 0; // When a card is removed it flys out left or right, otherwise goes back to zero
         const rotation = xDelta / 100 + (isRemoved ? dir * 10 * velocity : 0); // Rotates the card as it is being removed.
         const scale = down ? 1.15 : 1; // Clicking the card increases it's scale.
-        setHovered(down);
+        // setHovered(down);
         return {
           x,
           rotation,
@@ -78,9 +78,9 @@ const TechStack = props => {
   });
 
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       <animated.div style={hidden} className={classes.hidden}>
-        Thank you for viewing.
+        Cheers
       </animated.div>
       {springs.map((props, index) => (
         <animated.div
@@ -93,7 +93,7 @@ const TechStack = props => {
           <TechCard {...props} index={index} bind={bind} card={cards[index]} />
         </animated.div>
       ))}
-    </div>
+    </section>
   );
 };
 
@@ -103,10 +103,10 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     maxWidth: "650px",
-    marginTop: "6%",
     height: "525px",
     justifyContent: "center",
-    gridArea: "stack"
+    gridArea: "stack",
+    zIndex: 15
   },
   card: {
     display: "flex",
@@ -114,7 +114,7 @@ const styles = theme => ({
     width: "100%",
     height: "100%",
     willChange: "transform",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   hidden: {
     display: "flex",

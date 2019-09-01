@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "react-jss";
 import themes from "../lib/theme";
-import Baseline from "../components/Baseline";
-import HomeContainer from "./HomeContainer";
+import Baseline from "../components/reusable/Baseline";
 
 const types = {
   dark: "DARK",

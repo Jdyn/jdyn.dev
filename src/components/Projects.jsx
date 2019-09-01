@@ -20,31 +20,6 @@ const Projects = props => {
 
   const myRef = useRef();
 
-  const handleClickOutside = e => {
-    if (
-      !myRef.current.contains(e.target) &&
-      !modal &&
-      e.target !== document.getElementById("0729") &&
-      e.target !== document.getElementById("themeSwitch")
-    ) {
-      set(false);
-    }
-  };
-
-  const handleTouchOutside = e => {
-    if (
-      !myRef.current.contains(e.target) &&
-      !modal &&
-      e.target !== document.getElementById("0729") &&
-      e.target !== document.getElementById("themeSwitch") &&
-      !scrolled
-    ) {
-      set(false);
-    }
-
-    setScroll(false);
-  };
-
   const handleModal = project => {
     document.body.style.overflow = "hidden";
     ReactGA.event({
@@ -60,6 +35,31 @@ const Projects = props => {
   };
 
   useEffect(() => {
+    const handleClickOutside = e => {
+      if (
+        !myRef.current.contains(e.target) &&
+        !modal &&
+        e.target !== document.getElementById("0729") &&
+        e.target !== document.getElementById("themeSwitch")
+      ) {
+        set(false);
+      }
+    };
+
+    const handleTouchOutside = e => {
+      if (
+        !myRef.current.contains(e.target) &&
+        !modal &&
+        e.target !== document.getElementById("0729") &&
+        e.target !== document.getElementById("themeSwitch") &&
+        !scrolled
+      ) {
+        set(false);
+      }
+
+      setScroll(false);
+    };
+
     document.addEventListener("mouseup", handleClickOutside);
     document.addEventListener("touchend", handleTouchOutside);
     document.addEventListener("scroll", handleScroll);
@@ -120,7 +120,7 @@ const Projects = props => {
   useChain(open ? [containerRef, itemsRef] : [itemsRef, containerRef], [0, 0.1]);
 
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       {modal && <Modal setModal={setModal} item={currentProject} />}
       <animated.div
         id="projectsDisplay"
@@ -162,7 +162,7 @@ const Projects = props => {
           my work
         </animated.div>
       </animated.div>
-    </div>
+    </section>
   );
 };
 
@@ -189,25 +189,17 @@ const styles = theme => ({
     borderRadius: 10,
     minWidth: "250px",
     maxWidth: "1195px",
-    // minHeight: "65px",
     cursor: "pointer",
-    margin: "25px",
-    "@media (min-width: 700px)": {
-      margin: "25px 65px"
-      // padding: "10px"
-    },
     willChange: "width, height"
   },
   buttonTitle: {
     display: "flex",
     color: "white",
     position: "relative",
-    // marginTop: "-20px",
     fontWeight: 700,
     justifyContent: "center",
     flexGrow: 1,
     width: "100%",
-    // height: "100%",
     textTransform: "uppercase",
     letterSpacing: "0.125em",
     alignItems: "center"

@@ -67,10 +67,10 @@ const styles = theme => ({
     position: "relative",
     gridArea: "social",
     flexDirection: "row",
-    justifyContent: "center",
-    zIndex: 50
+    justifyContent: "center"
   },
   wrapper: {
+    zIndex: 15,
     "&:hover": {
       transform: "translateY(-3px)"
     },
@@ -80,8 +80,8 @@ const styles = theme => ({
       width: "64px",
       color: theme.color,
       "@media (min-width: 650px)": {
-        color: theme.white,
-      },
+        color: theme.white
+      }
     }
   }
 });

@@ -4,12 +4,12 @@ import withStyles from "react-jss";
 import { animated, interpolate } from "react-spring";
 
 const propTypes = {
-  classes: PropTypes.object.isRequired,
   card: PropTypes.object.isRequired,
-  rotation: PropTypes.object.isRequired,
-  scale: PropTypes.object.isRequired,
   bind: PropTypes.func.isRequired,
-  index: PropTypes.number.isRequired
+  scale: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  classes: PropTypes.object.isRequired,
+  rotation: PropTypes.object.isRequired
 };
 
 const trans = (rotation, scale) =>
@@ -21,29 +21,23 @@ const TechCard = props => {
 
   return (
     <animated.div
-      className={classes.container}
+      className={classes.root}
       style={{ transform: interpolate([rotation, scale], trans) }}
       {...bind(index)}
     >
-      <div className={classes.card}>
+      <div className={classes.container}>
         <div className={classes.header}>
           <img alt="tech icon" src={card.icon} />
-          <h2 className={classes.name}>
-            {/* {card.name} <span>{card.level}</span> */}
-            {card.name}
-          </h2>
+          <h2>{card.name}</h2>
         </div>
-        <div className={classes.rating}>
-          <div className={classes.rate} style={{ width: card.level }} />
-        </div>
-        <p className={classes.overview}>{card.overview}</p>
+        <p>{card.overview}</p>
       </div>
     </animated.div>
   );
 };
 
 const styles = theme => ({
-  container: {
+  root: {
     position: "relative",
     width: "100%",
     maxWidth: "285px",
@@ -51,9 +45,19 @@ const styles = theme => ({
     borderRadius: 10,
     cursor: "grab",
     backgroundColor: theme.primary,
-    boxShadow: `0 12.5px 50px -10px ${theme.shadow}, 0 10px 10px -10px ${theme.shadow}`
+    boxShadow: `0 12.5px 50px -10px ${theme.shadow}, 0 10px 10px -10px ${theme.shadow}`,
+    "& p": {
+      margin: 0,
+      padding: "20px",
+      userSelect: "none",
+      fontSize: 17,
+      flexGrow: 1,
+      color: theme.color,
+      fontWeight: 500,
+      letterSpacing: "0.085em"
+    }
   },
-  card: {
+  container: {
     display: "flex",
     flexDirection: "column",
     position: "relative",
@@ -63,16 +67,6 @@ const styles = theme => ({
       WebkitTouchCallout: "none",
       WebkitUserSelect: "none"
     }
-  },
-  overview: {
-    margin: 0,
-    padding: "20px",
-    userSelect: "none",
-    fontSize: 17,
-    flexGrow: 1,
-    color: theme.color,
-    fontWeight: 500,
-    letterSpacing: "0.085em"
   },
   header: {
     display: "flex",
@@ -97,24 +91,12 @@ const styles = theme => ({
       fontWeight: 700,
       textTransform: "uppercase",
       letterSpacing: "0.125em",
-      justifyContent: "middle",
       alignItems: "center",
       "& span": {
         textAlign: "right",
         width: "100%"
       }
     }
-  },
-  rating: {
-    display: "flex",
-    width: "100%",
-    height: "15px",
-    fontSize: "0.5em",
-    textAlign: "center",
-    backgroundColor: theme.quartinary
-  },
-  rate: {
-    backgroundColor: theme.primaryGrey
   }
 });
 

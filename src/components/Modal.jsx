@@ -5,27 +5,13 @@ import { useSpring, animated, config } from "react-spring";
 import ReactGA from "react-ga";
 
 const propTypes = {
+  item: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
-  setModal: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired
+  setModal: PropTypes.func.isRequired
 };
 
 const Modal = props => {
   const { classes, setModal, item } = props;
-
-  const handleClick = event => {
-    if (event.target === event.currentTarget) {
-      document.body.style.overflow = "visible";
-      set({ width: "0%", opacity: 0, transform: "scale(0)" });
-    }
-  };
-
-  const handleKeydown = event => {
-    if (event.key === "Escape") {
-      document.body.style.overflow = "visible";
-      set({ width: "0%", opacity: 0, transform: "scale(0)" });
-    }
-  };
 
   const handleLinkClick = (event, desc) => {
     ReactGA.event({
@@ -33,13 +19,6 @@ const Modal = props => {
       action: `project-link-click-${desc}`
     });
   };
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeydown);
-    return () => {
-      document.removeEventListener("keydown", handleKeydown);
-    };
-  }, []);
 
   const [{ opacity, transform }, set] = useSpring(() => ({
     config: config.default,
@@ -58,8 +37,29 @@ const Modal = props => {
     }
   }));
 
+  useEffect(() => {
+    const handleKeydown = event => {
+      if (event.key === "Escape") {
+        document.body.style.overflow = "visible";
+        set({ width: "0%", opacity: 0, transform: "scale(0)" });
+      }
+    };
+
+    document.addEventListener("keydown", handleKeydown);
+    return () => {
+      document.removeEventListener("keydown", handleKeydown);
+    };
+  }, [set]);
+
+  const closeModal = event => {
+    if (event.target === event.currentTarget) {
+      document.body.style.overflow = "visible";
+      set({ width: "0%", opacity: 0, transform: "scale(0)" });
+    }
+  };
+
   return (
-    <animated.div style={{ opacity }} className={classes.root} onClick={e => handleClick(e)}>
+    <animated.div style={{ opacity }} className={classes.root} onClick={e => closeModal(e)}>
       <animated.div className={classes.container} style={{ opacity, transform }}>
         <div className={classes.hero}>
           <h1>{item.name}</h1>
@@ -101,7 +101,9 @@ const Modal = props => {
             {item.technologies.map((item, index) => (
               <div className={classes.techItem} key={index}>
                 <img className={classes.techLogo} alt="technology icon" src={item.icon} />
-                {item.name}
+                <a target="_blank" rel="noopener noreferrer" href={item.href}>
+                  {item.name}
+                </a>
               </div>
             ))}
           </div>
@@ -149,7 +151,6 @@ const styles = theme => ({
     borderRadius: 10,
     margin: "auto",
     backgroundColor: theme.primary,
-    // zIndex: 400,
     boxShadow: `0 50px 50px -20px ${theme.shadow}, 0 30px 120px -30px ${theme.shadow}`
   },
   hero: props => ({
@@ -233,7 +234,11 @@ const styles = theme => ({
     marginTop: "-125px"
   },
   techItem: {
-    marginBottom: "8px"
+    marginBottom: "8px",
+    "& a": {
+      color: theme.color,
+      textDecoration: "none"
+    }
   },
   techLogo: {
     width: "15%",

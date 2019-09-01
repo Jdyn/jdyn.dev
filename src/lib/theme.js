@@ -32,7 +32,7 @@ export default {
     modal: "#292929",
     accent: "#555aff",
     accentFocus: "#AD1457",
-    shadow: "rgba(0, 0, 0, 0.3)",
+    shadow: "rgba(0, 0, 0, 0.4)",
     stripeBackground: "linear-gradient(150deg,#202020 15%,#343434 70%,#474747 94%)",
     stripeTopLeft: "#222222",
     stripeTopMiddle: "#252525",
