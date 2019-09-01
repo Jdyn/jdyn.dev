@@ -59,11 +59,7 @@ const Modal = props => {
   };
 
   return (
-    <animated.div
-      style={{ opacity }}
-      className={classes.root}
-      onClick={e => closeModal(e)}
-    >
+    <animated.div style={{ opacity }} className={classes.root} onClick={e => closeModal(e)}>
       <animated.div className={classes.container} style={{ opacity, transform }}>
         <div className={classes.hero}>
           <h1>{item.name}</h1>
@@ -240,7 +236,8 @@ const styles = theme => ({
   techItem: {
     marginBottom: "8px",
     "& a": {
-      color: theme.color
+      color: theme.color,
+      textDecoration: "none"
     }
   },
   techLogo: {

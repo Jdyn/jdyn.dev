@@ -39,7 +39,7 @@ const Home = props => {
       {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={classes.footer}>updated {formatTime(1563268521271)}</footer>
+      <footer className={classes.footer}>updated {formatTime(1567335582139)}</footer>
     </div>
   );
 };

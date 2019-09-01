@@ -13,7 +13,7 @@ class HomeContainer extends Component {
     };
 
     this.cards = [
-      tech.docker,
+      // tech.docker,
       tech.css,
       tech.phoenix,
       tech.ios,
