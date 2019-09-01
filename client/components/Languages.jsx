@@ -47,7 +47,7 @@ const Languages = props => {
           <animated.div
             className={classes.language}
             key={index}
-            style={{ transform: style.scale }}
+            // style={{ transform: style.scale }}
             onMouseOver={e => {
               e.preventDefault();
               let arr = [...state];

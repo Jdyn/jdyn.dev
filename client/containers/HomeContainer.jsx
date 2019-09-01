@@ -8,15 +8,15 @@ class HomeContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.cards = [
-      tech.css,
-      tech.phoenix,
-      tech.ios,
-      tech.node,
-      tech.react
-    ];
+    this.cards = [tech.css, tech.phoenix, tech.ios, tech.node, tech.react];
 
-    this.projects = [project.academus, project.typer, project.jdyn, project.window, project.new];
+    this.projects = [
+      project.academus,
+      project.typer,
+      project.jdyn,
+      project.window,
+      project.new
+    ];
 
     this.languages = [lang.Python, lang.Swift, lang.javaScript, lang.elixir];
   }
