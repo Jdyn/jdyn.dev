@@ -6,7 +6,7 @@ import TechStack from "./TechStack";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import formatTime from "../util/formatTime";
-// import Languages from "./Languages";
+import tester from "./test.css";
 
 const propTypes = {
   cards: PropTypes.array.isRequired,
@@ -29,7 +29,7 @@ const Home = props => {
         </Button> */}
       </header>
       <section className={classes.stackHero}>
-        <h1>My Stack.</h1>
+        <h1 className={tester.test}>My Stack.</h1>
       </section>
       {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
