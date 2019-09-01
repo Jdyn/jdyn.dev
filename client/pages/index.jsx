@@ -1,13 +1,9 @@
 import React from "react";
-import AppContainer from "../containers/AppContainer";
+import HomeContainer from "../containers/HomeContainer";
 
 class index extends React.Component {
   render() {
-    return (
-      <div>
-        <AppContainer />
-      </div>
-    );
+    return <HomeContainer {...this.props} />;
   }
 }
 

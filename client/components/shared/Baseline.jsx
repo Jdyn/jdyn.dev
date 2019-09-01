@@ -32,23 +32,29 @@ const styles = theme => ({
       fontWeight: "normal",
       fontStyle: "normal",
       webkitTextSizeAdjust: "100%",
-      textRendering: "optimizeLegibility",
-      "&::-webkit-scrollbar": {
-        width: "15px",
-        height: "16px",
-        backgroundColor: "lightgrey"
-      },
-      "&::-webkit-scrollbar-thumb": {
-        backgroundColor: "rgba(0,0,0,0.2)"
-      },
-      "&::-webkit-scrollbar-button": {
-        width: "0",
-        height: "0",
-        display: "none"
-      }
+      textRendering: "optimizeLegibility"
     },
-    div: {
-      color: theme.color
+    "body, div": {
+      color: theme.color,
+      "@media (min-width: 1025px)": {
+        "&::-webkit-scrollbar": {
+          width: "8px"
+        },
+        "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "#999",
+          borderRadius: 6,
+          webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,.2)"
+        },
+        "&::-webkit-scrollbar-track": {
+          backgroundColor: theme.primary,
+          webkitBoxShadow: "inset 0 0 6px transparent"
+        },
+        "&::-webkit-scrollbar-button": {
+          width: "0",
+          height: "0",
+          display: "none"
+        }
+      }
     },
     "*, *::before, *::after": {
       boxSizing: "inherit"

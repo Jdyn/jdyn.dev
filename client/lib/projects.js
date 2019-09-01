@@ -10,7 +10,7 @@ export default {
   academus: {
     name: "Academus",
     description: "A student's best friend",
-    image: "images/projects/academus.png",
+    image: "/static/images/projects/academus.png",
     overview: [
       "Academus is an app for students who seek a real polished and tailored experience with features that give you an edge in school, allowing you to worry less. Since the inception of the idea in the latter half of 2018, Academus has grown beyond my expectations in part due to it's ability to integrate with many already existing solutions but also the small, yet versatile 6 person team we had, that was able to grow it into a reality.",
       "The backend of Academus is built with Rails and Node, distributed in docker containers, hosted on Microsoft Azure. Our mobile clients were built with modern languages, Swift and Kotin for iOS and Android respectively.",
@@ -43,7 +43,7 @@ export default {
   typer: {
     name: "typer.io",
     description: "",
-    image: "images/projects/typer.png",
+    image: "/static/images/projects/typer.png",
     overview: [
       "The ultimate goal of this project is to create a community for people who are genuinely interested in improving their typing abilities, but perhaps find conventional methods to be boring or unrewarding. I think because humans are inherently competitive by nature, incorporating a competitive aspect to typing can make learning and improving more interesting.",
       "The backend of typer.io is built with Phoenix and Node, distributed in AWS EC2 instances. Phoenix is connected to a Postgres DB supplied by Amazon RDS (currently). The web client is built entirely with React and utilizes Redux for state management.",
@@ -62,7 +62,7 @@ export default {
   jdyn: {
     name: "jdyn.dev",
     description: "Portfolio",
-    image: "images/projects/jdyn.png",
+    image: "/static/images/projects/jdyn.png",
     overview: [
       "The site is mainly my portfolio and some other random stuff. I might set up a blog at some point, but in the mean time I will try to update it with recent work as often as possible."
     ],
@@ -73,7 +73,7 @@ export default {
   new: {
     name: "Coming Soon",
     description: "Upcoming Project",
-    image: "images/projects/new.png",
+    image: "/static/images/projects/new.png",
     overview: [],
     technologies: [tech.next, tech.react, tech.redux, tech.phoenix],
     links: [],

@@ -8,12 +8,7 @@ class HomeContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      currentTheme: ""
-    };
-
     this.cards = [
-      // tech.docker,
       tech.css,
       tech.phoenix,
       tech.ios,
@@ -21,36 +16,27 @@ class HomeContainer extends Component {
       tech.react
     ];
 
-    this.projects = [
-      project.academus,
-      project.typer,
-      project.jdyn,
-      project.window,
-      project.new
-    ];
+    this.projects = [project.academus, project.typer, project.jdyn, project.window, project.new];
 
     this.languages = [lang.Python, lang.Swift, lang.javaScript, lang.elixir];
   }
 
-  componentDidMount() {
-    this.setState({ currentTheme: localStorage.getItem("theme") });
-  }
-
   handleThemeChange = () => {
-    if (this.state.currentTheme === "LIGHT") {
-      this.props.changeTheme("DARK");
-      this.setState({ currentTheme: "DARK" });
-    } else if (this.state.currentTheme === "DARK") {
-      this.props.changeTheme("LIGHT");
-      this.setState({ currentTheme: "LIGHT" });
+    const { theme, changeTheme } = this.props;
+
+    if (theme === "LIGHT") {
+      changeTheme("DARK");
+    } else if (theme === "DARK") {
+      changeTheme("LIGHT");
     }
   };
 
   render() {
+    console.log(this.props);
     return (
       <Home
         changeTheme={this.handleThemeChange}
-        currentTheme={this.state.currentTheme}
+        currentTheme={this.props.theme}
         cards={this.cards}
         projects={this.projects}
         languages={this.languages}

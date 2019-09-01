@@ -1,7 +1,6 @@
 import React from "react";
-import Button from "./reusable/Button";
-import Social from "./Social";
-import Stripes from "./reusable/Stripes";
+// import Button from "./shared/Button";
+import Stripes from "./shared/Stripes";
 import Projects from "./Projects";
 import TechStack from "./TechStack";
 import PropTypes from "prop-types";
@@ -25,14 +24,13 @@ const Home = props => {
     <div className={classes.root}>
       <Stripes />
       <header className={classes.header}>
-        <Button id="themeSwitch" width="150px" onClick={changeTheme}>
+        {/* <Button id="themeSwitch" width="150px" onClick={changeTheme}>
           {currentTheme === "LIGHT" ? "go dark" : "go blind"}
-        </Button>
+        </Button> */}
       </header>
       <section className={classes.stackHero}>
         <h1>My Stack.</h1>
       </section>
-      <Social />
       {/* <Languages languages={props.languages} /> */}
       <TechStack cards={cards} />
       <Projects projects={projects} />
@@ -104,7 +102,8 @@ const styles = theme => ({
   },
   header: {
     gridArea: "header",
-    zIndex: 50
+    zIndex: 50,
+    height: "75px"
   }
 });
 

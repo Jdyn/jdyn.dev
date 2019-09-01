@@ -14,24 +14,26 @@ const propTypes = {
 const to = index => ({
   x: 0,
   y: index * -6,
-  rotation: -10 + Math.random() * 25, // Randomize initial rotation in stack
+  rotation: -10 + Math.random() * 25,
   scale: 1,
   delay: index * 150
 });
 
-const from = index => ({
-  x: Math.random() > 0.55 ? window.innerWidth * 1 : window.innerWidth * -1,
-  y: -1500,
-  rotation: 0,
-  scale: 0.5
-});
+const from = index => {
+  return {
+    x: Math.random() > 0.55 ? -500 * 1 : 500 * -1,
+    y: -1500,
+    rotation: 0,
+    scale: 0.5
+  };
+};
 
 const TechStack = props => {
   const { classes, cards } = props;
   const [removed] = useState(() => new Set());
   const [size, setSize] = useState(0);
   // const [hovered, setHovered] = useState(false);
-  
+
   const [springs, set] = useSprings(cards.length, index => ({
     ...to(index),
     from: from(index),
@@ -114,7 +116,7 @@ const styles = theme => ({
     width: "100%",
     height: "100%",
     willChange: "transform",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   hidden: {
     display: "flex",
