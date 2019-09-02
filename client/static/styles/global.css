@@ -2,6 +2,7 @@
   font-family: "Museo Sans Rounded";
   src: url("/static/fonts/museo/museosansrounded-500-webfont.woff2") format("woff2");
   font-weight: 500;
+  font-display: auto;
   font-style: normal;
 }
 
@@ -9,5 +10,6 @@
   font-family: "Museo Sans Rounded";
   src: url("/static/fonts/museo/museosansrounded-700-webfont.woff2") format("woff2");
   font-weight: 700;
+  font-display: auto;
   font-style: bold;
 }

@@ -1,17 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import withStyles from "react-jss";
+import React from 'react';
+import styles from './styles.css';
 
-const propTypes = {
-  classes: PropTypes.object.isRequired
-};
+interface Props {
+  children?: React.ReactNode;
+}
 
-const social = props => {
-  const { classes } = props;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Social: React.FC = (props: Props): JSX.Element => {
   return (
-    <div className={classes.container}>
+    <div className={styles.root}>
       <a
-        className={classes.wrapper}
+        className={styles.icon}
         aria-label="View my work on Github"
         href="https://github.com/Jdyn"
         target="_blank"
@@ -33,9 +32,8 @@ const social = props => {
           </svg>
         </div>
       </a>
-
       <a
-        className={classes.wrapper}
+        className={styles.icon}
         aria-label="View my information on LinkedIn"
         href="https://www.linkedin.com/in/jadenmoore/"
         target="_blank"
@@ -61,31 +59,4 @@ const social = props => {
   );
 };
 
-const styles = theme => ({
-  container: {
-    display: "flex",
-    position: "relative",
-    gridArea: "social",
-    flexDirection: "row",
-    justifyContent: "center"
-  },
-  wrapper: {
-    zIndex: 15,
-    "&:hover": {
-      transform: "translateY(-3px)"
-    },
-    transitionDuration: ".15s",
-    "& div": {
-      height: "64px",
-      width: "64px",
-      color: theme.color,
-      "@media (min-width: 650px)": {
-        color: theme.white
-      }
-    }
-  }
-});
-
-social.propTypes = propTypes;
-
-export default withStyles(styles)(social);
+export default Social;

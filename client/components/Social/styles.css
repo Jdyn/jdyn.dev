@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  position: relative;
+  grid-area: social;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icon {
+  z-index: 15;
+  transition-duration: .15s;
+}
+
+.icon > div {
+  height: 64px;
+  width: 64px;
+  color: #f0f0f0;
+}
+
+.icon:hover {
+  transform: translateY(-3px);
+}

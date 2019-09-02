@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
-import Social from "../Social";
+import Social from "../Social/Social";
 
 const propTypes = {
   classes: PropTypes.object.isRequired

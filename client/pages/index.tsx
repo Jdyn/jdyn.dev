@@ -1,10 +1,10 @@
-import React from "react";
-import HomeContainer from "../containers/HomeContainer";
+import React from 'react';
+import HomeContainer from '../containers/HomeContainer';
 
-class index extends React.Component {
-  render() {
+class Index extends React.PureComponent {
+  public render(): JSX.Element {
     return <HomeContainer {...this.props} />;
   }
 }
 
-export default index;
+export default Index;
