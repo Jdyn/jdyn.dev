@@ -23,12 +23,8 @@ const Languages = props => {
       transform: `perspective(600px) rotateX(${item.flipped ? 180 : 0}deg)`,
       scale: `scale(${item.hovered ? 1.05 : 1.0})`,
       boxShadow: item.hovered
-        ? `0 30px 60px -8px ${
-            theme.shadow
-          }, 0 18px 36px -18px rgba(0,0,0,.3),0 -12px 36px -8px rgba(0,0,0,.025)`
-        : `0 13px 27px -5px ${
-            theme.shadow
-          }, 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)`,
+        ? `0 30px 60px -8px ${theme.shadow}, 0 18px 36px -18px rgba(0,0,0,.3),0 -12px 36px -8px rgba(0,0,0,.025)`
+        : `0 13px 27px -5px ${theme.shadow}, 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)`,
       config: { mass: 5, tension: 400, friction: 50 }
     }))
   );
@@ -73,7 +69,9 @@ const Languages = props => {
             <animated.div
               className={classes.front}
               style={{
-                transform: style.transform.interpolate(t => `${t} rotateX(180deg)`),
+                transform: style.transform.interpolate(
+                  t => `${t} rotateX(180deg)`
+                ),
                 boxShadow: style.boxShadow
               }}
             />

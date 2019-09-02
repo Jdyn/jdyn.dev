@@ -10,8 +10,8 @@ export default date => {
       ["year", 31536000]
     ];
   
-    var diff = Math.round((NOW - date) / 1000);
-    for (var t = 0; t < times.length; t++) {
+    let diff = Math.round((NOW - date) / 1000);
+    for (let t = 0; t < times.length; t++) {
       if (diff < times[t][1]) {
         if (t === 0) {
           return "Just now";

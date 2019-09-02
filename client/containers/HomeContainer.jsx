@@ -32,7 +32,6 @@ class HomeContainer extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <Home
         changeTheme={this.handleThemeChange}
