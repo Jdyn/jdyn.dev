@@ -27,3 +27,54 @@
   color: #f0f0f0;
   font-weight: bold;
 }
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 285px;
+  height: 100%;
+  border-radius: 10px;
+  cursor: grab;
+  background-color: #353535;
+  box-shadow: 0 12.5px 50px -10px rgba(0, 0, 0, 0.4), 0 10px 10px -10px rgba(0, 0, 0, 0.4);
+}
+
+.card > p {
+  display: flex;
+  margin: 0;
+  padding: 20px;
+  user-select: none;
+  font-size: 16px;
+  flex: 1;
+  color: #f0f0f0;
+  font-weight: 500;
+  letter-spacing: 0.085em;
+}
+
+.cardHeader {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 195px;
+  border-radius: 10px 10px 0 0;
+  background-color: #292929;
+  color: #f0f0f0;
+  padding: 20px;
+}
+
+.cardHeader > img {
+  position: relative;
+  max-width: 35%;
+  height: 75%;
+  user-select: none;
+}
+
+.cardHeader > h2 {
+  display: inline-flex;
+  margin: 5px 0 5px 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  align-items: center;
+}

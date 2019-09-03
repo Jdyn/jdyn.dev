@@ -1,0 +1,20 @@
+export const to = (
+  index: number
+): { x: number; y: number; rotation: number; scale: number; delay: number } => ({
+  x: 0,
+  y: index * -6,
+  rotation: -10 + Math.random() * 25,
+  scale: 1,
+  delay: index * 150
+});
+
+export const from = (): { x: number; y: number; rotation: number; scale: number } => ({
+  x: 0,
+  y: -1500,
+  rotation: 0,
+  scale: 0.5
+});
+
+export const trans = (rotation: number, scale: number): string =>
+  `perspective(${'1500px'}) rotateX(30deg) rotateY(${rotation /
+    10}deg) rotateZ(${rotation}deg) scale(${scale})`;

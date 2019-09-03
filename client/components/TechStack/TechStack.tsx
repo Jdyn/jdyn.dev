@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactGA from 'react-ga';
-import { useGesture } from 'react-with-gesture';
+import { useGesture, GestureState } from 'react-with-gesture';
 import {
   useSprings,
   animated,
@@ -10,9 +10,8 @@ import {
   SpringUpdate
 } from 'react-spring';
 import styles from './styles.css';
-import TechCard from '../TechCard';
 import { Technology } from '../../lib/technologies';
-import { to, from } from './springs';
+import { to, from, trans } from './springs';
 
 interface Props {
   cards: Technology[];
@@ -33,11 +32,11 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
   );
 
   const bind = useGesture(
-    ({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }): any => {
+    ({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }: GestureState): void => {
       const trigger = velocity > 0.2 && (xDelta < -35 || xDelta > 35); // Controls how much velocity is required to remove from stack.
       const dir = xDir < 0 ? -1 : 1; // Determines whether card was dragged left or right.
       if (!down && trigger) {
-        removed.add(index); // If mouse button is up and velocity is reached, add the card to removed.
+        removed.add(index); // If mouse button is up and trigger velocity is reached, remove the card.
         setSize(removed.size);
         ReactGA.event({
           category: 'TechStack',
@@ -45,7 +44,7 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
         });
       }
       set((i): SpringUpdate | null => {
-        if (index !== i) return null; // Only change projects for the current card
+        if (index !== i) return null; // Only apply changes to the selected card.
         const isRemoved = removed.has(index);
         let x: number;
         let tension: number;
@@ -53,25 +52,23 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
         // When a card is removed it flys out left or right, otherwise goes back to zero
         if (isRemoved) {
           x = (200 + window.innerWidth) * dir;
-          tension = 200;
+          tension = 100;
         } else if (down) {
           x = xDelta;
           tension = 800;
         } else {
           x = 0;
-          tension = 500;
+          tension = 200;
         }
 
-        const rotation: number = xDelta / 100 + (isRemoved ? dir * 10 * velocity : 0); // Rotates the card as it is being removed.
+        const rotation: number = xDelta / 100 + (isRemoved ? dir * 40 * velocity : 0); // Rotates the card as it is being removed.
         const scale: number = down ? 1.15 : 1; // Clicking the card increases it's scale.
-        const friction = 50;
 
         return {
           x,
           rotation,
           scale,
-          delay: undefined,
-          config: { friction, tension }
+          config: { friction: 50, tension }
         };
       });
 
@@ -97,20 +94,34 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
         Cheers
       </animated.div>
       {springs.map(
-        (spring, index): JSX.Element => (
-          <animated.div
-            className={styles.container}
-            key={cards[index].name}
-            style={{
-              transform: interpolate(
-                [spring.x, spring.y],
-                (x, y): string => `translate3d(${x}px,${y}px,0)`
-              )
-            }}
-          >
-            <TechCard {...spring} index={index} bind={bind} card={cards[index]} />
-          </animated.div>
-        )
+        (spring, index): JSX.Element => {
+          const card = cards[index];
+
+          return (
+            <animated.div
+              className={styles.container}
+              key={cards[index].name}
+              style={{
+                transform: interpolate(
+                  [spring.x, spring.y],
+                  (x, y): string => `translate3d(${x}px,${y}px,0)`
+                )
+              }}
+            >
+              <animated.div
+                className={styles.card}
+                style={{ transform: interpolate([spring.rotation, spring.scale], trans) }}
+                {...bind(index)}
+              >
+                <div className={styles.cardHeader}>
+                  <img alt="tech icon" src={card.icon} />
+                  <h2>{card.name}</h2>
+                </div>
+                <p>{card.overview}</p>
+              </animated.div>
+            </animated.div>
+          );
+        }
       )}
     </section>
   );
