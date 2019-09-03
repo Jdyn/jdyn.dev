@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import styles from './styles.css';
-import Stripes from '../shared/Stripes';
+import Stripes from '../Reusable/Stripes';
 import Projects from '../Projects/Projects';
 import TechStack from '../TechStack/TechStack';
 import formatTime from '../../util/formatTime';
