@@ -1,4 +1,4 @@
-export const containerConfig = isOpen => ({
+export const containerConfig = (isOpen: boolean) => ({
   from: {
     width: '0%',
     background: '#555aff',
@@ -14,7 +14,7 @@ export const containerConfig = isOpen => ({
   }
 });
 
-export const projectConfig = isOpen => ({
+export const projectConfig = (isOpen: boolean) => ({
   from: {
     height: '0px',
     transform: 'scale(0)',
@@ -29,7 +29,7 @@ export const projectConfig = isOpen => ({
   }
 });
 
-export const labelConfig = isOpen => ({
+export const labelConfig = (isOpen: boolean) => ({
   to: {
     opacity: isOpen ? 0 : 1,
     height: isOpen ? '0' : '60px'
