@@ -38,7 +38,7 @@
   border-radius: 10px 10px 15px 15px;
 }
 
-.hero > h1 span {
+.hero > h1, span {
   margin-top: 0;
   z-index: 160;
   color: #fff;

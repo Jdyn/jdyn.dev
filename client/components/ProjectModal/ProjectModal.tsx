@@ -7,15 +7,13 @@ import styles from './styles.css';
 interface Props {
   project: Project;
   setModal: (isOpen: boolean) => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const ProjectModal: React.FC<Props> = (props: Props): JSX.Element => {
-  const { setModal, project } = props;
+  const { project, setModal } = props;
 
-  const handleLinkClick = (event: React.SyntheticEvent, description: string): void => {
-    event.preventDefault();
-
+  const handleLinkClick = (description: string): void => {
     ReactGA.event({
       category: 'Projects',
       action: `project-link-click-${description}`
@@ -61,7 +59,6 @@ const ProjectModal: React.FC<Props> = (props: Props): JSX.Element => {
 
       const modal = document.getElementById('modal');
       if (modal) {
-        // Makes the content behind the modal interactable while the closing animation occurs.
         modal.style.pointerEvents = 'none';
       }
 
@@ -91,7 +88,7 @@ const ProjectModal: React.FC<Props> = (props: Props): JSX.Element => {
               (link): JSX.Element => (
                 <a
                   key={link.name}
-                  onClick={(event): void => handleLinkClick(event, link.description)}
+                  onClick={(): void => handleLinkClick(link.description)}
                   href={`${link.href}`}
                   className={styles.linkItem}
                   target="_blank"

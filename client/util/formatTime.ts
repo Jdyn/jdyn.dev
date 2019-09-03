@@ -20,7 +20,7 @@ export default (date: Date): string => {
 
       const time = times[t - 1][1] as number;
       diff = Math.round(diff / time);
-      return `${diff}  ${times[t - 1][0]}${diff === 1 ? 'ago' : 's ago'}`;
+      return `${diff}  ${times[t - 1][0]}${diff === 1 ? ' ago' : 's ago'}`;
     }
   }
 

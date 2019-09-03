@@ -1,0 +1,40 @@
+.root {
+  grid-area: projects;
+  display: flex;
+  transition-duration: 0.2s;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  min-height: 250px;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  pointer-events: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  outline: none;
+  border-radius: 10px;
+  min-width: 250px;
+  max-width: 1195px;
+  cursor: pointer;
+  will-change: width, height;
+}
+
+.container > h3 {
+  display: flex;
+  color: #fff;
+  position: relative;
+  margin: 0;
+  font-weight: 700;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  align-items: center;
+}

@@ -1,6 +1,6 @@
-import React from "react";
-import Document from "next/document";
-import { SheetsRegistry, JssProvider, createGenerateId } from "react-jss";
+import React from 'react';
+import Document from 'next/document';
+import { SheetsRegistry, JssProvider, createGenerateId } from 'react-jss';
 
 export default class JssDocument extends Document {
   static async getInitialProps(ctx) {
@@ -11,7 +11,7 @@ export default class JssDocument extends Document {
     ctx.renderPage = () =>
       originalRenderPage({
         enhanceApp: App => props => (
-          <html lang="en">
+          <html lang="en" id="0729">
             <JssProvider registry={registry} generateId={generateId}>
               <App {...props} />
             </JssProvider>
