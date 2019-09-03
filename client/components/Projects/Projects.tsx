@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTransition, useSpring, useChain, animated } from 'react-spring';
 import ReactGA from 'react-ga';
-import ProjectCard from '../ProjectCard';
 import ProjectModal from '../ProjectModal';
 import { Project } from '../../lib/projects';
 import styles from './styles.css';
@@ -105,11 +104,15 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
       >
         {projectSpring.map(
           (transition): JSX.Element => (
-            <ProjectCard
-              key={transition.key}
-              project={transition.item}
-              style={transition.props}
-              handleModal={handleModal}
+            <animated.div
+              style={{
+                ...transition.props,
+                backgroundImage: `url(${transition.item.image})`,
+                flexBasis: transition.item.width
+              }}
+              className={styles.card}
+              key={transition.item.name}
+              onClick={(): void => handleModal(transition.item)}
             />
           )
         )}

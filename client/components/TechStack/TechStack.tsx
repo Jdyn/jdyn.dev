@@ -61,7 +61,7 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
           tension = 200;
         }
 
-        const rotation: number = xDelta / 100 + (isRemoved ? dir * 40 * velocity : 0); // Rotates the card as it is being removed.
+        const rotation: number = xDelta / 100 + (isRemoved ? dir * 15 * velocity : 0); // Rotates the card as it is being removed.
         const scale: number = down ? 1.15 : 1; // Clicking the card increases it's scale.
 
         return {
