@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "build": "next build client/",
+    "now-build": "next build client/",
     "dev": "nodemon -w server/index.js server/index.js",
-    "start": "set NODE_ENV=production && node server/index.js"
+    "start": "set NODE_ENV=production&&node server/index.js"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -37,7 +38,6 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "nodemon": "^1.19.1",
-    "prettier": "^1.18.2",
-    "typescript": "^3.5.3"
+    "prettier": "^1.18.2"
   }
 }
