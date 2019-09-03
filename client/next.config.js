@@ -1,7 +1,7 @@
 const withCSS = require('@zeit/next-css');
 module.exports = withCSS({
   target: 'serverless',
-  builds: [{ src: 'package.json', use: '@now/next' }],
+  builds: [{ src: 'next.config.js', use: '@now/next' }],
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
