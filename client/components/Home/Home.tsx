@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import styles from './styles.css';
 import Stripes from '../shared/Stripes';
 import Projects from '../Projects/Projects';
-import TechStack from '../TechStack';
+import TechStack from '../TechStack/TechStack';
 import formatTime from '../../util/formatTime';
 import { Project } from '../../lib/projects';
 import { Technology } from '../../lib/technologies';
