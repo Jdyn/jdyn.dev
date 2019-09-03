@@ -4,12 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w server/index.js server/index.js",
-    "now-build": "next build",
-    "now-start": "next start",
+    "dev": "next",
     "build": "next build",
-    "deploy": "now --prod",
-    "start": "set NODE_ENV=production&&node server/index.js"
+    "start": "next start",
+    "now-build": "next build",
+    "deploy": "now --prod"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
