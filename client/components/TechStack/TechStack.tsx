@@ -11,7 +11,7 @@ import {
 } from 'react-spring';
 import styles from './styles.css';
 import { Technology } from '../../lib/technologies';
-import { to, from, trans } from './springs';
+import { stackConfig, trans } from './springs';
 
 interface Props {
   cards: Technology[];
@@ -25,8 +25,8 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
   const [springs, set] = useSprings(
     cards.length,
     (index): UseSpringProps => ({
-      ...to(index),
-      from: from(),
+      ...stackConfig(index).to,
+      from: stackConfig(index).from,
       config: { mass: 1, tension: 225, friction: 55 }
     })
   );
@@ -74,7 +74,7 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
 
       if (!down && removed.size === cards.length) {
         setTimeout((): void => {
-          set((i): SpringUpdate => to(i));
+          set((i): SpringUpdate => stackConfig(i).to);
           removed.clear();
         }, 700);
 
