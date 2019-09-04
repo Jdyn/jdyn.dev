@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import ReactGA from 'react-ga';
 import { useGesture, GestureState } from 'react-with-gesture';
-import {
-  useSprings,
-  animated,
-  interpolate,
-  useSpring,
-  UseSpringProps,
-  SpringUpdate
-} from 'react-spring';
+import { useSprings, animated, useSpring, UseSpringProps, SpringUpdate, to } from 'react-spring';
 import styles from './styles.css';
 import { Technology } from '../../lib/technologies';
 import { stackConfig, trans } from './springs';
@@ -102,7 +95,7 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
               className={styles.container}
               key={cards[index].name}
               style={{
-                transform: interpolate(
+                transform: to(
                   [spring.x, spring.y],
                   (x, y): string => `translate3d(${x}px,${y}px,0)`
                 )
@@ -110,7 +103,7 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
             >
               <animated.div
                 className={styles.card}
-                style={{ transform: interpolate([spring.rotation, spring.scale], trans) }}
+                style={{ transform: to([spring.rotation, spring.scale], trans) }}
                 {...bind(index)}
               >
                 <div className={styles.cardHeader}>
