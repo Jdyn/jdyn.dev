@@ -52,13 +52,13 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
         // When a card is removed it flys out left or right, otherwise goes back to zero
         if (isRemoved) {
           x = (200 + window.innerWidth) * dir;
-          tension = 100;
+          tension = 200;
         } else if (down) {
           x = xDelta;
           tension = 800;
         } else {
           x = 0;
-          tension = 200;
+          tension = 400;
         }
 
         const rotation: number = xDelta / 100 + (isRemoved ? dir * 15 * velocity : 0); // Rotates the card as it is being removed.

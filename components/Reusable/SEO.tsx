@@ -10,10 +10,16 @@ const SEO: React.FC<Props> = (props: Props): JSX.Element => {
   return (
     <>
       <Head>
-        <title>Jdyn</title>
+        <title>Jaden Moore</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="A Developer Portfolio - Engineer and Visionary" />
-        <meta name="og:description" content="A Developer Portfolio - Engineer and Visionary" />
+        <meta
+          name="description"
+          content="Jaden | Portfolio | A Software Developer from California doing interesting things."
+        />
+        <meta
+          name="og:description"
+          content="Jaden | Portfolio | A Software Developer from California doing interesting things."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://i.imgur.com/eOTFEq0.png" />
         <meta property="og:url" content="https://jdyn.dev" />
