@@ -97,7 +97,7 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
               style={{
                 transform: to(
                   [spring.x, spring.y],
-                  (x, y): string => `translate3d(${x}px,${y}px,0)`
+                  (x, y): string => `translate3d(${x}px, ${y}px, 0)`
                 )
               }}
             >
