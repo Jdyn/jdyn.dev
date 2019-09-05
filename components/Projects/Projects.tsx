@@ -76,12 +76,13 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
   });
 
   const projectSpringRef = useRef();
-  const projectSpring = useTransition(projects, (project): string => project.name, {
+  const projectSpring = useTransition(isOpen ? projects : [], (project): string => project.name, {
     ref: projectSpringRef,
-    from: projectConfig(isOpen).from,
-    update: projectConfig(isOpen).update,
     trail: 400 / projects.length,
-    unique: true
+    unique: true,
+    from: projectConfig(isOpen).from,
+    enter: projectConfig(isOpen).enter,
+    leave: projectConfig(isOpen).leave,
   });
 
   const labelSpring = useSpring({
@@ -91,7 +92,7 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
 
   useChain(
     isOpen ? [containerSpringRef, projectSpringRef] : [projectSpringRef, containerSpringRef],
-    [0, 0.1]
+    [0, isOpen ? 0.1 : 0.6]
   );
 
   return (
@@ -99,7 +100,7 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
       <animated.div
         ref={containerRef}
         className={styles.container}
-        style={containerSpring}
+        style={{width: containerSpring.size, height: containerSpring.size}}
         onClick={(): void => setOpen(true)}
       >
         {projectSpring.map(
@@ -116,9 +117,9 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
             />
           )
         )}
-        <animated.h3 className={styles.label} style={labelSpring}>
+        {/* <animated.h3 className={styles.label} style={labelSpring}>
           my work
-        </animated.h3>
+        </animated.h3> */}
       </animated.div>
       {modalIsOpen && <ProjectModal setModal={setModal} project={currentProject} />}
     </section>

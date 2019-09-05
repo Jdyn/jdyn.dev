@@ -7,19 +7,19 @@ interface ContainerConfig {
   };
 }
 
-export const containerConfig = (isOpen: boolean): ContainerConfig => ({
+export const containerConfig = (isOpen: boolean): any => ({
   from: {
-    width: '0%',
-    backgroundColor: '#555aff',
-    boxShadow: '0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)'
+    size: '20%',
+    // backgroundColor: '#555aff',
+    // boxShadow: '0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)'
   },
   to: {
-    width: isOpen ? '100%' : '15%',
-    backgroundColor: isOpen ? '#353535' : '#555aff',
-    cursor: isOpen ? 'default' : 'pointer',
-    boxShadow: isOpen
-      ? `0 0px 200px -20px rgba(0, 0, 0, 0.4), 0 30px 120px -30px rgba(0, 0, 0, 0.4)`
-      : `0 0px 35px 0px rgba(0, 0, 0, 0.4), 0 30px 0px -30px rgba(0,0,0,.3)`
+    size: isOpen ? '100%' : "20%"
+    // backgroundColor: isOpen ? '#353535' : '#555aff',
+    // cursor: isOpen ? 'default' : 'pointer',
+    // boxShadow: isOpen
+    //   ? `0 0px 200px -20px rgba(0, 0, 0, 0.4), 0 30px 120px -30px rgba(0, 0, 0, 0.4)`
+    //   : `0 0px 35px 0px rgba(0, 0, 0, 0.4), 0 30px 0px -30px rgba(0,0,0,.3)`
   }
 });
 
@@ -32,19 +32,20 @@ interface ProjectConfig {
   };
 }
 
-export const projectConfig = (isOpen: boolean): ProjectConfig => ({
+export const projectConfig = (isOpen: boolean): any => ({
   from: {
-    height: '0px',
+    // height: '0px',
     transform: 'scale(0)',
-    margin: '0px',
+    // margin: '0px',
     opacity: 0
   },
-  update: {
-    height: isOpen ? '350px' : '0px',
-    margin: isOpen ? '10px' : '0px',
-    transform: isOpen ? 'scale(1)' : 'scale(0)',
-    opacity: isOpen ? 1 : 0
-  }
+  enter: {
+    // height: isOpen ? '350px' : '0px',
+    // margin: isOpen ? '10px' : '0px',
+    transform: 'scale(1)', //isOpen ? 'scale(1)' : 'scale(0)',
+    opacity: 1 //isOpen ? 1 : 0
+  },
+  leave: { opacity: 0, transform: 'scale(0)' }
 });
 
 interface LabelConfig {
