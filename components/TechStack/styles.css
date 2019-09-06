@@ -13,6 +13,7 @@
   display: flex;
   position: absolute;
   width: 100%;
+  min-width: 290px;
   height: 100%;
   will-change: transform;
   justify-content: center;
@@ -37,6 +38,8 @@
   cursor: grab;
   background-color: #353535;
   box-shadow: 0 12.5px 50px -10px rgba(0, 0, 0, 0.4), 0 10px 10px -10px rgba(0, 0, 0, 0.4);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
 .card > p {
@@ -64,14 +67,13 @@
 
 .cardHeader > img {
   position: relative;
-  max-width: 35%;
-  height: 75%;
+  max-width: 45%;
   user-select: none;
 }
 
 .cardHeader > h2 {
   display: inline-flex;
-  margin: 5px 0 5px 0;
+  margin: 10px 0px;
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;

@@ -32,11 +32,11 @@ const technologies: Technologies = {
     icon: '/static/images/technologies/ios.svg'
   },
   css: {
-    name: 'CSS/HTML',
+    name: 'CSS',
     href: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     overview:
       'Serious advancements have been made with CSS in recent years. Namely CSS Grid and Flexbox. With the combination of these tools, executing more modern design patterns is trivial in comparison to earlier methods. Flexbox and Grid have allowed me to take a level-headed approach to working with CSS.',
-    icon: '/static/images/technologies/html5.svg'
+    icon: '/static/images/technologies/css.svg'
   },
   phoenix: {
     name: 'Phoenix',
@@ -71,6 +71,12 @@ const technologies: Technologies = {
       "Due to the innate speed of Node and it's unique async I/O model, Node is among my first considerations when implementing real time features. I've found myself using it often and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
     icon: '/static/images/technologies/nodejs.svg'
   },
+  postgres: {
+    name: 'PostgreSQL',
+    href: 'https://www.postgresql.org/',
+    overview: '',
+    icon: '/static/images/technologies/postgresql.svg'
+  },
   ec2: {
     name: 'Amazon EC2',
     href: 'https://aws.amazon.com/ec2/',
@@ -89,6 +95,12 @@ const technologies: Technologies = {
     overview: '',
     icon: '/static/images/technologies/rails.svg'
   },
+  nginx: {
+    name: 'nginx',
+    href: '',
+    overview: '',
+    icon: '/static/images/technologies/nginx.svg'
+  },
   azure: {
     name: 'Azure',
     href: 'https://azure.microsoft.com/en-us/overview/what-is-azure/',
@@ -100,6 +112,12 @@ const technologies: Technologies = {
     href: 'https://developer.android.com/guide/platform',
     overview: '',
     icon: '/static/images/technologies/android.svg'
+  },
+  typescript: {
+    name: 'TypeScript',
+    href: 'https://developer.android.com/guide/platform',
+    overview: '',
+    icon: '/static/images/technologies/typescript.svg'
   }
 };
 

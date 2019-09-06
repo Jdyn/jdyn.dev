@@ -70,7 +70,16 @@ const projects: Projects = {
       'The backend of typer.io is built with Phoenix and Node, distributed in AWS EC2 instances. Phoenix is connected to a Postgres DB supplied by Amazon RDS (currently). The web client is built entirely with React and utilizes Redux for state management.',
       "To dive a little deeper, Phoenix handles most of the sites general feature sets through a robust REST API, including the forum, leaderboards, accounts, etc. Node currently handles the realtime communication in the actual game. I don't know how good of an idea this was in retrospect due to scalability concerns, but there are options available. Namely clustering multiple Node instances in PM2 or docker, and creating a centralized storage between them with something like Redis. This will likely be all but neccessary if I were to continue using Node. Another option would be to ditch Node all together (atleast for gameplay) and use Phoenix's built in WebSocket support which has proven to be very scalable, having reached over 2 million concurrent web socket connections at once recently."
     ],
-    technologies: [tech.react, tech.redux, tech.node, tech.phoenix, tech.css, tech.ec2, tech.rds],
+    technologies: [
+      tech.react,
+      tech.redux,
+      tech.node,
+      tech.phoenix,
+      tech.css,
+      tech.postgres,
+      tech.ec2,
+      tech.rds
+    ],
     links: [
       link(
         'WIP demo',
@@ -87,7 +96,7 @@ const projects: Projects = {
     overview: [
       'The site is mainly my portfolio and some other random stuff. I might set up a blog at some point, but in the mean time I will try to update it with recent work as often as possible.'
     ],
-    technologies: [tech.react],
+    technologies: [tech.typescript, tech.react, tech.next],
     links: [link('Source', 'https://github.com/Jdyn/jdyn.github.io', 'jdyn.dev-source-code')],
     width: '350px'
   },
@@ -96,7 +105,18 @@ const projects: Projects = {
     description: 'Upcoming Project',
     image: '/static/images/projects/new.png',
     overview: [],
-    technologies: [tech.next, tech.react, tech.redux, tech.phoenix],
+    technologies: [
+      tech.typescript,
+      tech.next,
+      tech.react,
+      tech.redux,
+      tech.phoenix,
+      tech.nginx,
+      tech.css,
+      tech.postgres,
+      tech.ec2,
+      tech.rds
+    ],
     links: [],
     width: '605px'
   },
