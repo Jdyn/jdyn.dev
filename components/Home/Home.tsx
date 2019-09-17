@@ -16,7 +16,7 @@ export interface Props {
 const Home: React.FC<Props> = (props: Props): JSX.Element => {
   const { cards, projects } = props;
 
-  const lastUpdate = useMemo((): string => formatTime(new Date(1568516395824)), [formatTime]);
+  const lastUpdate = useMemo((): string => formatTime(new Date(1568681114045)), [formatTime]);
 
   return (
     <div className={styles.root}>

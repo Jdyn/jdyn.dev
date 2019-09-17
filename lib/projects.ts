@@ -94,7 +94,7 @@ const projects: Projects = {
     description: 'Portfolio',
     image: '/static/images/projects/jdyn.png',
     overview: [
-      'The site is mainly my portfolio and some other random stuff. I might set up a blog at some point, but in the mean time I will try to update it with recent work as often as possible.'
+      'Welcome to my portfolio. This space essentially allows me to give commentary about a project and perhaps some context. In addition, Links and technologies pertaining to the project are here for additional information and perhaps some insight into how the project was built.'
     ],
     technologies: [tech.typescript, tech.react, tech.next],
     links: [link('Source', 'https://github.com/Jdyn/jdyn.github.io', 'jdyn.dev-source-code')],
