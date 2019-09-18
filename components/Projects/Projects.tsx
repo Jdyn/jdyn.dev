@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useTransition, useSpring, useChain, animated } from 'react-spring';
+import { useTransition, useSpring, useChain, animated, SpringHandle } from 'react-spring';
 import ReactGA from 'react-ga';
 import ProjectModal from '../ProjectModal';
 import { Project } from '../../lib/projects';
@@ -18,14 +18,14 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
   const [modalIsOpen, setModal] = useState(false);
   const [currentProject, setProject] = useState(null);
 
-  const containerRef: React.RefObject<HTMLDivElement> = useRef();
+  const rootRef: React.RefObject<HTMLDivElement> = useRef();
 
   useEffect((): React.EffectCallback => {
     const handleScrollEvent = (): void => setScroll(true);
 
     const isOutOfBounds = (target: EventTarget): boolean => {
       const html = document.getElementById('0729');
-      const containsTarget = containerRef.current.contains(target as Node);
+      const containsTarget = rootRef.current.contains(target as Node);
 
       if (!containsTarget && !modalIsOpen && target !== html) {
         return true;
@@ -68,36 +68,24 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
     setModal(true);
   };
 
-  const containerSpringRef = useRef();
-  const containerSpring = useSpring({
-    ref: containerSpringRef,
-    from: containerConfig(isOpen).from,
-    to: containerConfig(isOpen).to
-  });
+  const containerRef: React.RefObject<SpringHandle> = useRef();
+  const containerSpring = useSpring(containerConfig(isOpen, containerRef));
 
-  const projectSpringRef = useRef();
-  const projectSpring = useTransition(projects, (project): string => project.name, {
-    ref: projectSpringRef,
-    from: projectConfig(isOpen).from,
-    update: projectConfig(isOpen).update,
-    trail: 400 / projects.length,
-    unique: true
-  });
-
-  const labelSpring = useSpring({
-    from: labelConfig(isOpen).from,
-    to: labelConfig(isOpen).to
-  });
-
-  useChain(
-    isOpen ? [containerSpringRef, projectSpringRef] : [projectSpringRef, containerSpringRef],
-    [0, 0.1]
+  const projectRef = useRef();
+  const projectSpring = useTransition(
+    projects,
+    (project): string => project.name,
+    projectConfig(isOpen, projectRef, projects.length)
   );
+
+  const labelSpring = useSpring(labelConfig(isOpen));
+
+  useChain(isOpen ? [containerRef, projectRef] : [projectRef, containerRef], [0, 0.1]);
 
   return (
     <section className={styles.root}>
       <animated.div
-        ref={containerRef}
+        ref={rootRef}
         className={styles.container}
         style={containerSpring}
         onClick={(): void => setOpen(true)}

@@ -1,13 +1,9 @@
-interface ContainerConfig {
-  [name: string]: {
-    width: string;
-    backgroundColor: string;
-    boxShadow: string;
-    cursor?: string;
-  };
-}
+import { RefObject } from 'react';
+import { UseSpringProps, SpringHandle, UseTransitionProps } from 'react-spring';
+import { Project } from '../../lib/projects';
 
-export const containerConfig = (isOpen: boolean): ContainerConfig => ({
+export const containerConfig = (isOpen: boolean, ref: RefObject<SpringHandle>): UseSpringProps => ({
+  ref,
   from: {
     width: '0%',
     backgroundColor: '#555aff',
@@ -23,16 +19,14 @@ export const containerConfig = (isOpen: boolean): ContainerConfig => ({
   }
 });
 
-interface ProjectConfig {
-  [name: string]: {
-    height: string;
-    margin: string;
-    transform: string;
-    opacity: number;
-  };
-}
-
-export const projectConfig = (isOpen: boolean): ProjectConfig => ({
+export const projectConfig = (
+  isOpen: boolean,
+  ref: RefObject<SpringHandle>,
+  trailLength: number
+): UseTransitionProps<Project> | { ref: RefObject<SpringHandle> } => ({
+  ref,
+  trail: 400 / trailLength,
+  unique: true,
   from: {
     height: '0px',
     transform: 'scale(0)',
@@ -47,14 +41,7 @@ export const projectConfig = (isOpen: boolean): ProjectConfig => ({
   }
 });
 
-interface LabelConfig {
-  [name: string]: {
-    opacity: number;
-    height: string;
-  };
-}
-
-export const labelConfig = (isOpen: boolean): LabelConfig => ({
+export const labelConfig = (isOpen: boolean): UseSpringProps => ({
   to: {
     opacity: isOpen ? 0 : 1,
     height: isOpen ? '0' : '60px'
