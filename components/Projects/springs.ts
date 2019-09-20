@@ -6,16 +6,12 @@ export const containerConfig = (isOpen: boolean, ref: RefObject<SpringHandle>): 
   ref,
   from: {
     width: '0%',
-    backgroundColor: '#555aff',
-    boxShadow: '0 0px 75px 10px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)'
+    backgroundColor: '#555aff'
   },
   to: {
     width: isOpen ? '100%' : '15%',
     backgroundColor: isOpen ? '#353535' : '#555aff',
-    cursor: isOpen ? 'default' : 'pointer',
-    boxShadow: isOpen
-      ? `0 0px 200px -20px rgba(0, 0, 0, 0.4), 0 30px 120px -30px rgba(0, 0, 0, 0.4)`
-      : `0 0px 35px 0px rgba(0, 0, 0, 0.4), 0 30px 0px -30px rgba(0,0,0,.3)`
+    cursor: isOpen ? 'default' : 'pointer'
   }
 });
 
