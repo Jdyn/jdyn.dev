@@ -110,7 +110,7 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
                   <img alt="tech icon" src={card.icon} />
                   <h2>{card.name}</h2>
                 </div>
-                <p>{card.overview}</p>
+                {/* <p>{card.overview}</p> */}
               </animated.div>
             </animated.div>
           );
