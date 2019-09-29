@@ -83,7 +83,7 @@ const projects: Projects = {
     links: [
       link(
         'WIP demo',
-        'http://typer-io-web.s3-website-us-west-1.amazonaws.com/',
+        'http://www.typer.io.s3-website-us-west-2.amazonaws.com/',
         'typer.io-homepage'
       )
     ],
