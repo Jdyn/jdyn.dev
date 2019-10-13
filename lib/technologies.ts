@@ -97,7 +97,7 @@ const technologies: Technologies = {
   },
   nginx: {
     name: 'nginx',
-    href: '',
+    href: 'https://www.nginx.com/',
     overview: '',
     icon: '/static/images/technologies/nginx.svg'
   },

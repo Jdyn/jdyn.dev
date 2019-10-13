@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import ReactGA from 'react-ga';
 import { useGesture, GestureState } from 'react-with-gesture';
 import { useSprings, animated, useSpring, UseSpringProps, SpringUpdate, to } from 'react-spring';
-import styles from './styles.css';
 import { Technology } from '../../lib/technologies';
 import { stackConfig, trans } from './springs';
+import styles from './styles.css';
 
 interface Props {
   cards: Technology[];
@@ -28,14 +28,17 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
     ({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }: GestureState): void => {
       const trigger = velocity > 0.2 && (xDelta < -35 || xDelta > 35); // Controls how much velocity is required to remove from stack.
       const dir = xDir < 0 ? -1 : 1; // Determines whether card was dragged left or right.
+
+      // If mouse button is up and trigger velocity is reached, remove the card.
       if (!down && trigger) {
-        removed.add(index); // If mouse button is up and trigger velocity is reached, remove the card.
+        removed.add(index);
         setSize(removed.size);
         ReactGA.event({
           category: 'TechStack',
           action: 'swipe-card'
         });
       }
+
       set((i): SpringUpdate | null => {
         if (index !== i) return null; // Only apply changes to the selected card.
         const isRemoved = removed.has(index);
@@ -107,7 +110,7 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
                 {...bind(index)}
               >
                 <div className={styles.cardHeader}>
-                  <img alt="tech icon" src={card.icon} />
+                  <img alt={card.name} src={card.icon} />
                   <h2>{card.name}</h2>
                 </div>
                 <p>{card.overview}</p>
