@@ -86,9 +86,12 @@ const TechStack: React.FC<Props> = (props: Props): JSX.Element => {
 
   return (
     <section className={styles.root}>
-      <animated.div style={hidden} className={styles.label}>
-        Cheers
-      </animated.div>
+      {removed.size >= cards.length && (
+        <animated.div style={hidden} className={styles.label}>
+          Cheers
+        </animated.div>
+      )}
+
       {springs.map(
         (spring, index): JSX.Element => {
           const card = cards[index];
