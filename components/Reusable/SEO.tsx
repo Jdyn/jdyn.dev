@@ -14,7 +14,7 @@ const SEO: React.FC<Props> = (props: Props): JSX.Element => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="google-site-verification"
-          content="0IJY9Nuttd7aWn2iLERpeNSnm85WjCrEIUAqOiqLeGI"
+          content="gnLPOozHSJXW4wLOfSCFY1lWuRH-GXezcJHwTpvRWPw"
         />
         <meta
           name="description"
