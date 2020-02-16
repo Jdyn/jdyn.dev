@@ -80,13 +80,7 @@ const projects: Projects = {
       tech.ec2,
       tech.rds
     ],
-    links: [
-      link(
-        'WIP demo',
-        'http://www.typer.io.s3-website-us-west-2.amazonaws.com/',
-        'typer.io-homepage'
-      )
-    ],
+    links: [link('WIP Website', 'https://typer.io', 'typer.io-homepage')],
     width: '605px'
   },
   jdyn: {
