@@ -47,19 +47,7 @@ const projects: Projects = {
       tech.docker,
       tech.css
     ],
-    links: [
-      link('Website', 'https://academus.io/', 'academus-homepage'),
-      link(
-        'iOS',
-        'https://itunes.apple.com/us/app/academus/id1366365507?mt=8',
-        'academus-ios-homepage'
-      ),
-      link(
-        'Android',
-        'https://play.google.com/store/apps/details?id=io.academus.android',
-        'academus-android-homepage'
-      )
-    ]
+    links: [link('Website', 'https://academus.io/', 'academus-homepage')]
   },
   typer: {
     name: 'typer.io',
