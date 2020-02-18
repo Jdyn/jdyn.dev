@@ -1,14 +1,14 @@
 .stripes {
   display: grid;
   position: absolute;
-  grid: repeat(4, 180px) / repeat(7, 1fr);
+  grid: repeat(4, 200px) / repeat(7, 1fr);
   top: 0;
   z-index: 0;
   width: 100%;
   overflow: hidden;
   transform-origin: 0;
   background: linear-gradient(150deg,#202020 15%,#343434 70%,#474747 94%);
-  transform: skewY(-8deg);
+  transform: skewY(-10deg);
 }
 
 .stripes span:first-child {
