@@ -12,7 +12,7 @@ const Social: React.FC = (props: Props): JSX.Element => {
       <a
         className={styles.icon}
         aria-label="View my work on Github"
-        href="https://github.com/Jdyn/jdyn.dev"
+        href="https://github.com/Jdyn"
         target="_blank"
         rel="noopener noreferrer"
       >
