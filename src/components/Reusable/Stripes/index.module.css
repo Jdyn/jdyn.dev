@@ -7,7 +7,7 @@
   width: 100%;
   overflow: hidden;
   transform-origin: 0;
-  background: linear-gradient(150deg,#202020 15%,#343434 70%,#474747 94%);
+  background: linear-gradient(150deg,#202020 20%,#343434 70%,#474747 94%);
   transform: skewY(-10deg);
 }
 

@@ -61,6 +61,7 @@ const projects: Projects = {
     technologies: [
       tech.react,
       tech.redux,
+      tech.next,
       tech.node,
       tech.phoenix,
       tech.css,
@@ -68,7 +69,10 @@ const projects: Projects = {
       tech.ec2,
       tech.rds
     ],
-    links: [link('WIP Website', 'https://typer.io', 'typer.io-homepage')],
+    links: [
+      link('Website', 'https://typer.io', 'typer.io-homepage'),
+      link('Frontend Source', 'https://github.com/Jdyn/typer-io-web', 'typer.io-homepage')
+    ],
     width: '605px'
   },
   jdyn: {
@@ -76,17 +80,20 @@ const projects: Projects = {
     description: 'Portfolio',
     image: '/src/images/projects/jdyn.png',
     overview: [
-      'Welcome to my portfolio. This space essentially allows me to give commentary about a project and perhaps some context. In addition, Links and technologies pertaining to the project are here for additional information and perhaps some insight into how the project was built.'
+      'This space essentially allows for me to give some form of commentary, context, and perhaps some insight into how the project was built. In addition, Links and technologies pertaining to the project are there for additional information.'
     ],
     technologies: [tech.typescript, tech.react, tech.next],
-    links: [link('Source', 'https://github.com/Jdyn/jdyn.github.io', 'jdyn.dev-source-code')],
+    links: [
+      link('Recursion', 'https://jdyn.dev', 'jdyn.dev'),
+      link('Source', 'https://github.com/Jdyn/jdyn.dev', 'jdyn.dev-source-code')
+    ],
     width: '350px'
   },
   newProject: {
-    name: 'Coming Soon',
-    description: 'Upcoming Project',
-    image: '/src/images/projects/new.png',
-    overview: [],
+    name: 'LoLHero',
+    description: 'Video Game Account Boosting Service',
+    image: '/src/images/projects/lolhero.png',
+    overview: ['WIP'],
     technologies: [
       tech.typescript,
       tech.next,
@@ -99,16 +106,20 @@ const projects: Projects = {
       tech.ec2,
       tech.rds
     ],
-    links: [],
+    links: [
+      link('Frontend Source', 'https://github.com/Jdyn/lolhero-web', 'lolhero-front-source'),
+      link('Backend Source', 'https://github.com/Jdyn/lolhero-server', 'lolhero-front-source'),
+      link('Live Website', 'https://hero-dev.vercel.app/', 'lolhero-website')
+    ],
     width: '605px'
   },
   window: {
-    name: 'Fog',
-    image: '',
+    name: 'Coming Soon',
+    image: null,
     overview: [],
     technologies: [],
     links: [],
-    description: '#fdfbfb → #ebedee',
+    description: 'Unannounced Project',
     css: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)',
     width: '350px'
   }

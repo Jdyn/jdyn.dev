@@ -28,7 +28,7 @@ const technologies: Technologies = {
     name: 'iOS',
     href: 'https://developer.apple.com/documentation/',
     overview:
-      "My break into software development began with iOS working on Academus. The type-safety and structure given while working with Swift and Apple's platform is welcomed. Building up Academus iOS from scratch really solitified my knowledge and allowed me to grow exponentially in my early years.",
+      "The type-safety and structure given while working with Swift and Apple's platform is welcomed. Building up Academus iOS from scratch really solitified my knowledge and allowed me to grow exponentially in my early years.",
     icon: '/src/images/technologies/ios.svg'
   },
   css: {
@@ -42,14 +42,14 @@ const technologies: Technologies = {
     name: 'Phoenix',
     href: 'https://phoenixframework.org/',
     overview:
-      "Elixir's high concurrency capabilities (thanks to the Erlang VM) as well as clever pattern matching syntax and other benefits puts Phoenix on quite a pedistal for me. I built the main API of typer.io with Phoenix and it was strangely refreshing. I think Phoenix (and Elixir) has a lot more potential than it bargains for.",
+      "Elixir's high concurrency and fault tolerant design puts Phoenix among the greatest for large-scale web applications. I think Phoenix (and Elixir) has a lot more potential than it bargains for.",
     icon: '/src/images/technologies/phoenix.svg'
   },
   react: {
     name: 'React.js',
     href: 'https://reactjs.org/',
     overview:
-      "React's rise in popularity among developers is certainly not unfounded, features that were once arduous to implement are arguably elementary with React. The most fundamental purpose of a front-end framework is to enable the developer to iterate quickly and efficiently and React actualizes this idea very well.",
+      'Almost everything I make these days involves React in some way. The most fundamental purpose of a front-end framework is to enable the developer to iterate fast and React actualizes this idea very well.',
     icon: '/src/images/technologies/react.svg'
   },
   redux: {
@@ -68,7 +68,7 @@ const technologies: Technologies = {
     name: 'Node.js',
     href: 'https://nodejs.org/en/',
     overview:
-      "Due to the innate speed of Node and it's unique async I/O model, Node is among my first considerations when implementing real time features. I've found myself using it often and consider it to be quite an exceptional tool. Although with the rise of Go and Elixir, Node may have a lot to answer for, especially in terms of scalability.",
+      "Due to the inherent speed of Node's event system and async I/O model, It is among my first considerations when implementing real time features. I find myself using it often and consider it to be quite an exceptional tool.",
     icon: '/src/images/technologies/nodejs.svg'
   },
   postgres: {

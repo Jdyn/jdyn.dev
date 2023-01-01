@@ -1,7 +1,6 @@
-import { RefObject } from 'react';
-import { UseSpringProps, SpringHandle } from 'react-spring';
+import { SpringRef, UseSpringProps } from 'react-spring';
 
-export const containerConfig = (isOpen: boolean, ref: RefObject<SpringHandle>): UseSpringProps => ({
+export const containerConfig = (isOpen: boolean, ref: SpringRef) => ({
   ref,
   from: {
     width: '0%',
@@ -14,10 +13,7 @@ export const containerConfig = (isOpen: boolean, ref: RefObject<SpringHandle>): 
   }
 });
 
-export const projectConfig = (
-  isOpen: boolean,
-  trailLength: number
-) => ({
+export const projectConfig = (isOpen: boolean, trailLength: number) => ({
   trail: 400 / trailLength,
   unique: true,
   from: {
@@ -37,7 +33,7 @@ export const projectConfig = (
 export const labelConfig = (isOpen: boolean): UseSpringProps => ({
   to: {
     opacity: isOpen ? 0 : 1,
-    height: isOpen ? '0' : '60px'
+    height: isOpen ? '0' : '50px'
   },
   from: {
     opacity: 0,

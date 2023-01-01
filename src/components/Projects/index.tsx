@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useTransition, useSpring, useChain, animated, SpringHandle } from 'react-spring';
+import { useTransition, useSpring, useChain, animated, useSpringRef } from 'react-spring';
 import ReactGA from 'react-ga';
 import ProjectModal from '../ProjectModal';
 import { Project } from '../../lib/projects';
 import styles from './index.module.css';
-import { containerConfig, projectConfig, labelConfig } from './springs';
+import { containerConfig, labelConfig } from './springs';
 
 interface Props {
   projects: Project[];
@@ -20,7 +20,7 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
 
   const rootRef: React.RefObject<HTMLDivElement> = useRef();
 
-  useEffect((): React.EffectCallback => {
+  useEffect(() => {
     const handleScrollEvent = (): void => setScroll(true);
 
     const isOutOfBounds = (target: EventTarget): boolean => {
@@ -68,29 +68,26 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
     setModal(true);
   };
 
-  const containerRef = useRef();
+  const containerRef = useSpringRef();
   const containerSpring = useSpring(containerConfig(isOpen, containerRef));
 
-  const projectRef = useRef();
-  const projectSpring = useTransition(
-    projects,
-    {
-      ref: projectRef,
-      trail: 400 / projects.length,
-      from: {
-        height: '0px',
-        transform: 'scale(0)',
-        margin: '0px',
-        opacity: 0
-      },
-      update: {
-        height: isOpen ? '350px' : '0px',
-        margin: isOpen ? '10px' : '0px',
-        transform: isOpen ? 'scale(1)' : 'scale(0)',
-        opacity: isOpen ? 1 : 0
-      }
+  const projectRef = useSpringRef();
+  const projectSpring = useTransition(projects, {
+    ref: projectRef,
+    trail: 400 / projects.length,
+    from: {
+      height: '0px',
+      transform: 'scale(0)',
+      margin: '0px',
+      opacity: 0
+    },
+    update: {
+      height: isOpen ? '350px' : '0px',
+      margin: isOpen ? '10px' : '0px',
+      transform: isOpen ? 'scale(1)' : 'scale(0)',
+      opacity: isOpen ? 1 : 0
     }
-  );
+  });
 
   const labelSpring = useSpring(labelConfig(isOpen));
 
@@ -109,7 +106,7 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
             <animated.div
               style={{
                 ...style,
-                backgroundImage: `url(${item.image})`,
+                backgroundImage: item.image ? `url(${item.image})` : item.css,
                 flexBasis: item.width
               }}
               className={styles.card}

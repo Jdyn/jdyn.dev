@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import { useSpring, UseSpringProps, animated, config } from 'react-spring';
+import { useSpring, animated, config } from 'react-spring';
 import { Project } from '../../lib/projects';
 import styles from './index.module.css';
 
 interface Props {
   project: Project;
   setModal: (isOpen: boolean) => void;
-  children?: React.ReactNode;
 }
 
 const ProjectModal: React.FC<Props> = (props: Props): JSX.Element => {
@@ -20,28 +19,26 @@ const ProjectModal: React.FC<Props> = (props: Props): JSX.Element => {
     });
   };
 
-  const [{ opacity, transform }, set] = useSpring(
-    () => ({
-      config: config.default,
-      to: {
-        width: '100%',
-        transform: 'scale(1)',
-        opacity: 1
-      },
-      from: {
-        width: '0%',
-        opacity: 0,
-        transform: 'scale(0)'
-      },
-      onRest: (changes): void => {
-        if (!changes.value.opacity) {
-          setModal(false);
-        }
+  const [{ opacity, transform }, set] = useSpring(() => ({
+    config: config.default,
+    to: {
+      width: '100%',
+      transform: 'scale(1)',
+      opacity: 1
+    },
+    from: {
+      width: '0%',
+      opacity: 0,
+      transform: 'scale(0)'
+    },
+    onRest: (changes): void => {
+      if (!changes.value.opacity) {
+        setModal(false);
       }
-    })
-  );
+    }
+  }));
 
-  useEffect((): React.EffectCallback => {
+  useEffect(() => {
     const handleKeydown = (event: KeyboardEvent): void => {
       if (event.key === 'Escape') {
         document.body.style.overflow = 'visible';
@@ -71,7 +68,10 @@ const ProjectModal: React.FC<Props> = (props: Props): JSX.Element => {
   return (
     <animated.div id="modal" style={{ opacity }} className={styles.root} onClick={closeModal}>
       <animated.div className={styles.container} style={{ opacity, transform }}>
-        <div className={styles.hero} style={{ backgroundImage: `url(${project.image})` }}>
+        <div
+          className={styles.hero}
+          style={{ backgroundImage: project.image ? `url(${project.image})` : project.css }}
+        >
           <h1>{project.name}</h1>
           <span>{project.description}</span>
         </div>

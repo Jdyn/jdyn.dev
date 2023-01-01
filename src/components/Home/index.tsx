@@ -10,24 +10,31 @@ import { Technology } from '../../lib/technologies';
 export interface Props {
   cards: Technology[];
   projects: Project[];
-  children?: React.ReactNode;
 }
 
 const Home: React.FC<Props> = (props: Props): JSX.Element => {
   const { cards, projects } = props;
 
-  const lastUpdate = useMemo((): string => formatTime(new Date(1582007359660)), [formatTime]);
+  const createdAt = useMemo((): string => formatTime(1582007359660), []);
+  const updatedAt = useMemo((): string => formatTime(1672550803179), []);
 
   return (
     <div className={styles.root}>
       <Stripes />
       <header className={styles.header} />
       <section className={styles.hero}>
-        <h3>My Stack.</h3>
+        <h3>My Stack</h3>
       </section>
       <TechStack cards={cards} />
       <Projects projects={projects} />
-      <footer className={styles.footer}>updated {lastUpdate}</footer>
+      <footer className={styles.footer}>
+        <a href="https://github.com/Jdyn/jdyn.dev" target="_blank" rel="noopener noreferrer">
+          source
+        </a>
+        <div>
+          updated {updatedAt}, created {createdAt}
+        </div>
+      </footer>
     </div>
   );
 };

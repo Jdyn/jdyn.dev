@@ -37,12 +37,17 @@
   grid-area: footer;
   padding-bottom: 10px;
   display: flex;
+  flex-direction: column;
   flex-shrink: 1;
   font-size: 16px;
   height: 125px;
   justify-content: center;
-  align-items: flex-end;
-  color: #f0f0f0;
+  align-items: center;
+  color: #707070
+}
+
+.footer > a {
+  color: #707070
 }
 
 @media (min-width: 650px) {

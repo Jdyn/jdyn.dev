@@ -1,17 +1,25 @@
 @font-face {
-  font-family: 'Museo Sans Rounded';
-  src: url('/src/fonts/museosansrounded-500-webfont.woff2') format('woff2');
-  font-weight: 500;
   font-display: swap;
+  font-family: 'dinn';
+  src: url('/src/fonts/dinn-700.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Museo Sans Rounded';
-  src: url('/src/fonts/museosansrounded-700-webfont.woff2') format('woff2');
-  font-weight: 700;
   font-display: swap;
-  font-style: bold;
+  font-family: 'dinn';
+  src: url('/src/fonts/dinn-500.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'dinn';
+  src: url('/src/fonts/dinn-300.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
 }
 
 *,
@@ -31,7 +39,7 @@ body {
   background-color: #292929;
   color: #f0f0f0;
   font-size: 100%;
-  font-family: 'Museo Sans Rounded', 'Open Sans', 'Segoe UI', 'sans-serif';
+  font-family: 'dinn', 'Open Sans', 'Segoe UI', 'sans-serif';
   font-weight: normal;
   font-style: normal;
   text-rendering: optimizeLegibility;

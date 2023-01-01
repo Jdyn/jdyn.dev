@@ -33,24 +33,39 @@
   position: relative;
   width: 100%;
   max-width: 285px;
-  height: 100%;
-  border-radius: 10px;
+  height: 525px;
+  border-radius: 16px;
   cursor: grab;
-  background-color: #353535;
-  box-shadow: 0 12.5px 50px -10px rgba(0, 0, 0, 0.4), 0 10px 10px -10px rgba(0, 0, 0, 0.4);
+  background: #252525;
+  box-shadow: 0 12.5px 50px -10px rgba(0, 0, 0, 0.2), 0 10px 10px -10px rgba(0, 0, 0, 0.2);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
 }
 
-.card > p {
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 320px;
+  margin: 4px;
+  background: #353535;
+  border-radius: 16px;
+}
+
+.body > p {
   display: flex;
   margin: 0;
-  padding: 20px;
+  padding: 12px;
   user-select: none;
   font-size: 17px;
+  line-height: 22px;
   flex: 1;
   color: #f0f0f0;
-  font-weight: 500;
+  margin: 15px;
+  background: #292929;
+  border-radius: 16px;
   letter-spacing: 0.085em;
 }
 
@@ -59,15 +74,16 @@
   position: relative;
   flex-direction: column;
   height: 195px;
-  border-radius: 10px 10px 0 0;
-  background-color: #292929;
+  align-items: flex-start;
+  border-radius: 16px 16px 0 0;
+  background: #252525;
   color: #f0f0f0;
   padding: 20px;
 }
 
 .cardHeader > img {
   position: relative;
-  max-width: 45%;
+  max-height: 75%;
   user-select: none;
 }
 

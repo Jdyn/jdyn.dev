@@ -1,7 +1,9 @@
-export default (date: Date): string => {
-  const NOW = new Date();
+const formatTime = (date: string | number): string => {
+  const newDate = new Date(date);
 
-  const times: (string | number)[][] = [
+  const now = new Date();
+
+  const times = [
     ['second', 1],
     ['minute', 60],
     ['hour', 3600],
@@ -11,10 +13,11 @@ export default (date: Date): string => {
     ['year', 31536000]
   ];
 
-  let diff = Math.round((NOW.valueOf() - date.valueOf()) / 1000);
+  let diff = Math.round((now.valueOf() - newDate.valueOf()) / 1000) as number;
+
   for (let t = 0; t < times.length; t += 1) {
     if (diff < times[t][1]) {
-      if (t === 0) {
+      if (t === 1 || t === 0) {
         return 'Just now';
       }
 
@@ -22,7 +25,16 @@ export default (date: Date): string => {
       diff = Math.round(diff / time);
       return `${diff}  ${times[t - 1][0]}${diff === 1 ? ' ago' : 's ago'}`;
     }
+
+    // If time is greater than a year...
+    if (diff > times[6][1]) {
+      const time = times[6][1] as number;
+      diff = Math.round(diff / time);
+      return `${diff}  ${times[6][0]}${diff === 1 ? ' ago' : 's ago'}`;
+    }
   }
 
   return '';
 };
+
+export default formatTime;
