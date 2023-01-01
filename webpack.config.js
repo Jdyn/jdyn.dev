@@ -9,12 +9,13 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-module.exports = function (env) {
-  const isProduction = env.NODE_ENV === 'production';
+module.exports = function (_env) {
+  const isProduction = process.env.NODE_ENV === 'production';
+  console.log(isProduction)
   const isDevelopment = !isProduction;
 
   return {
-    mode: isDevelopment ? 'development' : 'production',
+    mode: isProduction ? 'production' : 'development',
     devtool: isDevelopment && 'cheap-module-source-map',
     entry: './src/app.tsx',
     output: {

@@ -1,11 +1,11 @@
 {
   "name": "jdyn.dev",
-  "homepage": "https://jdyn.dev",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --env NODE_ENV=production"
+    "build": "NODE_ENV=production webpack --env NODE_ENV=production"
   },
   "engines": {
     "node": "16.x"
