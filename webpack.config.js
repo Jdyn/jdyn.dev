@@ -110,8 +110,8 @@ module.exports = function (_env, argv) {
       new ForkTsCheckerWebpackPlugin({
         async: false
       }),
-      isDevelopment && new webpack.HotModuleReplacementPlugin(),
-      isDevelopment && new ReactRefreshWebpackPlugin()
+      !isProduction && new webpack.HotModuleReplacementPlugin(),
+      !isProduction && new ReactRefreshWebpackPlugin()
     ].filter(Boolean),
     optimization: {
       minimize: isProduction,
