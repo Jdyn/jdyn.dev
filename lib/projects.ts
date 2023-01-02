@@ -47,7 +47,7 @@ const projects: Projects = {
       tech.docker,
       tech.css
     ],
-    links: [link('Website', 'https://academus.io/', 'academus-homepage')]
+    links: [link('iOS Source', 'https://github.com/Jdyn/academus-ios', 'academus-ios-source')]
   },
   typer: {
     name: 'typer.io',
