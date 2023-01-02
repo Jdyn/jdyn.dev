@@ -1,4 +1,4 @@
-import { SpringRef, UseSpringProps } from 'react-spring';
+import { SpringRef, UseSpringProps } from '@react-spring/web';
 
 export const containerConfig = (isOpen: boolean, ref: SpringRef) => ({
   ref,

@@ -17,7 +17,7 @@ export const stackConfig = (index: number): StackConfig => ({
     delay: index * 150
   },
   from: {
-    x: 2000,
+    x: 3000,
     y: -1500,
     rotation: 0,
     scale: 0.2

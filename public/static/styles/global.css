@@ -1,7 +1,7 @@
 @font-face {
   font-display: swap;
   font-family: 'dinn';
-  src: url('/src/fonts/dinn-700.woff') format('woff');
+  src: url('/static/fonts/dinn-700.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
   font-display: swap;
   font-family: 'dinn';
-  src: url('/src/fonts/dinn-500.woff') format('woff');
+  src: url('/static/fonts/dinn-500.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
 @font-face {
   font-display: swap;
   font-family: 'dinn';
-  src: url('/src/fonts/dinn-300.woff') format('woff');
+  src: url('/static/fonts/dinn-300.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 }

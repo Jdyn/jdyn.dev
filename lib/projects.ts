@@ -31,7 +31,7 @@ const projects: Projects = {
   academus: {
     name: 'Academus',
     description: "A student's best friend",
-    image: '/src/images/projects/academus.png',
+    image: '/static/images/projects/academus.png',
     width: '605px',
     overview: [
       "Academus is an app for students who seek a real polished and tailored experience with features that give you an edge in school, allowing you to worry less. Since the inception of the idea in the latter half of 2018, Academus has grown beyond my expectations in part due to it's ability to integrate with many already existing solutions but also the small, yet versatile 6 person team we had, that was able to grow it into a reality.",
@@ -52,7 +52,7 @@ const projects: Projects = {
   typer: {
     name: 'typer.io',
     description: '',
-    image: '/src/images/projects/typer.png',
+    image: '/static/images/projects/typer.png',
     overview: [
       'The ultimate goal of this project is to create a community for people who are genuinely interested in improving their typing abilities, but perhaps find conventional methods to be boring or unrewarding. I think because humans are inherently competitive by nature, incorporating a competitive aspect to typing can make learning and improving more interesting.',
       'The backend of typer.io is built with Phoenix and Node, distributed in AWS EC2 instances. Phoenix is connected to a Postgres DB supplied by Amazon RDS (currently). The web client is built entirely with React and utilizes Redux for state management.',
@@ -78,7 +78,7 @@ const projects: Projects = {
   jdyn: {
     name: 'jdyn.dev',
     description: 'Portfolio',
-    image: '/src/images/projects/jdyn.png',
+    image: '/static/images/projects/jdyn.png',
     overview: [
       'This space essentially allows for me to give some form of commentary, context, and perhaps some insight into how the project was built. In addition, Links and technologies pertaining to the project are there for additional information.'
     ],
@@ -92,7 +92,7 @@ const projects: Projects = {
   newProject: {
     name: 'LoLHero',
     description: 'Video Game Account Boosting Service',
-    image: '/src/images/projects/lolhero.png',
+    image: '/static/images/projects/lolhero.png',
     overview: ['WIP'],
     technologies: [
       tech.typescript,

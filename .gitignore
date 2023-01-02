@@ -3,7 +3,7 @@
 /dist/
 /out/
 /build
-
+/.next/
 /package-lock.json
 /.vscode
 

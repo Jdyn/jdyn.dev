@@ -24,6 +24,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.tsx'] }],
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'no-use-before-define': ['off'],
+    'react/react-in-jsx-scope': ['off'],
     'max-len': [
       'error',
       {

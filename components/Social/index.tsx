@@ -1,12 +1,7 @@
 import React from 'react';
 import styles from './index.module.css';
 
-interface Props {
-  children?: React.ReactNode;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Social: React.FC = (props: Props): JSX.Element => {
+const Social: React.FC = (): JSX.Element => {
   return (
     <div className={styles.root}>
       <a

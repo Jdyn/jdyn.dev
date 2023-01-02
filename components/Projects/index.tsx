@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
-import { useTransition, useSpring, useChain, animated, useSpringRef } from 'react-spring';
+import { useTransition, useSpring, useChain, animated, useSpringRef } from '@react-spring/web';
 import ReactGA from 'react-ga';
 import ProjectModal from '../ProjectModal';
 import { Project } from '../../lib/projects';
@@ -89,7 +91,7 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
     }
   });
 
-  const labelSpring = useSpring(labelConfig(isOpen));
+  const labelStyles = useSpring(labelConfig(isOpen));
 
   useChain(isOpen ? [containerRef, projectRef] : [projectRef, containerRef], [0, 0.1]);
 
@@ -115,7 +117,7 @@ const Projects: React.FC<Props> = (props: Props): JSX.Element => {
             />
           )
         )}
-        <animated.h3 className={styles.label} style={labelSpring}>
+        <animated.h3 className={styles.label} style={labelStyles}>
           my work
         </animated.h3>
       </animated.div>

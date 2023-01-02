@@ -83,7 +83,6 @@
 
 .cardHeader > img {
   position: relative;
-  max-height: 75%;
   user-select: none;
 }
 
