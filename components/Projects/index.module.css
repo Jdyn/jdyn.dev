@@ -6,7 +6,10 @@
   align-items: flex-end;
   justify-content: center;
   width: 100%;
-  min-height: 250px;
+  padding-top: 150px;
+  padding-bottom: 50vh;
+  margin-top: -50px;
+  /* min-height: 250px; */
   pointer-events: none;
 }
 
