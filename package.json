@@ -1,40 +1,36 @@
 {
-  "name": "jdyn.dev",
-  "version": "0.1.0",
+  "name": "jdyn-dev",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "engines": {
-    "node": "18.x"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@react-spring/web": "9.6.1",
+    "@ark-ui/react": "^3.9.0",
+    "@react-spring/web": "9.7.3",
     "@use-gesture/react": "^10.2.23",
-    "next": "^13.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-ga": "^3.1.2"
+    "framer-motion": "^11.3.30",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-ga": "^3.3.1",
+    "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
-    "@types/node": "^14.0.14",
-    "@types/react": "^16.9.41",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-redux": "^7.1.9",
-    "@types/react-router-dom": "^5.1.5",
-    "@typescript-eslint/eslint-plugin": "^5.47.1",
-    "@typescript-eslint/parser": "^5.47.1",
-    "eslint": "^7.3.1",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.2",
-    "eslint-plugin-react-hooks": "^4.1.2",
-    "typescript": "^4.9.4"
+    "@eslint/js": "^9.9.0",
+    "@types/node": "^22.5.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^5.4.1"
   }
 }
