@@ -1,21 +1,16 @@
-"use client";
-
 /* eslint-disable no-nested-ternary */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDrag } from "@use-gesture/react";
 import { useSprings, animated, useSpring, to } from "@react-spring/web";
-import { Technology } from "../../lib/technologies";
 import { stackConfig, trans } from "./springs";
 import styles from "./index.module.css";
 import technologies from "../../lib/technologies";
 
-interface Props {
-  cards: Technology[];
-}
+const cards = Object.values(technologies).filter((t) =>
+  ["iOS", "Node.js", "React.js", "Phoenix"].includes(t.name)
+);
 
-const cards = Object.values(technologies).filter(t => ["iOS", "Node.js", "React.js", "Phoenix"].includes(t.name));
-
-const TechStack: React.FC<Props> = (): JSX.Element => {
+const TechStack = (): JSX.Element => {
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
   const [size, setSize] = useState(0);
 
@@ -94,12 +89,7 @@ const TechStack: React.FC<Props> = (): JSX.Element => {
               {...bind(index)}
             >
               <div className={styles.cardHeader}>
-                <img
-                  alt={card.name}
-                  src={card.icon}
-                  width={125}
-                  height={125}
-                />
+                <img alt={card.name} src={card.icon} width={125} height={125} />
                 <h2>{card.name}</h2>
               </div>
               <div className={styles.body}>

@@ -4,37 +4,37 @@ const formatTime = (date: string | number): string => {
   const now = new Date();
 
   const times = [
-    ['second', 1],
-    ['minute', 60],
-    ['hour', 3600],
-    ['day', 86400],
-    ['week', 604800],
-    ['month', 2592000],
-    ['year', 31536000]
+    ["second", 1],
+    ["minute", 60],
+    ["hour", 3600],
+    ["day", 86400],
+    ["week", 604800],
+    ["month", 2592000],
+    ["year", 31536000],
   ];
 
   let diff = Math.round((now.valueOf() - newDate.valueOf()) / 1000) as number;
 
   for (let t = 0; t < times.length; t += 1) {
-    if (diff < times[t][1]) {
+    if (diff < (times[t][1] as number)) {
       if (t === 1 || t === 0) {
-        return 'Just now';
+        return "Just now";
       }
 
       const time = times[t - 1][1] as number;
       diff = Math.round(diff / time);
-      return `${diff}  ${times[t - 1][0]}${diff === 1 ? ' ago' : 's ago'}`;
+      return `${diff}  ${times[t - 1][0]}${diff === 1 ? " ago" : "s ago"}`;
     }
 
     // If time is greater than a year...
-    if (diff > times[6][1]) {
+    if (diff > (times[6][1] as number)) {
       const time = times[6][1] as number;
       diff = Math.round(diff / time);
-      return `${diff}  ${times[6][0]}${diff === 1 ? ' ago' : 's ago'}`;
+      return `${diff}  ${times[6][0]}${diff === 1 ? " ago" : "s ago"}`;
     }
   }
 
-  return '';
+  return "";
 };
 
 export default formatTime;

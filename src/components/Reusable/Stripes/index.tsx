@@ -1,13 +1,8 @@
-import React from 'react';
-import Social from '../../Social';
-import styles from './index.module.css';
- 
-interface Props {
-  children?: React.ReactNode;
-}
+import React from "react";
+import Social from "../../Social";
+import styles from "./index.module.css";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Stripes: React.FC = (props: Props): JSX.Element => {
+const Stripes: React.FC = (): JSX.Element => {
   return (
     <div className={styles.stripes}>
       <span />
