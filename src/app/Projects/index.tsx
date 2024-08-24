@@ -91,6 +91,7 @@ const Projects = (): JSX.Element => {
       <animated.div
         ref={rootRef}
         className={styles.container}
+        data-open={isOpen}
         style={containerSpring}
         onClick={(): void => setOpen(true)}
       >
@@ -112,7 +113,7 @@ const Projects = (): JSX.Element => {
           }
         )}
         <animated.h3 className={styles.label} style={labelStyles}>
-          my work
+          work
         </animated.h3>
       </animated.div>
       {modalIsOpen && currentProject && <ProjectDialog setModal={setModal} project={currentProject} />}

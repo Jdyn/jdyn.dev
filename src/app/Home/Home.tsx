@@ -16,7 +16,7 @@ const Index: React.FC = (): JSX.Element => {
       <section className={styles.hero}>
       </section> */}
 
-      <TechStack />
+      {/* <TechStack /> */}
       <Projects />
       <footer className={styles.footer}>
         <a href="https://github.com/Jdyn/jdyn.dev" target="_blank" rel="noopener noreferrer">
