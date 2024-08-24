@@ -113,7 +113,7 @@ const Projects = (): JSX.Element => {
           }
         )}
         <animated.h3 className={styles.label} style={labelStyles}>
-          work
+          my work
         </animated.h3>
       </animated.div>
       {modalIsOpen && currentProject && <ProjectDialog setModal={setModal} project={currentProject} />}
