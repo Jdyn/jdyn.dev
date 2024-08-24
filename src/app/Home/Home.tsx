@@ -3,7 +3,7 @@ import styles from './index.module.css';
 import Stripes from '@/components/Reusable/Stripes';
 import Projects from '@/app/Projects';
 import formatTime from '../../util/formatTime';
-import TechStack from '@/components/TechStack';
+// import TechStack from '@/components/TechStack';
 
 const createdAt = formatTime(1582007359660);
 const updatedAt = formatTime(1672550803179);
