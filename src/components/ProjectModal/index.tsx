@@ -1,76 +1,90 @@
-import React, { useEffect } from 'react';
-import ReactGA from 'react-ga';
-import { useSpring, animated, config } from '@react-spring/web';
-import { Project } from '../../lib/projects';
-import styles from './index.module.css';
+import React, { useEffect } from "react";
+import ReactGA from "react-ga";
+import { useSpring, animated, config } from "@react-spring/web";
+import { Project } from "../../lib/projects";
+import styles from "./index.module.css";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   project: Project;
-  setModal: (isOpen: boolean) => void;
 }
 
 const ProjectDialog: React.FC<Props> = (props: Props): JSX.Element => {
-  const { project, setModal } = props;
+  const { project } = props;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  }, []);
 
   const handleLinkClick = (description: string): void => {
     ReactGA.event({
-      category: 'Projects',
-      action: `project-link-click-${description}`
+      category: "Projects",
+      action: `project-link-click-${description}`,
     });
   };
 
   const [{ opacity, transform }, set] = useSpring(() => ({
     config: config.default,
     to: {
-      width: '100%',
-      transform: 'scale(1)',
-      opacity: 1
+      width: "100%",
+      transform: "scale(1)",
+      opacity: 1,
     },
     from: {
-      width: '0%',
+      width: "0%",
       opacity: 0,
-      transform: 'scale(0)'
+      transform: "scale(0)",
     },
     onRest: (changes): void => {
       if (!changes.value.opacity) {
-        setModal(false);
+        navigate("/projects");
       }
-    }
+    },
   }));
 
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent): void => {
-      if (event.key === 'Escape') {
-        document.body.style.overflow = 'visible';
-        set({ width: '0%', opacity: 0, transform: 'scale(0)' });
+      if (event.key === "Escape") {
+        document.body.style.overflow = "visible";
+        set({ width: "0%", opacity: 0, transform: "scale(0)" });
       }
     };
 
-    document.addEventListener('keydown', handleKeydown);
+    document.addEventListener("keydown", handleKeydown);
     return (): void => {
-      document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener("keydown", handleKeydown);
     };
   }, [set]);
 
   const closeModal = (event: React.SyntheticEvent): void => {
     if (event.target === event.currentTarget) {
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = "visible";
 
-      const modal = document.getElementById('modal');
+      const modal = document.getElementById("modal");
       if (modal) {
-        modal.style.pointerEvents = 'none';
+        modal.style.pointerEvents = "none";
       }
 
-      set({ width: '0%', opacity: 0, transform: 'scale(0)' });
+      set({ width: "0%", opacity: 0, transform: "scale(0)" });
     }
   };
 
   return (
-    <animated.div id="modal" style={{ opacity }} className={styles.root} onClick={closeModal}>
+    <animated.div
+      id="modal"
+      style={{ opacity }}
+      className={styles.root}
+      onClick={closeModal}
+    >
       <animated.div className={styles.container} style={{ opacity, transform }}>
         <div
           className={styles.hero}
-          style={{ backgroundImage: project.image ? `url(${project.image})` : project.css }}
+          style={{
+            backgroundImage: project.image
+              ? `url(${project.image})`
+              : project.css,
+          }}
         >
           <div className={styles.close}>
             <button type="button" onClick={closeModal}>
@@ -137,7 +151,11 @@ const ProjectDialog: React.FC<Props> = (props: Props): JSX.Element => {
               (technology): JSX.Element => (
                 <div className={styles.techItem} key={technology.name}>
                   <img alt="technology icon" src={technology.icon} />
-                  <a target="_blank" rel="noopener noreferrer" href={technology.href}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={technology.href}
+                  >
                     {technology.name}
                   </a>
                 </div>

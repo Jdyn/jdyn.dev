@@ -1,7 +1,7 @@
 .stripes {
   display: grid;
   position: absolute;
-  grid: repeat(4, 250px) / repeat(7, 1fr);
+  grid: repeat(4, 25vh) / repeat(7, 1fr);
   top: 0;
   z-index: 0;
   width: 100%;

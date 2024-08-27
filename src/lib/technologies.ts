@@ -118,7 +118,13 @@ const technologies: Technologies = {
     href: 'https://developer.android.com/guide/platform',
     overview: '',
     icon: '/assets/images/technologies/typescript.svg'
-  }
+  },
+  elixir: {
+    name: 'Elixir',
+    href: 'https://elixir-lang.org/',
+    overview: '',
+    icon: '/assets/images/technologies/elixir.svg'
+  },
 };
 
 export default technologies;
